@@ -1,0 +1,172 @@
+.hero-historia {
+    position: relative;
+    background-image: url('foto-clinica.jpg'); /* Sua foto da sala de espera */
+    background-size: cover;
+    background-position: left center;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.hero-overlay {
+    width: 100%;
+    height: 100%;
+    /* Degradê que vai do transparente para o azul escuro da DermaVita */
+    background: linear-gradient(to right, rgba(15, 33, 61, 0.4) 0%, #0f213d 60%);
+    padding: 60px 0;
+}
+
+.hero-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.hero-content {
+    flex: 1;
+    color: white;
+    z-index: 2;
+}
+
+.hero-titulo {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.hero-subtitulo {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    max-width: 500px;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 300px;
+}
+
+.btn-hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-claro {
+    background-color: #72c6c8; /* Tom de verde água da sua inspiração */
+    color: white;
+}
+
+.btn-claro:hover { background-color: #5fb1b3; }
+
+.btn-transparente {
+    background-color: rgba(114, 198, 200, 0.3);
+    border: 1px solid #72c6c8;
+    color: white;
+}
+
+.btn-transparente:hover { background-color: rgba(114, 198, 200, 0.5); }
+
+/* Estilo para a imagem do Médico */
+.hero-medico {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-self: flex-end; /* Faz o médico "brotar" do fundo da seção */
+}
+
+.img-medico {
+    max-height: 550px; /* Ajuste conforme necessário */
+    filter: drop-shadow(-10px 10px 20px rgba(0,0,0,0.5)); /* Sombra suave no PNG */
+}
+
+/* Responsividade */
+@media (max-width: 992px) {
+    .hero-overlay {
+        background: linear-gradient(to bottom, rgba(15, 33, 61, 0.6) 0%, #0f213d 90%);
+        text-align: center;
+    }
+    .hero-container { flex-direction: column; }
+    .hero-content { margin-bottom: 40px; }
+    .hero-subtitulo { margin: 0 auto 30px; }
+    .hero-buttons { margin: 0 auto; }
+    .hero-medico { display: none; } /* Esconde o médico no mobile para focar no texto */
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+}
+
+/* CONTAINER */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* HEADER TOPO */
+.top-header {
+  background: #1e3a5f;
+  color: white;
+  padding: 10px 0;
+  font-size: 14px;
+  position: relative;
+  transition: top 0.3s;
+}
+
+.socials a {
+  color: white;
+  margin-left: 15px;
+  text-decoration: none;
+}
+
+/* NAVBAR */
+.navbar {
+  background: white;
+  border-bottom: 1px solid #ddd;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-area img {
+  width: 40px;
+}
+
+.navbar h2 {
+  color: #1e3a5f;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
