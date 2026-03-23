@@ -66,3 +66,23 @@ window.addEventListener("resize", () => {
   index = 0;
   updateCarousel();
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const faqQuestions = document.querySelectorAll('.faq-question');
+
+    faqQuestions.forEach(question => {
+        question.addEventListener('click', () => {
+            const item = question.parentElement;
+
+            // Opcional: Fecha outros itens se quiser que apenas um fique aberto por vez
+            document.querySelectorAll('.faq-item').forEach(otherItem => {
+                if (otherItem !== item) {
+                    otherItem.classList.remove('active');
+                }
+            });
+
+            // Alterna a classe active no item clicado
+            item.classList.toggle('active');
+        });
+    });
+});
