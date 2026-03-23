@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Clínica DermaVita</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- HEADER TOPO -->
+  <header class="top-header">
+    <div class="container">
+      <span>📞 (15) 99999-9999</span>
+      <div class="socials">
+        <a href="#">Instagram</a>
+        <a href="#">Facebook</a>
+        <a href="#">LinkedIn</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="container">
+
+      <div class="logo-area">
+        <img src="imagens/medico.jpg" alt="Logo">
+        <h2>DermaVita</h2>
+      </div>
+
+      <ul>
+        <li><a href="#">Início</a></li>
+        <li><a href="#">Sobre</a></li>
+        <li><a href="#">Tratamentos</a></li>
+        <li><a href="#">Contato</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="text">
+        <h1>Dermatologia Estética Avançada</h1>
+        <p>Com o Dr. Rafael Monteiro Azevedo</p>
+        <button onclick="openModal()">Agendar Consulta</button>
+      </div>
+
+      <div class="image">
+        <img src="imagens/medico.jpg" alt="Médico">
+      </div>
+    </div>
+  </section>
+
+  <!-- ÁREAS DE ATUAÇÃO -->
+  <section class="areas">
+    <h2>Áreas de atuação</h2>
+
+    <div class="areas-grid">
+
+      <div class="area-card">
+        <img src="imagens/medico.jpg" alt="">
+        <h3>Rejuvenescimento</h3>
+        <p>Botox e preenchimentos</p>
+      </div>
+
+      <div class="area-card">
+        <img src="imagens/medico.jpg" alt="">
+        <h3>Laser</h3>
+        <p>Tratamentos de pele</p>
+      </div>
+
+      <div class="area-card">
+        <img src="imagens/medico.jpg" alt="">
+        <h3>Dermatologia Clínica</h3>
+        <p>Saúde da pele</p>
+      </div>
+
+    </div>
+  </section>
+
+ <!-- QUEM SOU EU -->
+<section class="about-me">
+  <div class="about-container">
+
+    <div class="about-image">
+      <img src="imagens/medico.jpg" alt="Dr. Rafael">
+    </div>
+
+    <div class="about-text">
+      <h2>Quem sou eu</h2>
+      <p>
+        Sou especialista em dermatologia estética, com foco em proporcionar
+        resultados naturais e melhorar a autoestima dos meus pacientes.
+        Com anos de experiência, busco sempre utilizar técnicas modernas
+        e seguras.
+      </p>
+
+      <button onclick="verMais()">Saiba mais</button>
+    </div>
+
+  </div>
+
+  <section class="testimonials">
+  <h2>Depoimentos</h2>
+
+  <div class="carousel">
+
+    <button class="prev">&#10094;</button>
+
+    <div class="carousel-track">
+
+      <!-- 6 depoimentos -->
+      <div class="testimonial">
+        <p>Excelente atendimento, muito atencioso e profissional. Explicou tudo com clareza.
+             <br><br>
+    <span class="stars">★★★★★</span>
+        </p>
+        
+        <h3>Mariana Souza</h3>
+        <span>Paciente</span>
+      </div>
+
+      <div class="testimonial">
+        <p>Minha experiência foi incrível, desde o atendimento até o resultado final.
+             <br><br>
+    <span class="stars">★★★★★</span>
+        </p>
+       
+        <h3>Carlos Henrique</h3>
+        <span>Paciente</span>
+      </div>
+
+      <div class="testimonial">
+        <p>Clínica moderna e médico extremamente competente. Recomendo sem dúvidas.
+             <br><br>
+    <span class="stars">★★★★★</span>
+        </p>
+        
+        <h3>Ana Paula Lima</h3>
+        <span>Paciente</span>
+      </div>
+
+      <div class="testimonial">
+        <p>Profissional muito humano e detalhista. Me senti seguro durante todo o processo.
+             <br><br>
+    <span class="stars">★★★★★</span>
+        </p>
+       
+        <h3>Fernanda Rocha</h3>
+        <span>Paciente</span>
+      </div>
+
+      <div class="testimonial">
+        <p>Resultado excelente! Superou minhas expectativas.
+             <br><br>
+    <span class="stars">★★★★★</span>
+        </p>
+        
+        <h3>Ricardo Alves</h3>
+        <span>Paciente</span>
+      </div>
+
+      <div class="testimonial">
+        <p>Atendimento impecável e estrutura de alto nível.
+             <br><br>
+    <span class="stars">★★★★★</span>
+        </p>
+        
+        <h3>Juliana Martins</h3>
+        <span>Paciente</span>
+      </div>
+
+    </div>
+
+    <button class="next">&#10095;</button>
+
+  </div>
+</section>
+
+</section>
+
+  <!-- MODAL -->
+  <div id="modal" class="modal">
+    <form class="modal-content">
+      <input type="text" placeholder="Nome">
+      <input type="email" placeholder="Email">
+      <button>Enviar</button>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
