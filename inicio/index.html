@@ -216,6 +216,32 @@ h1,h2,h3,h4 { font-family: 'Playfair Display', serif; line-height: 1.18; }
 .hero-stat-num { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: var(--navy); display: block; }
 .hero-stat-lbl { font-size: 10px; color: #64748b; text-transform: uppercase; letter-spacing: .1em; }
 
+@media (max-width: 900px) {
+  .hero-stats {
+    position: absolute; bottom: 12px; right: 12px; left: auto;
+    display: flex; gap: 8px; flex-wrap: wrap; max-width: 160px;
+    justify-content: flex-end;
+  }
+  .hero-stat {
+    padding: 10px 14px; min-width: 70px; background: rgba(255,255,255,0.95);
+  }
+  .hero-stat-num { font-size: 16px; }
+  .hero-stat-lbl { font-size: 9px; }
+}
+
+@media (max-width: 640px) {
+  .hero-stats {
+    flex-direction: row; left: auto; bottom: 8px; right: 8px;
+    gap: 6px; max-width: 100%;
+  }
+  .hero-stat {
+    padding: 8px 12px; min-width: 60px;
+    border-radius: 8px;
+  }
+  .hero-stat-num { font-size: 14px; }
+  .hero-stat-lbl { font-size: 8px; }
+}
+
 /* ═══════════════════════════════════════════
    AREAS (TRATAMENTOS)
 ═══════════════════════════════════════════ */
@@ -697,6 +723,56 @@ h1,h2,h3,h4 { font-family: 'Playfair Display', serif; line-height: 1.18; }
 .faq-item.active .faq-answer { max-height: 300px; }
 
 /* ═══════════════════════════════════════════
+   MAPA - LOCALIZAÇÃO
+═══════════════════════════════════════════ */
+.map-section {
+  padding: 100px 5%;
+  background: var(--white);
+}
+
+.map-inner {
+  max-width: 1200px; margin: auto;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
+}
+
+.map-container {
+  position: relative; border-radius: var(--radius-lg);
+  overflow: hidden; box-shadow: var(--shadow-card);
+  height: 500px;
+}
+
+.map-container iframe {
+  width: 100%; height: 100%; border: none; display: block;
+}
+
+.map-content .eyebrow { color: var(--orange); }
+.map-content h2 { font-size: clamp(28px, 3vw, 40px); color: var(--navy); margin-bottom: 20px; }
+.map-content p { font-size: 15px; line-height: 1.75; color: #64748b; margin-bottom: 24px; }
+
+.map-address {
+  background: rgba(232,101,10,0.08); border-left: 4px solid var(--orange);
+  border-radius: var(--radius-md); padding: 24px;
+  margin-bottom: 32px;
+}
+
+.map-address-title {
+  font-weight: 600; color: var(--navy); margin-bottom: 12px; font-size: 14px;
+  text-transform: uppercase; letter-spacing: .1em;
+}
+
+.map-address-list {
+  list-style: none; gap: 10px; display: flex; flex-direction: column;
+}
+
+.map-address-list li {
+  font-size: 14px; color: #64748b; display: flex; align-items: center; gap: 10px;
+}
+
+.map-address-list i { color: var(--orange); width: 16px; }
+
+.map-cta { margin-top: 28px; }
+
+/* ═══════════════════════════════════════════
    CONTATO FINAL
 ═══════════════════════════════════════════ */
 .contact-section {
@@ -868,16 +944,15 @@ h1,h2,h3,h4 { font-family: 'Playfair Display', serif; line-height: 1.18; }
    RESPONSIVE
 ═══════════════════════════════════════════ */
 @media (max-width: 1024px) {
-  .why-inner, .about-inner { gap: 50px; }
+  .why-inner, .about-inner, .map-inner { gap: 50px; }
 }
 
 @media (max-width: 900px) {
-  .hero-inner, .why-inner, .about-inner {
+  .hero-inner, .why-inner, .about-inner, .map-inner {
     grid-template-columns: 1fr; gap: 48px;
   }
   .hero-image-wrap { order: -1; }
   .hero-image-wrap img { max-width: 380px; }
-  .hero-stats { bottom: 10px; }
 
   .areas-grid, .articles-grid { grid-template-columns: 1fr 1fr; }
   .faq-grid { grid-template-columns: 1fr; }
@@ -899,7 +974,6 @@ h1,h2,h3,h4 { font-family: 'Playfair Display', serif; line-height: 1.18; }
   .nav-hamburger { display: flex; }
   .areas-grid, .articles-grid { grid-template-columns: 1fr; }
   .testimonial-item { min-width: 100%; }
-  .hero-stats { flex-direction: column; left: 50%; transform: translateX(-50%); bottom: -50px; }
   .hero-image-wrap img { max-width: 280px; }
   .results-grid { grid-template-columns: 1fr; }
 }
@@ -922,6 +996,7 @@ h1,h2,h3,h4 { font-family: 'Playfair Display', serif; line-height: 1.18; }
     <li><a href="#tratamentos">Tratamentos</a></li>
     <li><a href="#sobre">Sobre</a></li>
     <li><a href="#depoimentos">Depoimentos</a></li>
+    <li><a href="#localizacao">Localização</a></li>
     <li><a href="#contato">Contato</a></li>
   </ul>
 
@@ -1386,6 +1461,40 @@ h1,h2,h3,h4 { font-family: 'Playfair Display', serif; line-height: 1.18; }
 </section>
 
 
+<!-- ═══════════════════════════════ MAPA ═══ -->
+<section class="map-section" id="localizacao">
+  <div class="map-inner">
+    <!-- Mapa -->
+    <div class="map-container">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3664.7859526340357!2d-47.51823!3d-23.571667!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c8f0c0c0c0c0c1%3A0x800000000000!2sAv.%20Pres.%20Kennedy%2C%201500%20-%20Centro%2C%20Votorantim%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1234567890" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+    <!-- Informações de Contato -->
+    <div class="map-content">
+      <span class="eyebrow">Onde nos encontrar</span>
+      <h2>Visite Nossa Clínica</h2>
+      <p>Estamos localizados em uma região de fácil acesso, com estrutura moderna e confortável para recebê-lo. Venha conhecer nosso espaço e conversar com o Dr. Rafael sobre seus objetivos estéticos.</p>
+
+      <div class="map-address">
+        <div class="map-address-title">Endereço Completo</div>
+        <ul class="map-address-list">
+          <li><i class="fas fa-map-pin"></i> <strong>Instituto DermaVita</strong></li>
+          <li><i class="fas fa-road"></i> Av. Presidente Kennedy, 1500 – Conjunto 51</li>
+          <li><i class="fas fa-city"></i> Votorantim – SP, Brasil</li>
+          <li><i class="fas fa-phone"></i> <strong>(15) 99999-9999</strong></li>
+          <li><i class="fas fa-envelope"></i> contato@dermavita.com.br</li>
+        </ul>
+      </div>
+
+      <div class="map-cta">
+        <p style="font-size:13px; color:#64748b; margin-bottom:16px;">Horário de Funcionamento: Seg-Sex 9h às 19h | Sábado 9h às 13h</p>
+        <a href="https://maps.google.com/?q=Av.+Presidente+Kennedy,+1500,+Votorantim,+SP" target="_blank" class="btn-primary"><i class="fas fa-map"></i> Abrir no Google Maps</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 <!-- ═══════════════════════════════ CONTATO ═══ -->
 <section class="contact-section" id="contato">
   <div class="contact-inner">
@@ -1470,10 +1579,10 @@ h1,h2,h3,h4 { font-family: 'Playfair Display', serif; line-height: 1.18; }
     <h3>Agendar Consulta</h3>
     <p>Preencha os dados abaixo e entraremos em contato em breve.</p>
     <div class="modal-form">
-      <input type="text" placeholder="Seu nome completo">
-      <input type="email" placeholder="Seu e-mail">
-      <input type="tel" placeholder="WhatsApp (15) 9 ____-____">
-      <select>
+      <input type="text" id="nome" placeholder="Seu nome completo" required>
+      <input type="email" id="email" placeholder="Seu e-mail" required>
+      <input type="tel" id="telefone" placeholder="WhatsApp (15) 9 ____-____ "required>
+      <select id="tratamento" required>
         <option value="" disabled selected>Escolha o tratamento de interesse</option>
         <option>Rejuvenescimento facial</option>
         <option>Tecnologia Laser</option>
@@ -1481,14 +1590,75 @@ h1,h2,h3,h4 { font-family: 'Playfair Display', serif; line-height: 1.18; }
         <option>Bioestimuladores</option>
         <option>Outro</option>
       </select>
-      <button onclick="closeModal()">Enviar Solicitação</button>
+      <button onclick="enviarFormulario()">Enviar Solicitação</button>
     </div>
   </div>
 </div>
 
 
 <!-- ═══════════════════════════════ SCRIPTS ═══ -->
+
+ <script type="module">
+  // Import Firebase
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+  import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+  // CONFIG do seu projeto (copie do Firebase)
+  const firebaseConfig = {
+   apiKey: "AIzaSyANRXKDUEqk9zcL0GbCKmKd5PGjd1loV2M",
+  authDomain: "sitemedico-5624c.firebaseapp.com",
+  projectId: "sitemedico-5624c",
+  storageBucket: "sitemedico-5624c.firebasestorage.app",
+  messagingSenderId: "601487396528",
+  appId: "1:601487396528:web:a7a4c044b91c1c712b7575",
+  measurementId: "G-H3SPNX2Q6S"
+  };
+
+  // Inicializar Firebase
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+
+  // Tornar global (pra usar fora do module se quiser)
+  window.db = db;
+  window.addDoc = addDoc;
+  window.collection = collection;
+</script>
+
 <script>
+    async function enviarFormulario() {
+  const nome = document.getElementById('nome').value;
+  const email = document.getElementById('email').value;
+  const telefone = document.getElementById('telefone').value;
+  const tratamento = document.getElementById('tratamento').value;
+
+  if (!nome || !email || !telefone || !tratamento) {
+    alert("Preencha todos os campos!");
+    return;
+  }
+
+  try {
+    await addDoc(collection(db, "agendamentos"), {
+      nome: nome,
+      email: email,
+      telefone: telefone,
+      tratamento: tratamento,
+      data: new Date()
+    });
+
+    alert("Solicitação enviada com sucesso!");
+    closeModal();
+
+    // Limpar campos
+    document.getElementById('nome').value = "";
+    document.getElementById('email').value = "";
+    document.getElementById('telefone').value = "";
+    document.getElementById('tratamento').selectedIndex = 0;
+
+  } catch (error) {
+    console.error("Erro ao enviar:", error);
+    alert("Erro ao enviar. Tente novamente.");
+  }
+}
 // MODAL
 function openModal()  { document.getElementById('modal').classList.add('open'); }
 function closeModal() { document.getElementById('modal').classList.remove('open'); }
