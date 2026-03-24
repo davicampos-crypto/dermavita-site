@@ -7,78 +7,69 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-
-  <!-- HEADER TOPO -->
-  <header class="top-header">
+<header class="top-header">
     <div class="container">
-      <span>📞 (15) 99999-9999</span>
-      <div class="socials">
-        <a href="#">Instagram</a>
-        <a href="#">Facebook</a>
-        <a href="#">LinkedIn</a>
-      </div>
+        <span><i class="fas fa-phone"></i> (15) 99999-9999</span>
+        <div class="socials">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+        </div>
     </div>
-  </header>
+</header>
 
-  <!-- NAVBAR -->
-  <nav class="navbar">
+<nav class="navbar">
     <div class="container">
-
-      <div class="logo-area">
-        <img src="imagens/medico.jpg" alt="Logo">
-        <h2>DermaVita</h2>
-      </div>
-
-      <ul>
-        <li><a href="#">Início</a></li>
-        <li><a href="sobre/index.html">Sobre</a></li>
-        <li><a href="tratamentos/index.html">Tratamentos</a></li>
-        <li><a href="contatos/index.html">Contato</a></li>
-      </ul>
+        <div class="logo-area">
+            <img src="imagens/logo.png" alt="Logo">
+            <h2>DermaVita</h2>
+        </div>
+        <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="sobre/index.html">Sobre</a></li>
+            <li><a href="tratamentos/index.html">Tratamentos</a></li>
+            <li><a href="contatos/index.html">Contato</a></li>
+        </ul>
     </div>
-  </nav>
+</nav>
 
-  <!-- HERO -->
-  <section class="hero">
+<section class="hero">
     <div class="hero-content">
-      <div class="text">
-        <h1>Dermatologia Estética Avançada</h1>
-        <p>Com o Dr. Rafael Monteiro Azevedo</p>
-        <button onclick="openModal()">Agendar Consulta</button>
-      </div>
-
-      <div class="image">
-        <img src="imagens/medico.jpg" alt="Médico">
-      </div>
+        <div class="text">
+            <span class="subtitle">Bem-vindo à DermaVita</span>
+            <h1>Dermatologia Estética Avançada</h1>
+            <p>Realçando sua beleza natural com ciência e sofisticação através dos cuidados do Dr. Rafael Monteiro Azevedo.</p>
+            <div class="hero-btns">
+                <button class="btn-primary" onclick="openModal()">Agendar Consulta</button>
+                <button class="btn-secondary">Conheça os Tratamentos</button>
+            </div>
+        </div>
+        <div class="image">
+            <img src="imagens/medico.jpg" alt="Dr. Rafael Monteiro">
+        </div>
     </div>
-  </section>
+</section>
 
-  <!-- ÁREAS DE ATUAÇÃO -->
-  <section class="areas">
-    <h2>Áreas de atuação</h2>
-
+<section class="areas">
+    <h2 class="titulo-secao">Áreas de Atuação</h2>
     <div class="areas-grid">
-
-      <div class="area-card">
-        <img src="imagens/medico.jpg" alt="">
-        <h3>Rejuvenescimento</h3>
-        <p>Botox e preenchimentos</p>
-      </div>
-
-      <div class="area-card">
-        <img src="imagens/medico.jpg" alt="">
-        <h3>Laser</h3>
-        <p>Tratamentos de pele</p>
-      </div>
-
-      <div class="area-card">
-        <img src="imagens/medico.jpg" alt="">
-        <h3>Dermatologia Clínica</h3>
-        <p>Saúde da pele</p>
-      </div>
-
+        <div class="area-card">
+            <i class="fas fa-magic icon-area"></i>
+            <h3>Rejuvenescimento</h3>
+            <p>Botox, bioestimuladores e preenchimentos personalizados.</p>
+        </div>
+        <div class="area-card">
+            <i class="fas fa-bolt icon-area"></i>
+            <h3>Tecnologia Laser</h3>
+            <p>Tratamentos avançados para manchas, cicatrizes e textura.</p>
+        </div>
+        <div class="area-card">
+            <i class="fas fa-stethoscope icon-area"></i>
+            <h3>Dermatologia Clínica</h3>
+            <p>Prevenção e diagnóstico para a saúde integral da sua pele.</p>
+        </div>
     </div>
-  </section>
+</section>
 
  <!-- QUEM SOU EU -->
 <section class="about-me">
@@ -97,7 +88,7 @@
         e seguras.
       </p>
 
-      <button onclick="verMais()">Saiba mais</button>
+      <button onclick="window.location.href='sobre/index.html'">Saiba mais</button>
     </div>
 
   </div>
@@ -191,8 +182,7 @@
   </div>
 
   <script src="script.js"></script>
-</body>
-</html>
+
 
 <section class="artigos-container">
     <h2 class="titulo-secao">Artigos</h2>
@@ -226,7 +216,7 @@
                 <p class="resumo">O podcast com Dr. Rafael está de volta para discutir as principais tendências da estética para 2026.</p>
             </div>
         </article>
-    </div>
+        </div>
 </section>
 
 <section class="faq-section">
@@ -279,7 +269,7 @@
                 </div>
             </div>
         </div>
-    </div>
+        </div>
 </section>
 
 <footer class="main-footer">
