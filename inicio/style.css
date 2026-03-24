@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -11,22 +15,6 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-/* HEADER TOPO */
-.top-header {
-  background: #1e3a5f;
-  color: white;
-  padding: 10px 0;
-  font-size: 14px;
-  position: relative;
-  transition: top 0.3s;
-}
-
-.socials a {
-  color: white;
-  margin-left: 15px;
-  text-decoration: none;
 }
 
 /* NAVBAR */
@@ -68,7 +56,10 @@ body {
 .hero {
   background: linear-gradient(to right, #1e3a5f, #0f172a);
   color: white;
-  padding: 80px 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 0;
 }
 
 .hero-content {
@@ -99,7 +90,7 @@ body {
 }
 
 .hero img {
-  width: 350px;
+  width: 500px;
   border-radius: 10px;
 }
 
@@ -108,6 +99,7 @@ body {
   padding: 60px;
   text-align: center;
   background: #f8fafc;
+  margin-top: 60px;
 }
 
 .areas h2 {
@@ -125,8 +117,19 @@ body {
   background: white;
   padding: 25px;
   border-radius: 12px;
-  transition: 0.3s;
+  transition: transform 0.2s ease, opacity 0.2s ease;
   cursor: pointer;
+  opacity: 0;
+  transform: translateY(40px) scale(0.95);
+}
+
+.area-card.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.area-card:hover {
+  transform: scale(1.08); /* movimento mais brusco */
 }
 
 .area-card img {
@@ -236,7 +239,9 @@ body {
 }
 
 /* RESPONSIVO GERAL */
-@media (max-width: 768px) {
+@media (max-width: 768px) {  .hero img {
+    width: 300px;
+  }
   .about-container {
     flex-direction: column;
     text-align: center;
@@ -449,6 +454,66 @@ body {
 .divider { height: 2px; background: #0f213d; width: 100%; margin: 15px 0; opacity: 0.2; }
 .resumo { color: #444; font-size: 0.95rem; line-height: 1.5;}
 
+.contact-final {
+    background: linear-gradient(120deg, #0f213d 0%, #1b4d89 50%, #2c6ca1 100%);
+    color: white;
+    padding: 70px 20px;
+    text-align: center;
+    overflow: hidden;
+    animation: fadeSlideUp 0.7s ease forwards;
+}
+
+.contact-final-inner {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.contact-final h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    color: #f8f9fa;
+}
+
+.contact-final p {
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+    color: #dce6f2;
+}
+
+.contact-btns {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.btn-social {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    border: 1px solid rgba(255,255,255,0.35);
+    transition: transform 0.25s ease, background 0.25s ease;
+}
+
+.btn-social:hover {
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: 0 10px 22px rgba(0,0,0,0.2);
+}
+
+.btn-social.whatsapp { background: #25D366; }
+.btn-social.instagram { background: #E1306C; }
+.btn-social.linkedin { background: #0077B5; }
+
+@keyframes fadeSlideUp {
+    0% { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
 /* Configurações de Cores DermaVita */
 :root {
     --azul-dark: #0f213d; /* Azul marinho do seu site */
@@ -652,3 +717,4 @@ h1, h2, h3, .titulo-secao {
 .active .content {
   display: block; /* Mostra quando o pai tem a classe active */
 }
+

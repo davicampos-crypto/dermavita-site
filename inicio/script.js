@@ -92,3 +92,61 @@ accordion.forEach(item => {
     item.classList.toggle('active');
   });
 });
+window.addEventListener('scroll', () => {
+    const heroContent = document.querySelector('.hero-content');
+    
+    // Pegamos o quanto o usuário já scrollou
+    const scrollProgress = window.pageYOffset || document.documentElement.scrollTop;
+    // Altura da tela do usuário
+    const windowHeight = window.innerHeight;
+    
+    // O ponto onde o efeito REALMENTE começa (50% da altura da tela)
+    const startTrigger = windowHeight * 0.5; 
+
+    if (scrollProgress > startTrigger) {
+        // Quanto scrollamos APÓS o gatilho
+        const activeArea = scrollProgress - startTrigger;
+
+        // CÁLCULO DO ZOOM: 
+        // 1 é o tamanho normal. 
+        // O divisor (500) controla a velocidade. Menor = mais rápido.
+        const zoom = 1 + (activeArea / 500);
+        
+        // CÁLCULO DA OPACIDADE:
+        // Começa em 1 e vai diminuindo até 0
+        const fade = 1 - (activeArea / 400);
+
+        // APLICAÇÃO DOS ESTILOS (Corrigido)
+        heroContent.style.transform = `scale(${zoom})`;
+        heroContent.style.opacity = Math.max(0, fade);
+    } else {
+        // Mantém o estado original se estiver acima da metade
+        heroContent.style.transform = "scale(1)";
+        heroContent.style.opacity = "1";
+    }
+});
+
+// areas animation on scroll
+function setupAreasAnimation() {
+    const cards = document.querySelectorAll('.area-card');
+
+    if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.2
+        });
+
+        cards.forEach(card => observer.observe(card));
+    } else {
+        // fallback for old browsers
+        cards.forEach(card => card.classList.add('visible'));
+    }
+}
+
+document.addEventListener('DOMContentLoaded', setupAreasAnimation);

@@ -7,17 +7,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-<header class="top-header">
-    <div class="container">
-        <span><i class="fas fa-phone"></i> (15) 99999-9999</span>
-        <div class="socials">
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-facebook"></i></a>
-            <a href="#"><i class="fab fa-linkedin"></i></a>
-        </div>
-    </div>
-</header>
-
 <nav class="navbar">
     <div class="container">
         <div class="logo-area">
@@ -25,30 +14,35 @@
             <h2>DermaVita</h2>
         </div>
         <ul>
-            <li><a href="index.html">Início</a></li>
-            <li><a href="sobre/index.html">Sobre</a></li>
-            <li><a href="tratamentos/index.html">Tratamentos</a></li>
-            <li><a href="contatos/index.html">Contato</a></li>
+            <li><a href="#home">Início</a></li>
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#areas">Tratamentos</a></li>
+            <li><a href="#contato">Contato</a></li>
         </ul>
     </div>
 </nav>
 
-<section class="hero">
-    <div class="hero-content">
-        <div class="text">
-            <span class="subtitle">Bem-vindo à DermaVita</span>
-            <h1>Dermatologia Estética Avançada</h1>
-            <p>Realçando sua beleza natural com ciência e sofisticação através dos cuidados do Dr. Rafael Monteiro Azevedo.</p>
-            <div class="hero-btns">
-                <button class="btn-primary" onclick="openModal()">Agendar Consulta</button>
-                <button class="btn-secondary">Conheça os Tratamentos</button>
+<section class="hero-wrapper" id="home">
+    <div class="hero" id="animated-hero">
+        <div class="hero-content">
+            <div class="text">
+                <span class="subtitle">Bem-vindo à DermaVita</span>
+                <h1>Dermatologia Estética Avançada</h1>
+                <p>Realçando sua beleza natural com ciência e sofisticação através dos cuidados do Dr. Rafael Monteiro Azevedo.</p>
+                <div class="hero-btns">
+                    <button class="btn-primary" onclick="openModal()">Agendar Consulta</button>
+                    <button class="btn-secondary" onclick="document.querySelector('#areas').scrollIntoView({behavior:'smooth'})">Conheça os Tratamentos</button>
+                </div>
             </div>
-        </div>
-        <div class="image">
-            <img src="imagens/medico.jpg" alt="Dr. Rafael Monteiro">
+            <div class="image">
+                <img src="imagens/medico.jpg" alt="Dr. Rafael Monteiro">
+            </div>
         </div>
     </div>
 </section>
+
+<section class="next-content">
+   
 
 <section class="areas">
     <h2 class="titulo-secao">Áreas de Atuação</h2>
@@ -70,9 +64,10 @@
         </div>
     </div>
 </section>
+</section>
 
- <!-- QUEM SOU EU -->
-<section class="about-me">
+<!-- QUEM SOU EU -->
+<section class="about-me" id="sobre">
   <div class="about-container">
 
     <div class="about-image">
@@ -82,13 +77,14 @@
     <div class="about-text">
       <h2>Quem sou eu</h2>
       <p>
-        Sou especialista em dermatologia estética, com foco em proporcionar
-        resultados naturais e melhorar a autoestima dos meus pacientes.
-        Com anos de experiência, busco sempre utilizar técnicas modernas
-        e seguras.
+        Sou o Dr. Rafael Monteiro, dermatologista especializado em estética, com foco em técnicas seguras e resultados naturais. Atendo com informações claras, tratamentos personalizados e muito cuidado humano.
       </p>
 
-      <button onclick="window.location.href='sobre/index.html'">Saiba mais</button>
+      <p>
+        Aqui na DermaVita, oferecemos protocolos rápidos e modernos para que você se sinta confiante desde a primeira consulta.
+      </p>
+
+      <button onclick="document.querySelector('#areas').scrollIntoView({behavior:'smooth'})">Ver Tratamentos</button>
     </div>
 
   </div>
@@ -270,6 +266,18 @@
             </div>
         </div>
         </div>
+</section>
+
+<section class="contact-final" id="contato">
+  <div class="contact-final-inner">
+    <h2>Fale com a DermaVita</h2>
+    <p>Connecte-se conosco diretamente pelas redes sociais ou WhatsApp.</p>
+    <div class="contact-btns">
+      <a href="https://wa.me/551599999999" target="_blank" class="btn-social whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+      <a href="https://www.instagram.com" target="_blank" class="btn-social instagram"><i class="fab fa-instagram"></i> Instagram</a>
+      <a href="https://www.linkedin.com" target="_blank" class="btn-social linkedin"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+    </div>
+  </div>
 </section>
 
 <footer class="main-footer">
