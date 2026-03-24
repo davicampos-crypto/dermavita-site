@@ -442,6 +442,120 @@ h1,h2,h3,h4 { font-family: 'Playfair Display', serif; line-height: 1.18; }
 }
 
 /* ═══════════════════════════════════════════
+   RESULTADOS (ANTES E DEPOIS)
+═══════════════════════════════════════════ */
+.results-section {
+  padding: 100px 5%;
+  background: var(--off-white);
+}
+
+.results-grid {
+  max-width: 1200px; margin: auto;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px;
+  margin-bottom: 60px;
+}
+
+.result-card {
+  background: var(--white); border-radius: var(--radius-lg);
+  overflow: hidden; border: 1px solid rgba(0,0,0,0.06);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.result-card:hover { transform: translateY(-6px); box-shadow: 0 20px 60px rgba(0,0,0,0.12); }
+
+.before-after-container {
+  position: relative; width: 100%; height: 360px;
+  overflow: hidden; background: #f0f0f0;
+}
+
+.before-after-img {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+}
+.before-after-img img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+}
+.before-after-img.after {
+  opacity: 0;
+  transition: opacity .3s cubic-bezier(.4,0,.2,1);
+  pointer-events: none;
+}
+.before-after-container.active .before-after-img.after {
+  opacity: 1;
+}
+
+.ba-label {
+  position: absolute; top: 12px; right: 12px;
+  background: rgba(11,31,56,0.92); color: #fff;
+  padding: 6px 14px; border-radius: 20px;
+  font-size: 11px; font-weight: 700;
+  letter-spacing: .12em; text-transform: uppercase;
+}
+.before-after-img.before .ba-label {
+  background: rgba(232,101,10,0.92);
+}
+
+.toggle-btn {
+  position: absolute; bottom: 16px; left: 50%;
+  transform: translateX(-50%);
+  background: rgba(11,31,56,0.92); color: #fff;
+  border: 1.5px solid rgba(232,101,10,0.5);
+  padding: 10px 18px; border-radius: 24px;
+  font-size: 13px; font-weight: 600;
+  cursor: pointer; z-index: 10;
+  transition: all var(--transition);
+  display: flex; align-items: center; gap: 8px;
+  font-family: 'DM Sans', sans-serif;
+}
+.toggle-btn:hover {
+  background: rgba(232,101,10,0.92);
+  border-color: var(--orange);
+  transform: translateX(-50%) scale(1.05);
+}
+.before-after-container.active .toggle-btn {
+  background: rgba(232,101,10,0.92);
+  border-color: var(--orange);
+}
+.toggle-btn i {
+  font-size: 12px;
+}
+
+.result-info {
+  padding: 28px 24px;
+}
+.result-info h3 {
+  font-size: 18px; color: var(--navy); margin-bottom: 8px;
+}
+.result-tag {
+  font-size: 12.5px; font-weight: 600; letter-spacing: .14em;
+  text-transform: uppercase; color: var(--orange); margin-bottom: 12px;
+  display: block;
+}
+.result-desc {
+  font-size: 14px; line-height: 1.65; color: #64748b;
+  margin-bottom: 16px;
+}
+.result-details {
+  display: flex; gap: 16px; flex-wrap: wrap; font-size: 12.5px;
+  color: #94a3b8;
+}
+.result-details span {
+  display: flex; align-items: center; gap: 6px;
+}
+.result-details i { color: var(--orange); }
+
+.results-cta {
+  max-width: 1200px; margin: auto;
+  text-align: center; padding: 40px;
+  background: rgba(232,101,10,0.06); border: 1px solid rgba(232,101,10,0.15);
+  border-radius: var(--radius-lg);
+}
+.results-cta p {
+  font-size: 16px; color: var(--navy);
+  margin-bottom: 20px; font-weight: 500;
+}
+
+/* ═══════════════════════════════════════════
    TESTIMONIALS
 ═══════════════════════════════════════════ */
 .testimonials-section {
@@ -769,6 +883,8 @@ h1,h2,h3,h4 { font-family: 'Playfair Display', serif; line-height: 1.18; }
   .faq-grid { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr; gap: 36px; }
 
+  .results-grid { grid-template-columns: 1fr 1fr; }
+
   .why-photos { height: 380px; }
   .photo-main { width: 230px; height: 320px; }
   .photo-secondary { width: 190px; height: 220px; }
@@ -785,6 +901,7 @@ h1,h2,h3,h4 { font-family: 'Playfair Display', serif; line-height: 1.18; }
   .testimonial-item { min-width: 100%; }
   .hero-stats { flex-direction: column; left: 50%; transform: translateX(-50%); bottom: -50px; }
   .hero-image-wrap img { max-width: 280px; }
+  .results-grid { grid-template-columns: 1fr; }
 }
 </style>
 </head>
@@ -802,8 +919,8 @@ h1,h2,h3,h4 { font-family: 'Playfair Display', serif; line-height: 1.18; }
 
   <ul class="nav-links">
     <li><a href="#home">Início</a></li>
-    <li><a href="#sobre">Sobre</a></li>
     <li><a href="#tratamentos">Tratamentos</a></li>
+    <li><a href="#sobre">Sobre</a></li>
     <li><a href="#depoimentos">Depoimentos</a></li>
     <li><a href="#contato">Contato</a></li>
   </ul>
@@ -990,6 +1107,95 @@ h1,h2,h3,h4 { font-family: 'Playfair Display', serif; line-height: 1.18; }
       <button class="btn-primary" onclick="scrollTo('#tratamentos')">Ver Tratamentos</button>
     </div>
 
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════ TRANSFORMAÇÕES (ANTES E DEPOIS) ═══ -->
+<section class="results-section" id="resultados">
+  <div class="section-header">
+    <span class="eyebrow">Transformações Reais</span>
+    <h2>Resultados de Nossos Pacientes</h2>
+    <p>Veja os resultados alcançados com protocolos personalizados e técnicas avançadas</p>
+  </div>
+
+  <div class="results-grid">
+    <!-- Card 1 - Rejuvenescimento -->
+    <div class="result-card">
+      <div class="before-after-container">
+        <div class="before-after-img before">
+          <img src="imagens/medico.jpg" alt="Antes - Rejuvenescimento">
+          <span class="ba-label">ANTES</span>
+        </div>
+        <div class="before-after-img after">
+          <img src="imagens/medico.jpg" alt="Depois - Rejuvenescimento">
+          <span class="ba-label">DEPOIS</span>
+        </div>
+        <button class="toggle-btn" onclick="toggleAfter(this)"><i class="fas fa-arrow-right"></i> Ver Depois</button>
+      </div>
+      <div class="result-info">
+        <h3>Rejuvenescimento Facial</h3>
+        <p class="result-tag">Botox + Preenchimento</p>
+        <p class="result-desc">Redução de rugas e linhas de expressão com resultado natural e harmonioso.</p>
+        <div class="result-details">
+          <span><i class="fas fa-calendar"></i> 30 dias</span>
+          <span><i class="fas fa-check-circle"></i> Sem downtime</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 2 - Laser -->
+    <div class="result-card">
+      <div class="before-after-container">
+        <div class="before-after-img before">
+          <img src="imagens/medico.jpg" alt="Antes - Laser">
+          <span class="ba-label">ANTES</span>
+        </div>
+        <div class="before-after-img after">
+          <img src="imagens/medico.jpg" alt="Depois - Laser">
+          <span class="ba-label">DEPOIS</span>
+        </div>
+        <button class="toggle-btn" onclick="toggleAfter(this)"><i class="fas fa-arrow-right"></i> Ver Depois</button>
+      </div>
+      <div class="result-info">
+        <h3>Tratamento a Laser</h3>
+        <p class="result-tag">Remoção de Manchas</p>
+        <p class="result-desc">Eliminação eficaz de manchas solares e melanose com equipamento de última geração.</p>
+        <div class="result-details">
+          <span><i class="fas fa-calendar"></i> 45 dias</span>
+          <span><i class="fas fa-check-circle"></i> Resultados perceptíveis</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 3 - Bioestimulador -->
+    <div class="result-card">
+      <div class="before-after-container">
+        <div class="before-after-img before">
+          <img src="imagens/medico.jpg" alt="Antes - Bioestimulador">
+          <span class="ba-label">ANTES</span>
+        </div>
+        <div class="before-after-img after">
+          <img src="imagens/medico.jpg" alt="Depois - Bioestimulador">
+          <span class="ba-label">DEPOIS</span>
+        </div>
+        <button class="toggle-btn" onclick="toggleAfter(this)"><i class="fas fa-arrow-right"></i> Ver Depois</button>
+      </div>
+      <div class="result-info">
+        <h3>Bioestimulador de Colágeno</h3>
+        <p class="result-tag">Rejuvenescimento Profundo</p>
+        <p class="result-desc">Estímulo natural da produção de colágeno para pele mais firme e luminosa.</p>
+        <div class="result-details">
+          <span><i class="fas fa-calendar"></i> 60 dias</span>
+          <span><i class="fas fa-check-circle"></i> Resultados progressivos</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="results-cta">
+    <p>Quer conhecer seus resultados potenciais?</p>
+    <button class="btn-primary" onclick="openModal()">Agende Sua Consulta</button>
   </div>
 </section>
 
@@ -1336,6 +1542,18 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.15 });
 document.querySelectorAll('.area-card').forEach(c => observer.observe(c));
+
+// BEFORE/AFTER TOGGLE BUTTON
+function toggleAfter(btn) {
+  const container = btn.closest('.before-after-container');
+  container.classList.toggle('active');
+  
+  if (container.classList.contains('active')) {
+    btn.innerHTML = '<i class="fas fa-arrow-left"></i> Ver Antes';
+  } else {
+    btn.innerHTML = '<i class="fas fa-arrow-right"></i> Ver Depois';
+  }
+}
 
 // FAQ
 document.querySelectorAll('.faq-question').forEach(btn => {
