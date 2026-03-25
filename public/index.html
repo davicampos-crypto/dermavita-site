@@ -8,6 +8,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
+  
 /* ═══════════════════════════════════════════
    RESET & TOKENS
 ═══════════════════════════════════════════ */
@@ -749,10 +750,8 @@ h1,h2,h3,h4 { font-family: 'Playfair Display', serif; line-height: 1.18; }
     transform: translateY(-2px);
 }
 
-/* Ajuste no card para garantir que o botão apareça bem no hover */
-.service-card:hover .service-info {
-    transform: translateY(-20px); /* Ajuste para dar espaço ao botão */
-}
+
+
 
 /* --- EFEITOS DE HOVER --- */
 
@@ -771,6 +770,9 @@ h1,h2,h3,h4 { font-family: 'Playfair Display', serif; line-height: 1.18; }
 .read-more:hover {
     border-bottom: 1px solid #fff;
 }
+
+
+
 /* ═══════════════════════════════════════════
    ARTIGOS
 ═══════════════════════════════════════════ */
@@ -1153,6 +1155,40 @@ body.modal-open {
 .navbar.mobile-open .nav-links a { color: #fff; font-size: 14px; padding: 10px; border-radius: var(--radius-sm); }
 .navbar.mobile-open .nav-links a:hover { background: rgba(255,255,255,0.08); color: #fff; }
 
+@media (max-width: 768px) {
+  .navbar.mobile-open .nav-cta-wrap {
+    display: none;
+  }
+}
+
+/* FORÇAR VISIBILIDADE NO MOBILE - DERMAVITA */
+@media (max-width: 768px) {
+    /* 1. Força o card a aparecer independente de JS ou Scroll */
+    .area-card {
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+        visibility: visible !important;
+        transition: none !important; /* Remove delay de animação no mobile */
+    }
+
+    /* 2. Garante que o botão agendar esteja sempre visível e clicável */
+    .area-card .btn-secondary {
+        display: block !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: none !important;
+        margin-top: 20px !important;
+        border-color: var(--orange) !important; /* Dá destaque pro botão no celular */
+        color: var(--white) !important;
+        background-color: var(--orange) !important; /* Sugestão: fundo laranja no mobile facilita o clique */
+        text-align: center;
+    }
+
+    /* 3. Ajuste do ícone para não sumir */
+    .area-icon {
+        background: rgba(232,101,10,0.18) !important;
+    }
+}
 </style>
 </head>
 <body>
@@ -1200,7 +1236,7 @@ body.modal-open {
     </div>
 
     <div class="hero-image-wrap">
-      <img src="imagens/medico.jpg" alt="Dr. Rafael Monteiro Azevedo">
+      <img src="imagens/cadeira.png" alt="Dr. Rafael Monteiro Azevedo">
       <div class="hero-stats">
         <div class="hero-stat">
           <span class="hero-stat-num">10+</span>
@@ -1233,7 +1269,7 @@ body.modal-open {
       <div class="area-icon"><i class="fas fa-spa"></i></div>
       <h3>Rejuvenescimento</h3>
       <p>Botox, bioestimuladores e preenchimentos personalizados para resultados naturais e duradouros.</p>
-      <button class="btn-secondary" onclick="openModal()"">Agendar esse tratamento</button>
+      <button class="btn-secondary" onclick="openModal()">Agendar esse tratamento</button>
     </div>
     <div class="area-card">
       <div class="area-icon"><i class="fas fa-bolt"></i></div>
@@ -1265,10 +1301,11 @@ body.modal-open {
       </div>
 
       <div class="photo-frame photo-secondary">
-        <!-- Coloque uma foto de procedimento aqui -->
-        <div class="photo-placeholder">
-          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
-          <span>Foto de<br>procedimento</span>
+        <img src="imagens/procedimento.png" alt="procedimento dermatológico">
+        
+         <div class="photo-badge">
+          <i class="fas fa-check"></i>
+        
         </div>
       </div>
 
@@ -1337,7 +1374,7 @@ body.modal-open {
   <div class="about-inner">
 
     <div class="about-img-wrap">
-      <img src="imagens/medico.jpg" alt="Dr. Rafael Monteiro">
+      <img src="imagens/escrevendo.png" alt="Dr. Rafael Monteiro">
       <div class="about-img-badge">
         <strong>10+</strong>
         <span>Anos de experiência</span>
@@ -1378,11 +1415,11 @@ body.modal-open {
     <div class="result-card">
       <div class="before-after-container">
         <div class="before-after-img before">
-          <img src="imagens/medico.jpg" alt="Antes - Rejuvenescimento">
+          <img src="imagens/cliente1_antes.png" alt="Antes - Rejuvenescimento">
           <span class="ba-label">ANTES</span>
         </div>
         <div class="before-after-img after">
-          <img src="imagens/medico.jpg" alt="Depois - Rejuvenescimento">
+          <img src="imagens/cliente1_depois.png" alt="Depois - Rejuvenescimento">
           <span class="ba-label">DEPOIS</span>
         </div>
         <button class="toggle-btn" onclick="toggleAfter(this)"><i class="fas fa-arrow-right"></i> Ver Depois</button>
@@ -1402,11 +1439,11 @@ body.modal-open {
     <div class="result-card">
       <div class="before-after-container">
         <div class="before-after-img before">
-          <img src="imagens/medico.jpg" alt="Antes - Laser">
+          <img src="imagens/cliente2_antes.png" alt="Antes - Laser">
           <span class="ba-label">ANTES</span>
         </div>
         <div class="before-after-img after">
-          <img src="imagens/medico.jpg" alt="Depois - Laser">
+          <img src="imagens/cliente2_depois.png" alt="Depois - Laser">
           <span class="ba-label">DEPOIS</span>
         </div>
         <button class="toggle-btn" onclick="toggleAfter(this)"><i class="fas fa-arrow-right"></i> Ver Depois</button>
@@ -1426,11 +1463,11 @@ body.modal-open {
     <div class="result-card">
       <div class="before-after-container">
         <div class="before-after-img before">
-          <img src="imagens/medico.jpg" alt="Antes - Bioestimulador">
+          <img src="imagens/cliente3_antes.png" alt="Antes - Bioestimulador">
           <span class="ba-label">ANTES</span>
         </div>
         <div class="before-after-img after">
-          <img src="imagens/medico.jpg" alt="Depois - Bioestimulador">
+          <img src="imagens/cliente3_depois.png" alt="Depois - Bioestimulador">
           <span class="ba-label">DEPOIS</span>
         </div>
         <button class="toggle-btn" onclick="toggleAfter(this)"><i class="fas fa-arrow-right"></i> Ver Depois</button>
@@ -1550,7 +1587,7 @@ body.modal-open {
     <div class="services-grid">
         <div class="service-card">
             <div class="service-img">
-                <img src="imagens/rejuvenescimento.jpg" alt="Rejuvenescimento Facial">
+                <img src="imagens/tecnologia1.png" alt="Rejuvenescimento Facial">
             </div>
             <div class="service-info">
                 <h3>Rejuvenescimento Facial</h3>
@@ -1561,7 +1598,7 @@ body.modal-open {
 
         <div class="service-card">
             <div class="service-img">
-                <img src="imagens/laser.jpg" alt="Tecnologia Laser">
+                <img src="imagens/tecnologia2.png" alt="Tecnologia Laser">
             </div>
             <div class="service-info">
                 <h3>Tecnologia Laser</h3>
@@ -1572,7 +1609,7 @@ body.modal-open {
 
         <div class="service-card">
             <div class="service-img">
-                <img src="imagens/bioestimuladores.jpg" alt="Bioestimuladores">
+                <img src="imagens/bioestimuladores.png" alt="Bioestimuladores">
             </div>
             <div class="service-info">
                 <h3>Bioestimuladores</h3>
@@ -1592,7 +1629,7 @@ body.modal-open {
 
   <div class="articles-grid">
     <article class="article-card">
-      <div class="article-img" style="background-image:url('sua-imagem-1.jpg');"></div>
+      <div class="article-img" style="background-image:url('imagens/tecnologia1.png');"></div>
       <div class="article-body">
         <div class="article-tag">Dermatologia</div>
         <h3>Laser para dermatologia: saiba mais sobre a tecnologia</h3>
@@ -1603,7 +1640,7 @@ body.modal-open {
     </article>
 
     <article class="article-card">
-      <div class="article-img" style="background-image:url('sua-imagem-2.jpg');"></div>
+      <div class="article-img" style="background-image:url('imagens/bioestimuladores.png');"></div>
       <div class="article-body">
         <div class="article-tag">Estética Avançada</div>
         <h3>Bioestimuladores de Colágeno: entenda como funciona</h3>
@@ -1796,7 +1833,7 @@ body.modal-open {
 <div class="modal-overlay" id="modal">
   <div class="modal-box">
     <button class="modal-close" onclick="closeModal()">✕</button>
-    <h3>Agendar Consulta</h3>
+    <h3>Primeira consulta com desconto de 20%</h3>
     <p>Preencha os dados abaixo e entraremos em contato em breve.</p>
     <div class="modal-form">
       <input type="text" id="nome" placeholder="Seu nome completo" required>
@@ -1881,6 +1918,7 @@ apiKey: "AIzaSyB54ZSjQTuvdS5q71h3407MTnxdMGc06VA",
 }
 // MODAL
 function openModal() {
+  
   document.getElementById('modal').classList.add('open');
   document.body.classList.add('modal-open');
 }
@@ -1982,6 +2020,15 @@ document.querySelectorAll('.nav-links a').forEach(link => {
   });
 });
 
+ 
+document.addEventListener("DOMContentLoaded", function() {
+  if (!sessionStorage.getItem("modalShown")) {
+    setTimeout(function() {
+      openModal();
+      sessionStorage.setItem("modalShown", "true");
+    }, 12000);
+  }
+});
 
 </script>
 
