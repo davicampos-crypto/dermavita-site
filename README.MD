@@ -15,7 +15,7 @@ Landing page profissional para captação de pacientes, agendamento de consultas
 - [Estrutura do banco de dados (Firestore)](#estrutura-do-banco-de-dados-firestore)
 - [Regras de segurança do Firestore](#regras-de-segurança-do-firestore)
 - [Desafios notáveis e soluções](#desafios-notáveis-e-soluções)
-- [O que eu faria com mais tempo](#o-que-eu-faria-com-mais-tempo-(prioridades))
+- [O que eu faria com mais tempo](#o-que-eu-faria-com-mais-tempo)
 - [Como executar localmente](#como-executar-localmente)
 - [Deploy e hospedagem](#deploy-e-hospedagem)
 - [Links úteis](#links-úteis)
@@ -101,7 +101,7 @@ Solução: Substituição do CSS customizado por um carrossel baseado em overflo
 Desafio: Mudança de rumo no meio do projeto – comecei como site comum, depois virei landing page
 Solução: Perdi apenas alguns minutos de retrabalho porque a estrutura HTML/CSS já estava modularizada. Basta reorganizar seções e adicionar os gatilhos de conversão.
 
-## O que eu faria com mais tempo (prioridades)
+## O que eu faria com mais tempo
 
 - **Área administrativa protegida** – painel com login (Firebase Auth) para o médico visualizar e gerenciar os agendamentos em tempo real.
 - **Envio automático de e‑mail** – confirmação de agendamento e lembrete ao paciente (EmailJS ou SendGrid).
