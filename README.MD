@@ -153,6 +153,12 @@ Cada documento contém os seguintes campos:
 
 > ⚠️ Os dados são inseridos diretamente pelo formulário da landing page. Nenhuma autenticação é exigida para escrita (regras simplificadas para demonstração).
 
+
+## Captura de tela do banco de dados (Firestore)
+
+Abaixo está um exemplo da estrutura de dados armazenada no Firebase Firestore com os leads capturados pelo site:
+
+![Coleção "agendamentos" no Firestore](./assets/firestore-print.png)
 ---
 
 ## Regras de segurança do Firestore
