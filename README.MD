@@ -11,6 +11,7 @@ Landing page profissional para captação de pacientes, agendamento de consultas
 ## Índice
 
 - [Sobre o projeto](#sobre-o-projeto)
+- [Ficha do Médico](#ficha-do-medico)
 - [Tecnologias utilizadas](#tecnologias-utilizadas)
 - [Estrutura do banco de dados (Firestore)](#estrutura-do-banco-de-dados-firestore)
 - [Regras de segurança do Firestore](#regras-de-segurança-do-firestore)
@@ -32,6 +33,69 @@ O site foi criado para o **Instituto DermaVita** e tem como objetivos:
 - Exibir prova social: depoimentos, fotos de antes/depois, selos de confiança e integração com Doctoralia.
 - Oferecer uma experiência responsiva e otimizada para dispositivos móveis.
 - Permitir agendamento direto via WhatsApp ou formulário integrado com **Firebase Firestore**.
+
+---
+
+## Ficha do Médico
+
+# Ficha Profissional – Dr. Rafael Monteiro Azevedo
+
+## Identificação
+- **Nome:** Rafael Monteiro Azevedo  
+- **Título:** Médico Dermatologista  
+- **Especialidade:** Dermatologia Clínica, Cirúrgica e Estética Avançada  
+- **CRM-SP:** 000000  
+- **RQE:** 11111  
+
+## Formação Acadêmica
+- **Graduação em Medicina** – Universidade Estadual de Campinas (UNICAMP)  
+- **Residência Médica em Dermatologia** – Santa Casa de Misericórdia de São Paulo  
+- **Especialização em Dermatologia Estética Avançada** – Instituição de referência (SBD / cursos de extensão)  
+
+## Associações e Registros
+- **Sociedade Brasileira de Dermatologia (SBD)** – Membro Titular  
+- **Sociedade Brasileira de Dermatologia – Regional São Paulo (SBD-SP)** – Associado  
+- **Registro de Qualificação de Especialista (RQE):** 11111  
+- **CRM-SP:** 000000  
+
+## Áreas de Atuação e Procedimentos
+### Dermatologia Clínica
+- Diagnóstico e tratamento de doenças da pele, cabelos e unhas  
+- Dermatologia oncológica: prevenção e tratamento do câncer de pele  
+
+### Dermatologia Estética Avançada
+- **Rejuvenescimento facial:** Toxina Botulínica (Botox), Preenchimento com Ácido Hialurônico  
+- **Bioestimuladores de colágeno:** Ácido Poli-L-Lático (Sculptra®), Hidroxiapatita de Cálcio (Radiesse®)  
+- **Tecnologia a laser:** Manchas, cicatrizes de acne, textura da pele, flacidez e rejuvenescimento  
+- **Outros procedimentos:** Microagulhamento, peelings químicos, fios de sustentação  
+
+## Abordagem e Diferenciais
+- **Atendimento humanizado:** Escuta ativa, explicação clara e personalização dos tratamentos  
+- **Resultados naturais:** Foco em harmonização que respeita a individualidade de cada paciente  
+- **Tecnologia de ponta:** Equipamentos modernos e protocolos baseados em evidências científicas  
+- **Atualização contínua:** Participação em congressos nacionais e internacionais da área  
+- **Segurança:** Procedimentos realizados com alto rigor ético e técnico  
+
+## Local de Atendimento
+**Instituto DermaVita**  
+Av. Presidente Kennedy, 1500 – Conjunto 51  
+Votorantim – SP  
+
+## Contato
+- **WhatsApp:** (15) 99999-9999  
+- **E-mail:** contato@dermavita.com.br  
+- **Horário:** Segunda a sexta, 9h às 19h | Sábado, 9h às 13h  
+
+## Redes Sociais
+- **Instagram:** @dermavita  
+- **Facebook:** /dermavita  
+- **LinkedIn:** /company/dermavita  
+- **YouTube:** @dermavita  
+
+## Informações Complementares
+- **Idiomas:** Português (nativo), Inglês (fluente para leitura científica)  
+- **Publicações:** Artigos em blogs e portais sobre rejuvenescimento, laser e bioestimuladores  
+- **Docência:** Palestrante convidado em simpósios regionais da SBD-SP  
 
 ---
 
