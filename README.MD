@@ -158,7 +158,7 @@ Cada documento contém os seguintes campos:
 
 Abaixo está um exemplo da estrutura de dados armazenada no Firebase Firestore com os leads capturados pelo site:
 
-![Coleção "agendamentos" no Firestore](./assets/firestore-print.png)
+![Coleção "agendamentos" no Firestore](./public/imagens/Bancodedados.png)
 ---
 
 ## Regras de segurança do Firestore
