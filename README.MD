@@ -15,6 +15,7 @@ Landing page profissional para captação de pacientes, agendamento de consultas
 - [Estrutura do banco de dados (Firestore)](#estrutura-do-banco-de-dados-firestore)
 - [Regras de segurança do Firestore](#regras-de-segurança-do-firestore)
 - [Desafios notáveis e soluções](#desafios-notáveis-e-soluções)
+- [O que eu faria com mais tempo](#O-que-eu-faria-com-mais-tempo)
 - [Como executar localmente](#como-executar-localmente)
 - [Deploy e hospedagem](#deploy-e-hospedagem)
 - [Links úteis](#links-úteis)
