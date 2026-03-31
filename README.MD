@@ -11,7 +11,7 @@ Landing page profissional para captação de pacientes, agendamento de consultas
 ## Índice
 
 - [Sobre o projeto](#sobre-o-projeto)
-- [Ficha do Médico](#ficha-do-medico)
+- [Ficha do Médico](#ficha-do-médico)
 - [Tecnologias utilizadas](#tecnologias-utilizadas)
 - [Estrutura do banco de dados (Firestore)](#estrutura-do-banco-de-dados-firestore)
 - [Regras de segurança do Firestore](#regras-de-segurança-do-firestore)
