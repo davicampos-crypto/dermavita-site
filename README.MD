@@ -8,7 +8,7 @@ Landing page profissional para captação de pacientes, agendamento de consultas
 
 ---
 
-## 📌 Índice
+## Índice
 
 - [Sobre o projeto](#sobre-o-projeto)
 - [Tecnologias utilizadas](#tecnologias-utilizadas)
