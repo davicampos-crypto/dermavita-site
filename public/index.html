@@ -1,2039 +1,3124 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DermaVita – Dr. Rafael Monteiro Azevedo</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-<style>
-  
-/* ═══════════════════════════════════════════
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DermaVita – Dr. Rafael Monteiro Azevedo</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    /* ═══════════════════════════════════════════
    RESET & TOKENS
 ═══════════════════════════════════════════ */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-:root {
-  --navy:        #0b1f38;
-  --navy-mid:    #122b4f;
-  --navy-light:  #1a3a64;
-  --navy-surface:#0f2440;
-  --orange:      #e8650a;
-  --orange-h:    #f07228;
-  --orange-glow: rgba(232,101,10,0.18);
-  --white:       #ffffff;
-  --off-white:   #f5f7fa;
-  --text-body:   #334155;
-  --text-muted:  rgba(255,255,255,0.60);
-  --glass:       rgba(255,255,255,0.04);
-  --glass-b:     rgba(255,255,255,0.10);
-  --radius-sm:   8px;
-  --radius-md:   16px;
-  --radius-lg:   24px;
-  --shadow-card: 0 20px 60px rgba(0,0,0,0.18);
-  --transition:  0.3s cubic-bezier(.4,0,.2,1);
-}
+    :root {
+      --navy: #0b1f38;
+      --navy-mid: #122b4f;
+      --navy-light: #1a3a64;
+      --navy-surface: #0f2440;
+      --orange: #e8650a;
+      --orange-h: #f07228;
+      --orange-glow: rgba(232, 101, 10, 0.18);
+      --white: #ffffff;
+      --off-white: #f5f7fa;
+      --text-body: #334155;
+      --text-muted: rgba(255, 255, 255, 0.60);
+      --glass: rgba(255, 255, 255, 0.04);
+      --glass-b: rgba(255, 255, 255, 0.10);
+      --radius-sm: 8px;
+      --radius-md: 16px;
+      --radius-lg: 24px;
+      --shadow-card: 0 20px 60px rgba(0, 0, 0, 0.18);
+      --transition: 0.3s cubic-bezier(.4, 0, .2, 1);
+    }
 
-html { scroll-behavior: smooth; }
+    html {
+      scroll-behavior: smooth;
+    }
 
-body {
-  font-family: 'DM Sans', sans-serif;
-  background: var(--white);
-  color: var(--text-body);
-  overflow-x: hidden;
-}
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--white);
+      color: var(--text-body);
+      overflow-x: hidden;
+    }
 
-/* ═══════════════════════════════════════════
+    /* ═══════════════════════════════════════════
    TYPOGRAPHY
 ═══════════════════════════════════════════ */
-h1,h2,h3,h4 { font-family: 'Playfair Display', serif; line-height: 1.18; }
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-family: 'Playfair Display', serif;
+      line-height: 1.18;
+    }
 
-.eyebrow {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: .20em;
-  text-transform: uppercase;
-  color: var(--orange);
-  display: block;
-  margin-bottom: 12px;
-}
+    .eyebrow {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .20em;
+      text-transform: uppercase;
+      color: var(--orange);
+      display: block;
+      margin-bottom: 12px;
+    }
 
-/* ═══════════════════════════════════════════
+    /* ═══════════════════════════════════════════
    NAVBAR
 ═══════════════════════════════════════════ */
-.navbar {
-  position: fixed; top: 0; left: 0; right: 0;
-  z-index: 999;
-  padding: 0 5%;
-  height: 70px;
-  display: flex; align-items: center; justify-content: space-between;
-  background: rgba(11,31,56,0.92);
-  backdrop-filter: blur(18px);
-  border-bottom: 1px solid rgba(255,255,255,0.07);
-  transition: background var(--transition);
-}
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 999;
+      padding: 0 5%;
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(11, 31, 56, 0.92);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+      transition: background var(--transition);
+    }
 
-.nav-logo {
-  display: flex; align-items: center; gap: 12px;
-  text-decoration: none;
-}
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
 
-.nav-logo img {
-  width: 38px; height: 38px;
-  border-radius: 50%;
-  border: 2px solid var(--orange);
-  object-fit: cover;
-}
+    .nav-logo img {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      border: 2px solid var(--orange);
+      object-fit: cover;
+    }
 
-.nav-logo-text { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--white); font-weight: 700; }
-.nav-logo-sub  { font-size: 10px; color: var(--text-muted); letter-spacing: .12em; text-transform: uppercase; }
+    .nav-logo-text {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      color: var(--white);
+      font-weight: 700;
+    }
 
-.nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
-.nav-links a {
-  text-decoration: none; color: rgba(255,255,255,0.78); font-size: 13.5px;
-  font-weight: 500; letter-spacing: .02em;
-  transition: color var(--transition);
-  position: relative;
-}
-.nav-links a::after {
-  content:''; position: absolute; bottom: -4px; left: 0; right: 0;
-  height: 1.5px; background: var(--orange); transform: scaleX(0);
-  transition: transform var(--transition); transform-origin: left;
-}
-.nav-links a:hover { color: var(--white); }
-.nav-links a:hover::after { transform: scaleX(1); }
+    .nav-logo-sub {
+      font-size: 10px;
+      color: var(--text-muted);
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
 
-.nav-cta {
-  background: var(--orange); color: #fff; border: none;
-  padding: 10px 22px; border-radius: var(--radius-sm);
-  font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 600;
-  cursor: pointer; transition: background var(--transition), transform var(--transition);
-  text-decoration: none;
-}
-.nav-cta:hover { background: var(--orange-h); transform: translateY(-1px); }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
 
-/* Hamburger */
-.nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
-.nav-hamburger span { width: 24px; height: 2px; background: #fff; border-radius: 2px; transition: var(--transition); }
+    .nav-links a {
+      text-decoration: none;
+      color: rgba(255, 255, 255, 0.78);
+      font-size: 13.5px;
+      font-weight: 500;
+      letter-spacing: .02em;
+      transition: color var(--transition);
+      position: relative;
+    }
 
-/* ═══════════════════════════════════════════
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      right: 0;
+      height: 1.5px;
+      background: var(--orange);
+      transform: scaleX(0);
+      transition: transform var(--transition);
+      transform-origin: left;
+    }
+
+    .nav-links a:hover {
+      color: var(--white);
+    }
+
+    .nav-links a:hover::after {
+      transform: scaleX(1);
+    }
+
+    .nav-cta {
+      background: var(--orange);
+      color: #fff;
+      border: none;
+      padding: 10px 22px;
+      border-radius: var(--radius-sm);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background var(--transition), transform var(--transition);
+      text-decoration: none;
+    }
+
+    .nav-cta:hover {
+      background: var(--orange-h);
+      transform: translateY(-1px);
+    }
+
+    /* Hamburger */
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+    }
+
+    .nav-hamburger span {
+      width: 24px;
+      height: 2px;
+      background: #fff;
+      border-radius: 2px;
+      transition: var(--transition);
+    }
+
+    /* ═══════════════════════════════════════════
    HERO
 ═══════════════════════════════════════════ */
-.hero {
-  min-height: 100vh;
-  background: linear-gradient(135deg, var(--navy) 0%, #0f2a50 55%, #163660 100%);
-  display: flex; align-items: center;
-  padding: 100px 5% 60px;
-  position: relative; overflow: hidden;
-}
+    .hero {
+      min-height: 100vh;
+      background: linear-gradient(135deg, var(--navy) 0%, #0f2a50 55%, #163660 100%);
+      display: flex;
+      align-items: center;
+      padding: 100px 5% 60px;
+      position: relative;
+      overflow: hidden;
+    }
 
-/* geometric decoration */
-.hero::before {
-  content: '';
-  position: absolute; top: -120px; right: -120px;
-  width: 600px; height: 600px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(232,101,10,0.12) 0%, transparent 70%);
-  pointer-events: none;
-}
+    /* geometric decoration */
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -120px;
+      right: -120px;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(232, 101, 10, 0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
 
-.hero::after {
-  content: '';
-  position: absolute; bottom: 0; left: 0; right: 0;
-  height: 120px;
-  background: linear-gradient(to bottom, transparent, var(--white));
-  pointer-events: none;
-}
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 120px;
+      background: linear-gradient(to bottom, transparent, var(--white));
+      pointer-events: none;
+    }
 
-.hero-inner {
-  max-width: 1200px; margin: auto; width: 100%;
-  display: grid; grid-template-columns: 1fr 1fr;
-  gap: 60px; align-items: center;
-}
+    .hero-inner {
+      max-width: 1200px;
+      margin: auto;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
 
-.hero-text .eyebrow { color: var(--orange); }
+    .hero-text .eyebrow {
+      color: var(--orange);
+    }
 
-.hero-text h1 {
-  font-size: clamp(38px, 4.5vw, 62px);
-  color: var(--white); font-weight: 700;
-  margin-bottom: 20px;
-}
+    .hero-text h1 {
+      font-size: clamp(38px, 4.5vw, 62px);
+      color: var(--white);
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
 
-.hero-text h1 em { font-style: italic; color: var(--orange-h); }
+    .hero-text h1 em {
+      font-style: italic;
+      color: var(--orange-h);
+    }
 
-.hero-text p {
-  font-size: 16px; line-height: 1.75;
-  color: rgba(255,255,255,0.72);
-  max-width: 440px; margin-bottom: 36px;
-}
+    .hero-text p {
+      font-size: 16px;
+      line-height: 1.75;
+      color: rgba(255, 255, 255, 0.72);
+      max-width: 440px;
+      margin-bottom: 36px;
+    }
 
-.hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+    .hero-btns {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
 
-.btn-primary {
-  background: var(--orange); color: #fff; border: none;
-  padding: 15px 30px; border-radius: var(--radius-sm);
-  font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 600;
-  cursor: pointer; transition: background var(--transition), transform var(--transition);
-  text-decoration: none; display: inline-block;
-}
-.btn-primary:hover { background: var(--orange-h); transform: translateY(-2px); }
+    .btn-primary {
+      background: var(--orange);
+      color: #fff;
+      border: none;
+      padding: 15px 30px;
+      border-radius: var(--radius-sm);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background var(--transition), transform var(--transition);
+      text-decoration: none;
+      display: inline-block;
+    }
 
-.btn-secondary {
-  background: transparent; color: var(--white);
-  border: 1.5px solid rgba(255,255,255,0.30);
-  padding: 15px 30px; border-radius: var(--radius-sm);
-  font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 500;
-  cursor: pointer; transition: border-color var(--transition), color var(--transition);
-  text-decoration: none; display: inline-block;
-}
-.btn-secondary:hover { border-color: var(--orange); color: var(--orange-h); }
+    .btn-primary:hover {
+      background: var(--orange-h);
+      transform: translateY(-2px);
+    }
 
-.hero-image-wrap {
-  position: relative; display: flex; justify-content: center;
-}
+    .btn-secondary {
+      background: transparent;
+      color: var(--white);
+      border: 1.5px solid rgba(255, 255, 255, 0.30);
+      padding: 15px 30px;
+      border-radius: var(--radius-sm);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: border-color var(--transition), color var(--transition);
+      text-decoration: none;
+      display: inline-block;
+    }
 
-.hero-image-wrap img {
-  width: 100%; max-width: 460px;
-  border-radius: var(--radius-lg);
-  object-fit: cover;
-  box-shadow: 30px 30px 0 rgba(232,101,10,0.18), var(--shadow-card);
-  position: relative; z-index: 2;
-}
+    .btn-secondary:hover {
+      border-color: var(--orange);
+      color: var(--orange-h);
+    }
 
-.hero-stats {
-  position: absolute; bottom: -20px; left: -10px;
-  display: flex; gap: 12px; z-index: 3;
-}
+    .hero-image-wrap {
+      position: relative;
+      display: flex;
+      justify-content: center;
+    }
 
-.hero-stat {
-  background: var(--white);
-  border-radius: var(--radius-md);
-  padding: 14px 20px;
-  box-shadow: 0 12px 40px rgba(0,0,0,0.18);
-  text-align: center; min-width: 90px;
-}
-.hero-stat-num { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: var(--navy); display: block; }
-.hero-stat-lbl { font-size: 10px; color: #64748b; text-transform: uppercase; letter-spacing: .1em; }
+    .hero-image-wrap img {
+      width: 100%;
+      max-width: 460px;
+      border-radius: var(--radius-lg);
+      object-fit: cover;
+      box-shadow: 30px 30px 0 rgba(232, 101, 10, 0.18), var(--shadow-card);
+      position: relative;
+      z-index: 2;
+    }
 
-@media (max-width: 900px) {
-  .hero-stats {
-    position: absolute; bottom: 12px; right: 12px; left: auto;
-    display: flex; gap: 8px; flex-wrap: wrap; max-width: 160px;
-    justify-content: flex-end;
-  }
-  .hero-stat {
-    padding: 10px 14px; min-width: 70px; background: rgba(255,255,255,0.95);
-  }
-  .hero-stat-num { font-size: 16px; }
-  .hero-stat-lbl { font-size: 9px; }
-}
+    .hero-stats {
+      position: absolute;
+      bottom: -20px;
+      left: -10px;
+      display: flex;
+      gap: 12px;
+      z-index: 3;
+    }
 
-@media (max-width: 640px) {
-  .hero-stats {
-    flex-direction: row; left: auto; bottom: 8px; right: 8px;
-    gap: 6px; max-width: 100%;
-  }
-  .hero-stat {
-    padding: 8px 12px; min-width: 60px;
-    border-radius: 8px;
-  }
-  .hero-stat-num { font-size: 14px; }
-  .hero-stat-lbl { font-size: 8px; }
-}
+    .hero-stat {
+      background: var(--white);
+      border-radius: var(--radius-md);
+      padding: 14px 20px;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.18);
+      text-align: center;
+      min-width: 90px;
+    }
 
-/* ═══════════════════════════════════════════
+    .hero-stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--navy);
+      display: block;
+    }
+
+    .hero-stat-lbl {
+      font-size: 10px;
+      color: #64748b;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+    }
+
+    @media (max-width: 900px) {
+      .hero-stats {
+        position: absolute;
+        bottom: 12px;
+        right: 12px;
+        left: auto;
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+        max-width: 160px;
+        justify-content: flex-end;
+      }
+
+      .hero-stat {
+        padding: 10px 14px;
+        min-width: 70px;
+        background: rgba(255, 255, 255, 0.95);
+      }
+
+      .hero-stat-num {
+        font-size: 16px;
+      }
+
+      .hero-stat-lbl {
+        font-size: 9px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .hero-stats {
+        flex-direction: row;
+        left: auto;
+        bottom: 8px;
+        right: 8px;
+        gap: 6px;
+        max-width: 100%;
+      }
+
+      .hero-stat {
+        padding: 8px 12px;
+        min-width: 60px;
+        border-radius: 8px;
+      }
+
+      .hero-stat-num {
+        font-size: 14px;
+      }
+
+      .hero-stat-lbl {
+        font-size: 8px;
+      }
+    }
+
+    /* ═══════════════════════════════════════════
    AREAS (TRATAMENTOS)
 ═══════════════════════════════════════════ */
-.areas-section {
-  padding: 100px 5%;
-  background: var(--off-white);
-}
+    .areas-section {
+      padding: 100px 5%;
+      background: var(--off-white);
+    }
 
-.section-header { text-align: center; margin-bottom: 60px; }
-.section-header h2 { font-size: clamp(28px, 3vw, 42px); color: var(--navy); }
-.section-header p { color: #64748b; margin-top: 12px; font-size: 15px; max-width: 500px; margin-inline: auto; }
+    .section-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
 
-.areas-grid {
-  max-width: 1200px; margin: auto;
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px;
-}
+    .section-header h2 {
+      font-size: clamp(28px, 3vw, 42px);
+      color: var(--navy);
+    }
 
-.area-card {
-  background: var(--white); border-radius: var(--radius-lg);
-  padding: 40px 32px;
-  border: 1px solid rgba(0,0,0,0.06);
-  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
-  opacity: 0; transform: translateY(30px);
-  position: relative; overflow: hidden;
-}
-.area-card::before {
-  content: ''; position: absolute; top: 0; left: 0; right: 0;
-  height: 3px; background: var(--orange); transform: scaleX(0);
-  transition: transform var(--transition); transform-origin: left;
-}
-.area-card.visible { opacity: 1; transform: translateY(0); transition: opacity .6s ease, transform .6s ease, box-shadow var(--transition), border-color var(--transition); }
-.area-card:hover { transform: translateY(-8px); box-shadow: 0 24px 60px rgba(0,0,0,0.12); border-color: rgba(232,101,10,0.2); }
-.area-card:hover::before { transform: scaleX(1); }
-.area-card .btn-secondary {
-  margin-top: 18px;
-  padding: 12px 20px;
-}
+    .section-header p {
+      color: #64748b;
+      margin-top: 12px;
+      font-size: 15px;
+      max-width: 500px;
+      margin-inline: auto;
+    }
 
-.area-icon {
-  width: 56px; height: 56px; border-radius: 14px;
-  background: rgba(232,101,10,0.10);
-  display: flex; align-items: center; justify-content: center;
-  margin-bottom: 24px;
-  font-size: 22px; color: var(--orange);
-  transition: background var(--transition);
-}
-.area-card:hover .area-icon { background: rgba(232,101,10,0.18); }
-.area-card h3 { font-size: 20px; color: var(--navy); margin-bottom: 12px; }
-.area-card p  { font-size: 14px; line-height: 1.7; color: #64748b; }
+    .areas-grid {
+      max-width: 1200px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
 
-/* ═══════════════════════════════════════════
+    .area-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 40px 32px;
+      border: 1px solid rgba(0, 0, 0, 0.06);
+      transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+      opacity: 0;
+      transform: translateY(30px);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .area-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--orange);
+      transform: scaleX(0);
+      transition: transform var(--transition);
+      transform-origin: left;
+    }
+
+    .area-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity .6s ease, transform .6s ease, box-shadow var(--transition), border-color var(--transition);
+    }
+
+    .area-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.12);
+      border-color: rgba(232, 101, 10, 0.2);
+    }
+
+    .area-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .area-card .btn-secondary {
+      margin-top: 18px;
+      padding: 12px 20px;
+    }
+
+    .area-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 14px;
+      background: rgba(232, 101, 10, 0.10);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 24px;
+      font-size: 22px;
+      color: var(--orange);
+      transition: background var(--transition);
+    }
+
+    .area-card:hover .area-icon {
+      background: rgba(232, 101, 10, 0.18);
+    }
+
+    .area-card h3 {
+      font-size: 20px;
+      color: var(--navy);
+      margin-bottom: 12px;
+    }
+
+    .area-card p {
+      font-size: 14px;
+      line-height: 1.7;
+      color: #64748b;
+    }
+
+    /* ═══════════════════════════════════════════
    POR QUE ME ESCOLHER
 ═══════════════════════════════════════════ */
-.why-section {
-  padding: 100px 5%;
-  background: var(--navy);
-  position: relative; overflow: hidden;
-}
+    .why-section {
+      padding: 100px 5%;
+      background: var(--navy);
+      position: relative;
+      overflow: hidden;
+    }
 
-.why-section::before {
-  content: '';
-  position: absolute; top: -200px; right: -200px;
-  width: 700px; height: 700px; border-radius: 50%;
-  background: radial-gradient(circle, rgba(232,101,10,0.10) 0%, transparent 65%);
-  pointer-events: none;
-}
+    .why-section::before {
+      content: '';
+      position: absolute;
+      top: -200px;
+      right: -200px;
+      width: 700px;
+      height: 700px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(232, 101, 10, 0.10) 0%, transparent 65%);
+      pointer-events: none;
+    }
 
-.why-inner {
-  max-width: 1200px; margin: auto;
-  display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
-}
+    .why-inner {
+      max-width: 1200px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
 
-/* photos side */
-.why-photos { position: relative; height: 540px; }
+    /* photos side */
+    .why-photos {
+      position: relative;
+      height: 540px;
+    }
 
-.photo-frame {
-  position: absolute; border-radius: var(--radius-lg);
-  overflow: hidden; box-shadow: 0 30px 80px rgba(0,0,0,0.5);
-}
-.photo-main {
-  width: 320px; height: 440px; top: 0; left: 0;
-  background: var(--navy-light); border: 1.5px solid var(--glass-b);
-}
-.photo-secondary {
-  width: 240px; height: 290px; bottom: 0; right: 0;
-  background: var(--navy-mid); border: 1.5px solid var(--glass-b);
-}
+    .photo-frame {
+      position: absolute;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+    }
 
-.photo-frame img {
-  width: 100%; height: 100%; object-fit: cover; display: block;
-}
+    .photo-main {
+      width: 320px;
+      height: 440px;
+      top: 0;
+      left: 0;
+      background: var(--navy-light);
+      border: 1.5px solid var(--glass-b);
+    }
 
-.photo-placeholder {
-  width: 100%; height: 100%;
-  display: flex; flex-direction: column; align-items: center;
-  justify-content: center; gap: 10px;
-  color: var(--text-muted); font-size: 12px; text-align: center; padding: 24px;
-}
-.photo-placeholder svg { opacity: 0.3; }
+    .photo-secondary {
+      width: 240px;
+      height: 290px;
+      bottom: 0;
+      right: 0;
+      background: var(--navy-mid);
+      border: 1.5px solid var(--glass-b);
+    }
 
-.why-badge {
-  position: absolute; bottom: 90px; left: 270px;
-  background: var(--orange); color: #fff;
-  border-radius: 50px; padding: 10px 20px;
-  font-size: 12.5px; font-weight: 600;
-  white-space: nowrap; z-index: 10;
-  box-shadow: 0 8px 28px rgba(232,101,10,0.45);
-  display: flex; align-items: center; gap: 8px;
-  animation: floatY 3s ease-in-out infinite;
-}
-@keyframes floatY { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-6px)} }
+    .photo-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
 
-.badge-dot {
-  width: 8px; height: 8px; background: #fff;
-  border-radius: 50%; animation: blink 1.5s ease-in-out infinite;
-}
-@keyframes blink { 0%,100%{opacity:1} 50%{opacity:.3} }
+    .photo-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      color: var(--text-muted);
+      font-size: 12px;
+      text-align: center;
+      padding: 24px;
+    }
 
-.why-deco-circle {
-  position: absolute; top: -30px; left: -30px;
-  width: 110px; height: 110px;
-  border: 2px solid rgba(232,101,10,0.22); border-radius: 50%;
-  pointer-events: none;
-}
+    .photo-placeholder svg {
+      opacity: 0.3;
+    }
 
-/* content side */
-.why-content .eyebrow { color: var(--orange); }
-.why-content h2 { font-size: clamp(28px, 3vw, 40px); color: var(--white); margin-bottom: 14px; }
-.why-content h2 em { font-style: italic; color: var(--orange-h); }
-.why-content > p {
-  font-size: 15px; line-height: 1.75;
-  color: var(--text-muted); margin-bottom: 36px; max-width: 430px;
-}
+    .why-badge {
+      position: absolute;
+      bottom: 90px;
+      left: 270px;
+      background: var(--orange);
+      color: #fff;
+      border-radius: 50px;
+      padding: 10px 20px;
+      font-size: 12.5px;
+      font-weight: 600;
+      white-space: nowrap;
+      z-index: 10;
+      box-shadow: 0 8px 28px rgba(232, 101, 10, 0.45);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      animation: floatY 3s ease-in-out infinite;
+    }
 
-.why-cards { display: flex; flex-direction: column; gap: 12px; }
+    @keyframes floatY {
 
-.why-card {
-  background: var(--glass); border: 1px solid var(--glass-b);
-  border-radius: var(--radius-md); padding: 16px 20px;
-  display: flex; align-items: center; gap: 16px;
-  transition: background var(--transition), border-color var(--transition), transform var(--transition);
-  animation: slideIn .5s both;
-}
-@keyframes slideIn { from{opacity:0;transform:translateX(16px)} to{opacity:1;transform:translateX(0)} }
-.why-card:nth-child(1){animation-delay:.05s}
-.why-card:nth-child(2){animation-delay:.12s}
-.why-card:nth-child(3){animation-delay:.19s}
-.why-card:nth-child(4){animation-delay:.26s}
-.why-card:nth-child(5){animation-delay:.33s}
+      0%,
+      100% {
+        transform: translateY(0)
+      }
 
-.why-card:hover {
-  background: rgba(255,255,255,0.08);
-  border-color: rgba(232,101,10,0.35);
-  transform: translateX(6px);
-}
+      50% {
+        transform: translateY(-6px)
+      }
+    }
 
-.why-card-icon {
-  flex-shrink: 0; width: 44px; height: 44px;
-  border-radius: 11px;
-  background: rgba(232,101,10,0.14);
-  border: 1px solid rgba(232,101,10,0.28);
-  display: flex; align-items: center; justify-content: center;
-  color: var(--orange-h); font-size: 16px;
-  transition: background var(--transition);
-}
-.why-card:hover .why-card-icon { background: rgba(232,101,10,0.24); }
+    .badge-dot {
+      width: 8px;
+      height: 8px;
+      background: #fff;
+      border-radius: 50%;
+      animation: blink 1.5s ease-in-out infinite;
+    }
 
-.why-card-text strong {
-  display: block; font-weight: 600; font-size: 14px;
-  color: var(--white); margin-bottom: 2px;
-}
-.why-card-text span { font-size: 13px; color: rgba(255,255,255,0.62); line-height: 1.5; }
+    @keyframes blink {
 
-.why-cta { display: flex; gap: 14px; margin-top: 36px; flex-wrap: wrap; }
+      0%,
+      100% {
+        opacity: 1
+      }
 
-.btn-outline-white {
-  background: transparent; color: var(--white);
-  border: 1.5px solid rgba(255,255,255,0.28);
-  padding: 14px 26px; border-radius: var(--radius-sm);
-  font-family: 'DM Sans', sans-serif; font-size: 14px;
-  cursor: pointer; transition: border-color var(--transition), color var(--transition);
-  text-decoration: none; display: inline-block;
-}
-.btn-outline-white:hover { border-color: var(--orange); color: var(--orange-h); }
+      50% {
+        opacity: .3
+      }
+    }
 
-/* ═══════════════════════════════════════════
+    .why-deco-circle {
+      position: absolute;
+      top: -30px;
+      left: -30px;
+      width: 110px;
+      height: 110px;
+      border: 2px solid rgba(232, 101, 10, 0.22);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    /* content side */
+    .why-content .eyebrow {
+      color: var(--orange);
+    }
+
+    .why-content h2 {
+      font-size: clamp(28px, 3vw, 40px);
+      color: var(--white);
+      margin-bottom: 14px;
+    }
+
+    .why-content h2 em {
+      font-style: italic;
+      color: var(--orange-h);
+    }
+
+    .why-content>p {
+      font-size: 15px;
+      line-height: 1.75;
+      color: var(--text-muted);
+      margin-bottom: 36px;
+      max-width: 430px;
+    }
+
+    .why-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .why-card {
+      background: var(--glass);
+      border: 1px solid var(--glass-b);
+      border-radius: var(--radius-md);
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      transition: background var(--transition), border-color var(--transition), transform var(--transition);
+      animation: slideIn .5s both;
+    }
+
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateX(16px)
+      }
+
+      to {
+        opacity: 1;
+        transform: translateX(0)
+      }
+    }
+
+    .why-card:nth-child(1) {
+      animation-delay: .05s
+    }
+
+    .why-card:nth-child(2) {
+      animation-delay: .12s
+    }
+
+    .why-card:nth-child(3) {
+      animation-delay: .19s
+    }
+
+    .why-card:nth-child(4) {
+      animation-delay: .26s
+    }
+
+    .why-card:nth-child(5) {
+      animation-delay: .33s
+    }
+
+    .why-card:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(232, 101, 10, 0.35);
+      transform: translateX(6px);
+    }
+
+    .why-card-icon {
+      flex-shrink: 0;
+      width: 44px;
+      height: 44px;
+      border-radius: 11px;
+      background: rgba(232, 101, 10, 0.14);
+      border: 1px solid rgba(232, 101, 10, 0.28);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--orange-h);
+      font-size: 16px;
+      transition: background var(--transition);
+    }
+
+    .why-card:hover .why-card-icon {
+      background: rgba(232, 101, 10, 0.24);
+    }
+
+    .why-card-text strong {
+      display: block;
+      font-weight: 600;
+      font-size: 14px;
+      color: var(--white);
+      margin-bottom: 2px;
+    }
+
+    .why-card-text span {
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.62);
+      line-height: 1.5;
+    }
+
+    .why-cta {
+      display: flex;
+      gap: 14px;
+      margin-top: 36px;
+      flex-wrap: wrap;
+    }
+
+    .btn-outline-white {
+      background: transparent;
+      color: var(--white);
+      border: 1.5px solid rgba(255, 255, 255, 0.28);
+      padding: 14px 26px;
+      border-radius: var(--radius-sm);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      cursor: pointer;
+      transition: border-color var(--transition), color var(--transition);
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btn-outline-white:hover {
+      border-color: var(--orange);
+      color: var(--orange-h);
+    }
+
+    /* ═══════════════════════════════════════════
    SOBRE (ABOUT ME)
 ═══════════════════════════════════════════ */
-.about-section {
-  padding: 100px 5%;
-  background: var(--white);
-}
+    .about-section {
+      padding: 100px 5%;
+      background: var(--white);
+    }
 
-.about-inner {
-  max-width: 1200px; margin: auto;
-  display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
-}
+    .about-inner {
+      max-width: 1200px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
 
-.about-img-wrap { position: relative; }
+    .about-img-wrap {
+      position: relative;
+    }
 
-.about-img-wrap img {
-  width: 100%; border-radius: var(--radius-lg);
-  object-fit: cover; max-height: 560px;
-  box-shadow: var(--shadow-card);
-}
+    .about-img-wrap img {
+      width: 100%;
+      border-radius: var(--radius-lg);
+      object-fit: cover;
+      max-height: 560px;
+      box-shadow: var(--shadow-card);
+    }
 
-.about-img-badge {
-  position: absolute; bottom: 28px; right: -20px;
-  background: var(--navy); color: var(--white);
-  border-radius: var(--radius-md); padding: 18px 24px;
-  box-shadow: 0 16px 48px rgba(0,0,0,0.25);
-  text-align: center; min-width: 130px;
-  border: 1px solid rgba(255,255,255,0.08);
-}
-.about-img-badge strong { font-family: 'Playfair Display', serif; font-size: 28px; color: var(--orange); }
-.about-img-badge span  { display: block; font-size: 11px; color: var(--text-muted); margin-top: 2px; text-transform: uppercase; letter-spacing: .1em; }
+    .about-img-badge {
+      position: absolute;
+      bottom: 28px;
+      right: -20px;
+      background: var(--navy);
+      color: var(--white);
+      border-radius: var(--radius-md);
+      padding: 18px 24px;
+      box-shadow: 0 16px 48px rgba(0, 0, 0, 0.25);
+      text-align: center;
+      min-width: 130px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
 
-.about-content .eyebrow { color: var(--orange); }
-.about-content h2 { font-size: clamp(28px, 3vw, 40px); color: var(--navy); margin-bottom: 20px; }
-.about-content p  { font-size: 15px; line-height: 1.80; color: #4b5563; margin-bottom: 20px; }
+    .about-img-badge strong {
+      font-family: 'Playfair Display', serif;
+      font-size: 28px;
+      color: var(--orange);
+    }
 
-.about-tags { display: flex; flex-wrap: wrap; gap: 10px; margin: 28px 0; }
-.about-tag {
-  background: rgba(232,101,10,0.08); color: var(--orange);
-  border: 1px solid rgba(232,101,10,0.20);
-  padding: 6px 14px; border-radius: 50px;
-  font-size: 12.5px; font-weight: 500;
-}
+    .about-img-badge span {
+      display: block;
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-top: 2px;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+    }
 
-/* ═══════════════════════════════════════════
+    .about-content .eyebrow {
+      color: var(--orange);
+    }
+
+    .about-content h2 {
+      font-size: clamp(28px, 3vw, 40px);
+      color: var(--navy);
+      margin-bottom: 20px;
+    }
+
+    .about-content p {
+      font-size: 15px;
+      line-height: 1.80;
+      color: #4b5563;
+      margin-bottom: 20px;
+    }
+
+    .about-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 28px 0;
+    }
+
+    .about-tag {
+      background: rgba(232, 101, 10, 0.08);
+      color: var(--orange);
+      border: 1px solid rgba(232, 101, 10, 0.20);
+      padding: 6px 14px;
+      border-radius: 50px;
+      font-size: 12.5px;
+      font-weight: 500;
+    }
+
+    /* ═══════════════════════════════════════════
    RESULTADOS (ANTES E DEPOIS)
 ═══════════════════════════════════════════ */
-.results-section {
-  padding: 100px 5%;
-  background: var(--off-white);
-}
+    .results-section {
+      padding: 100px 5%;
+      background: var(--off-white);
+    }
 
-.results-grid {
-  max-width: 1200px; margin: auto;
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px;
-  margin-bottom: 60px;
-}
+    .results-grid {
+      max-width: 1200px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      margin-bottom: 60px;
+    }
 
-.result-card {
-  background: var(--white); border-radius: var(--radius-lg);
-  overflow: hidden; border: 1px solid rgba(0,0,0,0.06);
-  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-  transition: transform var(--transition), box-shadow var(--transition);
-}
-.result-card:hover { transform: translateY(-6px); box-shadow: 0 20px 60px rgba(0,0,0,0.12); }
+    .result-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1px solid rgba(0, 0, 0, 0.06);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
 
-.before-after-container {
-  position: relative; width: 100%; height: 360px;
-  overflow: hidden; background: #f0f0f0;
-}
+    .result-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+    }
 
-.before-after-img {
-  position: absolute; inset: 0;
-  display: flex; align-items: center; justify-content: center;
-}
-.before-after-img img {
-  width: 100%; height: 100%; object-fit: cover; display: block;
-}
-.before-after-img.after {
-  opacity: 0;
-  transition: opacity .3s cubic-bezier(.4,0,.2,1);
-  pointer-events: none;
-}
-.before-after-container.active .before-after-img.after {
-  opacity: 1;
-}
+    .before-after-container {
+      position: relative;
+      width: 100%;
+      height: 360px;
+      overflow: hidden;
+      background: #f0f0f0;
+    }
 
-.ba-label {
-  position: absolute; top: 12px; right: 12px;
-  background: rgba(11,31,56,0.92); color: #fff;
-  padding: 6px 14px; border-radius: 20px;
-  font-size: 11px; font-weight: 700;
-  letter-spacing: .12em; text-transform: uppercase;
-}
-.before-after-img.before .ba-label {
-  background: rgba(232,101,10,0.92);
-}
+    .before-after-img {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
-.toggle-btn {
-  position: absolute; bottom: 16px; left: 50%;
-  transform: translateX(-50%);
-  background: rgba(11,31,56,0.92); color: #fff;
-  border: 1.5px solid rgba(232,101,10,0.5);
-  padding: 10px 18px; border-radius: 24px;
-  font-size: 13px; font-weight: 600;
-  cursor: pointer; z-index: 10;
-  transition: all var(--transition);
-  display: flex; align-items: center; gap: 8px;
-  font-family: 'DM Sans', sans-serif;
-}
-.toggle-btn:hover {
-  background: rgba(232,101,10,0.92);
-  border-color: var(--orange);
-  transform: translateX(-50%) scale(1.05);
-}
-.before-after-container.active .toggle-btn {
-  background: rgba(232,101,10,0.92);
-  border-color: var(--orange);
-}
-.toggle-btn i {
-  font-size: 12px;
-}
+    .before-after-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
 
-.result-info {
-  padding: 28px 24px;
-}
-.result-info h3 {
-  font-size: 18px; color: var(--navy); margin-bottom: 8px;
-}
-.result-tag {
-  font-size: 12.5px; font-weight: 600; letter-spacing: .14em;
-  text-transform: uppercase; color: var(--orange); margin-bottom: 12px;
-  display: block;
-}
-.result-desc {
-  font-size: 14px; line-height: 1.65; color: #64748b;
-  margin-bottom: 16px;
-}
-.result-details {
-  display: flex; gap: 16px; flex-wrap: wrap; font-size: 12.5px;
-  color: #94a3b8;
-}
-.result-details span {
-  display: flex; align-items: center; gap: 6px;
-}
-.result-details i { color: var(--orange); }
+    .before-after-img.after {
+      opacity: 0;
+      transition: opacity .3s cubic-bezier(.4, 0, .2, 1);
+      pointer-events: none;
+    }
 
-.results-cta {
-  max-width: 1200px; margin: auto;
-  text-align: center; padding: 40px;
-  background: rgba(232,101,10,0.06); border: 1px solid rgba(232,101,10,0.15);
-  border-radius: var(--radius-lg);
-}
-.results-cta p {
-  font-size: 16px; color: var(--navy);
-  margin-bottom: 20px; font-weight: 500;
-}
+    .before-after-container.active .before-after-img.after {
+      opacity: 1;
+    }
 
-/* ═══════════════════════════════════════════
+    .ba-label {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: rgba(11, 31, 56, 0.92);
+      color: #fff;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .before-after-img.before .ba-label {
+      background: rgba(232, 101, 10, 0.92);
+    }
+
+    .toggle-btn {
+      position: absolute;
+      bottom: 16px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(11, 31, 56, 0.92);
+      color: #fff;
+      border: 1.5px solid rgba(232, 101, 10, 0.5);
+      padding: 10px 18px;
+      border-radius: 24px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      z-index: 10;
+      transition: all var(--transition);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'DM Sans', sans-serif;
+    }
+
+    .toggle-btn:hover {
+      background: rgba(232, 101, 10, 0.92);
+      border-color: var(--orange);
+      transform: translateX(-50%) scale(1.05);
+    }
+
+    .before-after-container.active .toggle-btn {
+      background: rgba(232, 101, 10, 0.92);
+      border-color: var(--orange);
+    }
+
+    .toggle-btn i {
+      font-size: 12px;
+    }
+
+    .result-info {
+      padding: 28px 24px;
+    }
+
+    .result-info h3 {
+      font-size: 18px;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+
+    .result-tag {
+      font-size: 12.5px;
+      font-weight: 600;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .result-desc {
+      font-size: 14px;
+      line-height: 1.65;
+      color: #64748b;
+      margin-bottom: 16px;
+    }
+
+    .result-details {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      font-size: 12.5px;
+      color: #94a3b8;
+    }
+
+    .result-details span {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .result-details i {
+      color: var(--orange);
+    }
+
+    .results-cta {
+      max-width: 1200px;
+      margin: auto;
+      text-align: center;
+      padding: 40px;
+      background: rgba(232, 101, 10, 0.06);
+      border: 1px solid rgba(232, 101, 10, 0.15);
+      border-radius: var(--radius-lg);
+    }
+
+    .results-cta p {
+      font-size: 16px;
+      color: var(--navy);
+      margin-bottom: 20px;
+      font-weight: 500;
+    }
+
+    /* ═══════════════════════════════════════════
    TESTIMONIALS
 ═══════════════════════════════════════════ */
-.testimonials-section {
-  padding: 100px 5%;
-  background: var(--off-white);
-}
+    .testimonials-section {
+      padding: 100px 5%;
+      background: var(--off-white);
+    }
 
-.carousel-wrap { max-width: 1200px; margin: auto; position: relative; overflow: hidden; }
+    .carousel-wrap {
+      max-width: 1200px;
+      margin: auto;
+      position: relative;
+      overflow: hidden;
+    }
 
-.carousel-track {
-  display: flex; transition: transform .5s cubic-bezier(.4,0,.2,1);
-  gap: 0;
-}
+    .carousel-track {
+      display: flex;
+      transition: transform .5s cubic-bezier(.4, 0, .2, 1);
+      gap: 0;
+    }
 
-.testimonial-item {
-  min-width: 33.33%; padding: 0 14px;
-  box-sizing: border-box;
-}
+    .testimonial-item {
+      min-width: 33.33%;
+      padding: 0 14px;
+      box-sizing: border-box;
+    }
 
-.testimonial-card {
-  background: var(--white); border-radius: var(--radius-lg);
-  padding: 32px; height: 100%;
-  border: 1px solid rgba(0,0,0,0.06);
-  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-  transition: transform var(--transition), box-shadow var(--transition);
-}
-.testimonial-card:hover { transform: translateY(-4px); box-shadow: 0 16px 50px rgba(0,0,0,0.10); }
+    .testimonial-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      height: 100%;
+      border: 1px solid rgba(0, 0, 0, 0.06);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
 
-.t-stars { color: #f59e0b; font-size: 15px; margin-bottom: 16px; letter-spacing: 2px; }
-.t-text  { font-size: 14.5px; line-height: 1.75; color: #4b5563; font-style: italic; margin-bottom: 24px; }
-.t-author { display: flex; align-items: center; gap: 12px; }
-.t-avatar {
-  width: 42px; height: 42px; border-radius: 50%;
-  background: linear-gradient(135deg, var(--navy-light), var(--orange));
-  display: flex; align-items: center; justify-content: center;
-  color: #fff; font-weight: 700; font-size: 16px;
-  flex-shrink: 0; font-family: 'Playfair Display', serif;
-}
-.t-name { font-weight: 600; font-size: 14px; color: var(--navy); }
-.t-label { font-size: 12px; color: #94a3b8; }
+    .testimonial-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 50px rgba(0, 0, 0, 0.10);
+    }
 
-.carousel-controls { display: flex; justify-content: center; gap: 12px; margin-top: 40px; }
+    .t-stars {
+      color: #f59e0b;
+      font-size: 15px;
+      margin-bottom: 16px;
+      letter-spacing: 2px;
+    }
 
-.carousel-btn {
-  width: 44px; height: 44px; border-radius: 50%;
-  background: var(--navy); color: #fff; border: none;
-  cursor: pointer; font-size: 14px;
-  display: flex; align-items: center; justify-content: center;
-  transition: background var(--transition), transform var(--transition);
-}
-.carousel-btn:hover { background: var(--orange); transform: scale(1.08); }
+    .t-text {
+      font-size: 14.5px;
+      line-height: 1.75;
+      color: #4b5563;
+      font-style: italic;
+      margin-bottom: 24px;
+    }
 
-/* ═══════════════════════════════════════════
+    .t-author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .t-avatar {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--navy-light), var(--orange));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-weight: 700;
+      font-size: 16px;
+      flex-shrink: 0;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .t-name {
+      font-weight: 600;
+      font-size: 14px;
+      color: var(--navy);
+    }
+
+    .t-label {
+      font-size: 12px;
+      color: #94a3b8;
+    }
+
+    .carousel-controls {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 40px;
+    }
+
+    .carousel-btn {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--navy);
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background var(--transition), transform var(--transition);
+    }
+
+    .carousel-btn:hover {
+      background: var(--orange);
+      transform: scale(1.08);
+    }
+
+    /* ═══════════════════════════════════════════
    tratamentos
 ═══════════════════════════════════════════ */
-.services {
-    padding: 100px 5%;
-    background-color: #fff;
-    text-align: center;
-}
+    .services {
+      padding: 100px 5%;
+      background-color: #fff;
+      text-align: center;
+    }
 
-.services-header {
-    margin-bottom: 60px;
-}
+    .services-header {
+      margin-bottom: 60px;
+    }
 
-.services-header h2 {
-    font-size: 2.5rem;
-    color: #2c3e50;
-    margin-top: 10px;
-}
+    .services-header h2 {
+      font-size: 2.5rem;
+      color: #2c3e50;
+      margin-top: 10px;
+    }
 
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
 
-.service-card {
-    position: relative;
-    border-radius: 20px;
-    overflow: hidden;
-    height: 450px;
-    cursor: pointer;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-}
+    .service-card {
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+      height: 450px;
+      cursor: pointer;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    }
 
-.service-img {
-    width: 100%;
-    height: 100%;
-    transition: transform 0.5s ease;
-}
+    .service-img {
+      width: 100%;
+      height: 100%;
+      transition: transform 0.5s ease;
+    }
 
-.service-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
+    .service-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
 
-/* Overlay escuro que aparece no hover */
-.service-card::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.8));
-    z-index: 1;
-}
+    /* Overlay escuro que aparece no hover */
+    .service-card::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to bottom, transparent 40%, rgba(0, 0, 0, 0.8));
+      z-index: 1;
+    }
 
-.service-info {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    padding: 30px;
-    text-align: left;
-    color: white;
-    z-index: 2;
-    transform: translateY(40px); /* Começa um pouco mais baixo */
-    transition: transform 0.4s ease, opacity 0.4s ease;
-}
+    .service-info {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      padding: 30px;
+      text-align: left;
+      color: white;
+      z-index: 2;
+      transform: translateY(40px);
+      /* Começa um pouco mais baixo */
+      transition: transform 0.4s ease, opacity 0.4s ease;
+    }
 
-.service-info h3 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-}
+    .service-info h3 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
 
-.service-info p {
-    font-size: 0.95rem;
-    opacity: 0; /* Escondido inicialmente */
-    transition: opacity 0.4s ease;
-    margin-bottom: 20px;
-}
+    .service-info p {
+      font-size: 0.95rem;
+      opacity: 0;
+      /* Escondido inicialmente */
+      transition: opacity 0.4s ease;
+      margin-bottom: 20px;
+    }
 
-.read-more {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 0.9rem;
-    border-bottom: 1px solid transparent;
-    transition: border 0.3s;
-}
-.btn-service {
-    background-color: #fff;
-    color: #333;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-weight: bold;
-    cursor: pointer;
-    font-size: 0.9rem;
-    transition: background 0.3s, transform 0.2s;
-    margin-top: 10px;
-}
+    .read-more {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 0.9rem;
+      border-bottom: 1px solid transparent;
+      transition: border 0.3s;
+    }
 
-.btn-service:hover {
-    background-color: #e0e0e0;
-    transform: translateY(-2px);
-}
+    .btn-service {
+      background-color: #fff;
+      color: #333;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 0.9rem;
+      transition: background 0.3s, transform 0.2s;
+      margin-top: 10px;
+    }
 
-
-
-
-/* --- EFEITOS DE HOVER --- */
-
-.service-card:hover .service-img {
-    transform: scale(1.1); /* Zoom na imagem */
-}
-
-.service-card:hover .service-info {
-    transform: translateY(0); /* Sobe o texto */
-}
-
-.service-card:hover .service-info p {
-    opacity: 1; /* Revela a descrição */
-}
-
-.read-more:hover {
-    border-bottom: 1px solid #fff;
-}
+    .btn-service:hover {
+      background-color: #e0e0e0;
+      transform: translateY(-2px);
+    }
 
 
 
-/* ═══════════════════════════════════════════
+
+    /* --- EFEITOS DE HOVER --- */
+
+    .service-card:hover .service-img {
+      transform: scale(1.1);
+      /* Zoom na imagem */
+    }
+
+    .service-card:hover .service-info {
+      transform: translateY(0);
+      /* Sobe o texto */
+    }
+
+    .service-card:hover .service-info p {
+      opacity: 1;
+      /* Revela a descrição */
+    }
+
+    .read-more:hover {
+      border-bottom: 1px solid #fff;
+    }
+
+
+
+    /* ═══════════════════════════════════════════
    ARTIGOS
 ═══════════════════════════════════════════ */
-.articles-section { padding: 100px 5%; background: var(--white); }
+    .articles-section {
+      padding: 100px 5%;
+      background: var(--white);
+    }
 
-.articles-grid {
-  max-width: 1200px; margin: auto;
-  display: grid; grid-template-columns: repeat(3,1fr); gap: 28px;
-}
+    .articles-grid {
+      max-width: 1200px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
 
-.article-card {
-  background: var(--white); border-radius: var(--radius-lg);
-  overflow: hidden; border: 1px solid rgba(0,0,0,0.07);
-  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-  transition: transform var(--transition), box-shadow var(--transition);
-  cursor: pointer;
-}
-.article-card:hover { transform: translateY(-6px); box-shadow: 0 20px 60px rgba(0,0,0,0.12); }
+    .article-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1px solid rgba(0, 0, 0, 0.07);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      transition: transform var(--transition), box-shadow var(--transition);
+      cursor: pointer;
+    }
 
-.article-img {
-  height: 200px; background-size: cover; background-position: center;
-  background-color: var(--navy-light);
-  position: relative; overflow: hidden;
-}
-.article-img::after {
-  content: ''; position: absolute; inset: 0;
-  background: linear-gradient(to top, rgba(11,31,56,0.4), transparent);
-}
+    .article-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+    }
 
-.article-body { padding: 24px; }
-.article-tag {
-  font-size: 11px; font-weight: 600; letter-spacing: .14em;
-  text-transform: uppercase; color: var(--orange); margin-bottom: 8px;
-}
-.article-body h3 { font-size: 17px; color: var(--navy); line-height: 1.4; margin-bottom: 10px; }
-.article-date    { font-size: 12px; color: #94a3b8; margin-bottom: 12px; }
-.article-divider { height: 1.5px; background: rgba(232,101,10,0.2); margin-bottom: 12px; }
-.article-excerpt { font-size: 13.5px; color: #64748b; line-height: 1.65; }
+    .article-img {
+      height: 200px;
+      background-size: cover;
+      background-position: center;
+      background-color: var(--navy-light);
+      position: relative;
+      overflow: hidden;
+    }
 
-/* ═══════════════════════════════════════════
+    .article-img::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(11, 31, 56, 0.4), transparent);
+    }
+
+    .article-body {
+      padding: 24px;
+    }
+
+    .article-tag {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 8px;
+    }
+
+    .article-body h3 {
+      font-size: 17px;
+      color: var(--navy);
+      line-height: 1.4;
+      margin-bottom: 10px;
+    }
+
+    .article-date {
+      font-size: 12px;
+      color: #94a3b8;
+      margin-bottom: 12px;
+    }
+
+    .article-divider {
+      height: 1.5px;
+      background: rgba(232, 101, 10, 0.2);
+      margin-bottom: 12px;
+    }
+
+    .article-excerpt {
+      font-size: 13.5px;
+      color: #64748b;
+      line-height: 1.65;
+    }
+
+    /* ═══════════════════════════════════════════
    FAQ
 ═══════════════════════════════════════════ */
-.faq-section { padding: 100px 5%; background: var(--off-white); }
+    .faq-section {
+      padding: 100px 5%;
+      background: var(--off-white);
+    }
 
-.faq-grid {
-  max-width: 1100px; margin: auto;
-  display: grid; grid-template-columns: repeat(2,1fr); gap: 16px;
-}
+    .faq-grid {
+      max-width: 1100px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
 
-.faq-item {
-  background: var(--navy); border-radius: var(--radius-md);
-  overflow: hidden; transition: box-shadow var(--transition);
-}
-.faq-item:hover { box-shadow: 0 8px 32px rgba(11,31,56,0.28); }
+    .faq-item {
+      background: var(--navy);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      transition: box-shadow var(--transition);
+    }
 
-.faq-question {
-  width: 100%; padding: 20px 24px;
-  background: none; border: none;
-  color: var(--white); font-family: 'DM Sans', sans-serif;
-  font-size: 14px; font-weight: 600; text-align: left;
-  cursor: pointer; display: flex; justify-content: space-between; align-items: center;
-  gap: 12px; transition: background var(--transition);
-}
-.faq-question:hover { background: rgba(255,255,255,0.05); }
+    .faq-item:hover {
+      box-shadow: 0 8px 32px rgba(11, 31, 56, 0.28);
+    }
 
-.faq-icon {
-  width: 28px; height: 28px; border-radius: 50%;
-  background: rgba(232,101,10,0.14);
-  border: 1px solid rgba(232,101,10,0.28);
-  display: flex; align-items: center; justify-content: center;
-  color: var(--orange); font-size: 16px; flex-shrink: 0;
-  transition: transform var(--transition), background var(--transition);
-}
-.faq-item.active .faq-icon { transform: rotate(45deg); background: var(--orange); color: #fff; }
+    .faq-question {
+      width: 100%;
+      padding: 20px 24px;
+      background: none;
+      border: none;
+      color: var(--white);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      text-align: left;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      transition: background var(--transition);
+    }
 
-.faq-answer {
-  max-height: 0; overflow: hidden;
-  transition: max-height .4s ease;
-}
-.faq-answer-inner {
-  padding: 0 24px 22px;
-  font-size: 14px; color: rgba(255,255,255,0.70); line-height: 1.75;
-  border-left: 3px solid var(--orange);
-  margin-left: 24px; margin-right: 24px;
-  padding-left: 16px;
-}
-.faq-item.active .faq-answer { max-height: 300px; }
+    .faq-question:hover {
+      background: rgba(255, 255, 255, 0.05);
+    }
 
-/* ═══════════════════════════════════════════
+    .faq-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: rgba(232, 101, 10, 0.14);
+      border: 1px solid rgba(232, 101, 10, 0.28);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--orange);
+      font-size: 16px;
+      flex-shrink: 0;
+      transition: transform var(--transition), background var(--transition);
+    }
+
+    .faq-item.active .faq-icon {
+      transform: rotate(45deg);
+      background: var(--orange);
+      color: #fff;
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height .4s ease;
+    }
+
+    .faq-answer-inner {
+      padding: 0 24px 22px;
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.70);
+      line-height: 1.75;
+      border-left: 3px solid var(--orange);
+      margin-left: 24px;
+      margin-right: 24px;
+      padding-left: 16px;
+    }
+
+    .faq-item.active .faq-answer {
+      max-height: 300px;
+    }
+
+    /* ═══════════════════════════════════════════
    MAPA - LOCALIZAÇÃO
 ═══════════════════════════════════════════ */
-.map-section {
-  padding: 100px 5%;
-  background: var(--white);
-}
+    .map-section {
+      padding: 100px 5%;
+      background: var(--white);
+    }
 
-.map-inner {
-  max-width: 1200px; margin: auto;
-  display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
-}
+    .map-inner {
+      max-width: 1200px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
 
-.map-container {
-  position: relative; border-radius: var(--radius-lg);
-  overflow: hidden; box-shadow: var(--shadow-card);
-  height: 500px;
-}
+    .map-container {
+      position: relative;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-card);
+      height: 500px;
+    }
 
-.map-container iframe {
-  width: 100%; height: 100%; border: none; display: block;
-}
+    .map-container iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+    }
 
-.map-content .eyebrow { color: var(--orange); }
-.map-content h2 { font-size: clamp(28px, 3vw, 40px); color: var(--navy); margin-bottom: 20px; }
-.map-content p { font-size: 15px; line-height: 1.75; color: #64748b; margin-bottom: 24px; }
+    .map-content .eyebrow {
+      color: var(--orange);
+    }
 
-.map-address {
-  background: rgba(232,101,10,0.08); border-left: 4px solid var(--orange);
-  border-radius: var(--radius-md); padding: 24px;
-  margin-bottom: 32px;
-}
+    .map-content h2 {
+      font-size: clamp(28px, 3vw, 40px);
+      color: var(--navy);
+      margin-bottom: 20px;
+    }
 
-.map-address-title {
-  font-weight: 600; color: var(--navy); margin-bottom: 12px; font-size: 14px;
-  text-transform: uppercase; letter-spacing: .1em;
-}
+    .map-content p {
+      font-size: 15px;
+      line-height: 1.75;
+      color: #64748b;
+      margin-bottom: 24px;
+    }
 
-.map-address-list {
-  list-style: none; gap: 10px; display: flex; flex-direction: column;
-}
+    .map-address {
+      background: rgba(232, 101, 10, 0.08);
+      border-left: 4px solid var(--orange);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      margin-bottom: 32px;
+    }
 
-.map-address-list li {
-  font-size: 14px; color: #64748b; display: flex; align-items: center; gap: 10px;
-}
+    .map-address-title {
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 12px;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+    }
 
-.map-address-list i { color: var(--orange); width: 16px; }
+    .map-address-list {
+      list-style: none;
+      gap: 10px;
+      display: flex;
+      flex-direction: column;
+    }
 
-.map-cta { margin-top: 28px; }
+    .map-address-list li {
+      font-size: 14px;
+      color: #64748b;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
 
-/* ═══════════════════════════════════════════
+    .map-address-list i {
+      color: var(--orange);
+      width: 16px;
+    }
+
+    .map-cta {
+      margin-top: 28px;
+    }
+
+    /* ═══════════════════════════════════════════
    CONTATO FINAL
 ═══════════════════════════════════════════ */
-.contact-section {
-  padding: 100px 5%;
-  background: linear-gradient(135deg, var(--navy) 0%, #102d57 50%, var(--navy-light) 100%);
-  text-align: center; position: relative; overflow: hidden;
-}
-.contact-section::before {
-  content: '';
-  position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
-  width: 600px; height: 600px; border-radius: 50%;
-  background: radial-gradient(circle, rgba(232,101,10,0.08), transparent 70%);
-  pointer-events: none;
-}
+    .contact-section {
+      padding: 100px 5%;
+      background: linear-gradient(135deg, var(--navy) 0%, #102d57 50%, var(--navy-light) 100%);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
 
-.contact-inner { position: relative; z-index: 1; max-width: 700px; margin: auto; }
-.contact-section .eyebrow { justify-content: center; display: flex; }
-.contact-inner h2 { font-size: clamp(30px, 3.5vw, 48px); color: var(--white); margin-bottom: 16px; }
-.contact-inner p  { font-size: 16px; color: var(--text-muted); margin-bottom: 40px; line-height: 1.7; }
+    .contact-section::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(232, 101, 10, 0.08), transparent 70%);
+      pointer-events: none;
+    }
 
-.contact-btns { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
+    .contact-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 700px;
+      margin: auto;
+    }
 
-.btn-social {
-  display: inline-flex; align-items: center; gap: 10px;
-  padding: 14px 24px; border-radius: var(--radius-sm);
-  text-decoration: none; color: var(--white);
-  font-weight: 600; font-size: 14px;
-  border: 1px solid rgba(255,255,255,0.20);
-  transition: transform var(--transition), box-shadow var(--transition), background var(--transition);
-  letter-spacing: .02em;
-}
-.btn-social:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(0,0,0,0.3); }
-.btn-social.whatsapp  { background: #1fbe57; }
-.btn-social.instagram { background: linear-gradient(135deg,#f9ce34,#ee2a7b,#6228d7); }
-.btn-social.linkedin  { background: #0a66c2; }
+    .contact-section .eyebrow {
+      justify-content: center;
+      display: flex;
+    }
 
-/* ═══════════════════════════════════════════
+    .contact-inner h2 {
+      font-size: clamp(30px, 3.5vw, 48px);
+      color: var(--white);
+      margin-bottom: 16px;
+    }
+
+    .contact-inner p {
+      font-size: 16px;
+      color: var(--text-muted);
+      margin-bottom: 40px;
+      line-height: 1.7;
+    }
+
+    .contact-btns {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn-social {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 24px;
+      border-radius: var(--radius-sm);
+      text-decoration: none;
+      color: var(--white);
+      font-weight: 600;
+      font-size: 14px;
+      border: 1px solid rgba(255, 255, 255, 0.20);
+      transition: transform var(--transition), box-shadow var(--transition), background var(--transition);
+      letter-spacing: .02em;
+    }
+
+    .btn-social:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .btn-social.whatsapp {
+      background: #1fbe57;
+    }
+
+    .btn-social.instagram {
+      background: linear-gradient(135deg, #f9ce34, #ee2a7b, #6228d7);
+    }
+
+    .btn-social.linkedin {
+      background: #0a66c2;
+    }
+
+    /* ═══════════════════════════════════════════
    FOOTER
 ═══════════════════════════════════════════ */
-.footer {
-  background: #070f1e;
-  color: rgba(255,255,255,0.75);
-  padding: 70px 5% 36px;
-}
+    .footer {
+      background: #070f1e;
+      color: rgba(255, 255, 255, 0.75);
+      padding: 70px 5% 36px;
+    }
 
-.footer-grid {
-  max-width: 1200px; margin: auto;
-  display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 60px;
-  padding-bottom: 50px;
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-}
+    .footer-grid {
+      max-width: 1200px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 60px;
+      padding-bottom: 50px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
 
-.footer-brand-logo {
-  display: flex; align-items: center; gap: 12px; margin-bottom: 16px;
-}
-.footer-brand-logo img {
-  width: 40px; height: 40px; border-radius: 50%;
-  border: 2px solid var(--orange); object-fit: cover;
-}
-.footer-brand-logo h3 { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--white); }
-.footer-brand p { font-size: 13.5px; line-height: 1.75; margin-bottom: 20px; }
+    .footer-brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
 
-.footer-contact-list { list-style: none; }
-.footer-contact-list li { font-size: 13px; margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
-.footer-contact-list i { color: var(--orange); width: 16px; }
+    .footer-brand-logo img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 2px solid var(--orange);
+      object-fit: cover;
+    }
 
-.footer-col h4 { font-family: 'Playfair Display', serif; font-size: 16px; color: var(--white); margin-bottom: 20px; }
+    .footer-brand-logo h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      color: var(--white);
+    }
 
-.footer-social { display: flex; gap: 12px; }
-.footer-social a {
-  width: 40px; height: 40px; border-radius: 50%;
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.10);
-  display: flex; align-items: center; justify-content: center;
-  color: rgba(255,255,255,0.70); font-size: 14px;
-  text-decoration: none; transition: background var(--transition), color var(--transition);
-}
-.footer-social a:hover { background: var(--orange); color: #fff; border-color: var(--orange); }
+    .footer-brand p {
+      font-size: 13.5px;
+      line-height: 1.75;
+      margin-bottom: 20px;
+    }
 
-.footer-doctoralia {
-  background: var(--white); border-radius: var(--radius-md);
-  padding: 20px; max-width: 280px;
-}
-.doc-card-header { display: flex; gap: 12px; margin-bottom: 16px; }
-.doc-thumb { width: 52px; height: 52px; border-radius: var(--radius-sm); object-fit: cover; }
-.doc-name { font-size: 14px; font-weight: 700; color: #333; }
-.doc-spec { font-size: 12px; color: #666; }
-.doc-stars { color: #10b981; font-size: 12px; }
-.doc-cta {
-  display: block; background: #4a90e2; color: #fff;
-  text-align: center; padding: 10px; border-radius: 6px;
-  text-decoration: none; font-size: 13px; font-weight: 600;
-  transition: background var(--transition);
-}
-.doc-cta:hover { background: #357abd; }
-.doc-brand-label { text-align: left; font-size: 11px; color: #10b981; font-weight: 700; margin-top: 8px; }
+    .footer-contact-list {
+      list-style: none;
+    }
 
-.footer-bottom {
-  max-width: 1200px; margin: 36px auto 0;
-  display: flex; justify-content: space-between; align-items: center;
-  flex-wrap: wrap; gap: 12px;
-  font-size: 12px;
-}
-.footer-bottom a { color: rgba(255,255,255,0.50); text-decoration: none; transition: color var(--transition); }
-.footer-bottom a:hover { color: var(--orange); }
+    .footer-contact-list li {
+      font-size: 13px;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
 
-/* WhatsApp Float */
-.whatsapp-float {
-  position: fixed; bottom: 28px; right: 28px;
-  width: 58px; height: 58px; border-radius: 50%;
-  background: #25d366; color: #fff;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 26px; text-decoration: none;
-  box-shadow: 0 8px 28px rgba(37,211,102,0.45);
-  z-index: 998; transition: transform var(--transition), box-shadow var(--transition);
-  animation: floatY 3s ease-in-out infinite;
-}
-.whatsapp-float:hover { transform: scale(1.1); box-shadow: 0 12px 40px rgba(37,211,102,0.6); }
+    .footer-contact-list i {
+      color: var(--orange);
+      width: 16px;
+    }
 
-/* ═══════════════════════════════════════════
+    .footer-col h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: 16px;
+      color: var(--white);
+      margin-bottom: 20px;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 12px;
+    }
+
+    .footer-social a {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.10);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255, 255, 255, 0.70);
+      font-size: 14px;
+      text-decoration: none;
+      transition: background var(--transition), color var(--transition);
+    }
+
+    .footer-social a:hover {
+      background: var(--orange);
+      color: #fff;
+      border-color: var(--orange);
+    }
+
+    .footer-doctoralia {
+      background: var(--white);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      max-width: 280px;
+    }
+
+    .doc-card-header {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .doc-thumb {
+      width: 52px;
+      height: 52px;
+      border-radius: var(--radius-sm);
+      object-fit: cover;
+    }
+
+    .doc-name {
+      font-size: 14px;
+      font-weight: 700;
+      color: #333;
+    }
+
+    .doc-spec {
+      font-size: 12px;
+      color: #666;
+    }
+
+    .doc-stars {
+      color: #10b981;
+      font-size: 12px;
+    }
+
+    .doc-cta {
+      display: block;
+      background: #4a90e2;
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
+      transition: background var(--transition);
+    }
+
+    .doc-cta:hover {
+      background: #357abd;
+    }
+
+    .doc-brand-label {
+      text-align: left;
+      font-size: 11px;
+      color: #10b981;
+      font-weight: 700;
+      margin-top: 8px;
+    }
+
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 36px auto 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 12px;
+    }
+
+    .footer-bottom a {
+      color: rgba(255, 255, 255, 0.50);
+      text-decoration: none;
+      transition: color var(--transition);
+    }
+
+    .footer-bottom a:hover {
+      color: var(--orange);
+    }
+
+    /* WhatsApp Float */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      background: #25d366;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      text-decoration: none;
+      box-shadow: 0 8px 28px rgba(37, 211, 102, 0.45);
+      z-index: 998;
+      transition: transform var(--transition), box-shadow var(--transition);
+      animation: floatY 3s ease-in-out infinite;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+      box-shadow: 0 12px 40px rgba(37, 211, 102, 0.6);
+    }
+
+    /* ═══════════════════════════════════════════
    MODAL
 ═══════════════════════════════════════════ */
-.modal-overlay {
-  display: none; position: fixed; inset: 0;
-  background: rgba(7,15,30,0.85); backdrop-filter: blur(8px);
-  z-index: 9999; align-items: center; justify-content: center;
-}
-.modal-overlay.open { display: flex; }
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(7, 15, 30, 0.85);
+      backdrop-filter: blur(8px);
+      z-index: 9999;
+      align-items: center;
+      justify-content: center;
+    }
 
-body.modal-open {
-  overflow: hidden;
-}
+    .modal-overlay.open {
+      display: flex;
+    }
 
-.modal-box {
-  background: var(--white); border-radius: var(--radius-lg);
-  padding: 48px 40px; max-width: 420px; width: 90%;
-  position: relative; animation: modalIn .3s ease;
-}
+    body.modal-open {
+      overflow: hidden;
+    }
 
-@media (max-width: 640px) {
-  .modal-box { max-width: 95%; padding: 24px 18px; }
-  .modal-form input, .modal-form select, .modal-form button { font-size: 15px; }
-  .modal-form input, .modal-form select { padding: 12px 14px; }
-  .modal-form button { padding: 12px; }
-}
-@keyframes modalIn { from{opacity:0;transform:scale(.95)} to{opacity:1;transform:scale(1)} }
+    .modal-box {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 48px 40px;
+      max-width: 420px;
+      width: 90%;
+      position: relative;
+      animation: modalIn .3s ease;
+    }
 
-.modal-close {
-  position: absolute; top: 18px; right: 18px;
-  background: none; border: none; font-size: 22px; color: #94a3b8;
-  cursor: pointer; transition: color var(--transition);
-}
-.modal-close:hover { color: var(--navy); }
+    @media (max-width: 640px) {
+      .modal-box {
+        max-width: 95%;
+        padding: 24px 18px;
+      }
 
-.modal-box h3 { font-size: 26px; color: var(--navy); margin-bottom: 8px; }
-.modal-box p  { font-size: 14px; color: #64748b; margin-bottom: 28px; }
+      .modal-form input,
+      .modal-form select,
+      .modal-form button {
+        font-size: 15px;
+      }
 
-.modal-form { display: flex; flex-direction: column; gap: 14px; }
-.modal-form input, .modal-form select {
-  padding: 14px 16px; border: 1.5px solid #e2e8f0;
-  border-radius: var(--radius-sm); font-family: 'DM Sans', sans-serif;
-  font-size: 14px; color: var(--text-body);
-  transition: border-color var(--transition), box-shadow var(--transition);
-  background: var(--white);
-}
-.modal-form input:focus, .modal-form select:focus {
-  outline: none; border-color: var(--orange);
-  box-shadow: 0 0 0 3px rgba(232,101,10,0.10);
-}
-.modal-form button {
-  background: var(--orange); color: #fff; border: none;
-  padding: 15px; border-radius: var(--radius-sm);
-  font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 600;
-  cursor: pointer; transition: background var(--transition);
-}
-.modal-form button:hover { background: var(--orange-h); }
+      .modal-form input,
+      .modal-form select {
+        padding: 12px 14px;
+      }
 
-/* ═══════════════════════════════════════════
+      .modal-form button {
+        padding: 12px;
+      }
+    }
+
+    @keyframes modalIn {
+      from {
+        opacity: 0;
+        transform: scale(.95)
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1)
+      }
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      background: none;
+      border: none;
+      font-size: 22px;
+      color: #94a3b8;
+      cursor: pointer;
+      transition: color var(--transition);
+    }
+
+    .modal-close:hover {
+      color: var(--navy);
+    }
+
+    .modal-box h3 {
+      font-size: 26px;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+
+    .modal-box p {
+      font-size: 14px;
+      color: #64748b;
+      margin-bottom: 28px;
+    }
+
+    .modal-form {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .modal-form input,
+    .modal-form select {
+      padding: 14px 16px;
+      border: 1.5px solid #e2e8f0;
+      border-radius: var(--radius-sm);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      color: var(--text-body);
+      transition: border-color var(--transition), box-shadow var(--transition);
+      background: var(--white);
+    }
+
+    .modal-form input:focus,
+    .modal-form select:focus {
+      outline: none;
+      border-color: var(--orange);
+      box-shadow: 0 0 0 3px rgba(232, 101, 10, 0.10);
+    }
+
+    .modal-form button {
+      background: var(--orange);
+      color: #fff;
+      border: none;
+      padding: 15px;
+      border-radius: var(--radius-sm);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background var(--transition);
+    }
+
+    .modal-form button:hover {
+      background: var(--orange-h);
+    }
+
+    /* ═══════════════════════════════════════════
    RESPONSIVE
 ═══════════════════════════════════════════ */
-@media (max-width: 1024px) {
-  .why-inner, .about-inner, .map-inner { gap: 50px; }
-}
+    @media (max-width: 1024px) {
 
-@media (max-width: 900px) {
-  .hero-inner, .why-inner, .about-inner, .map-inner {
-    grid-template-columns: 1fr; gap: 48px;
-  }
-  .hero-image-wrap { order: -1; }
-  .hero-image-wrap img { max-width: 380px; }
+      .why-inner,
+      .about-inner,
+      .map-inner {
+        gap: 50px;
+      }
+    }
 
-  .areas-grid, .articles-grid { grid-template-columns: 1fr 1fr; }
-  .faq-grid { grid-template-columns: 1fr; }
-  .footer-grid { grid-template-columns: 1fr; gap: 36px; }
+    @media (max-width: 900px) {
 
-  .results-grid { grid-template-columns: 1fr 1fr; }
+      .hero-inner,
+      .why-inner,
+      .about-inner,
+      .map-inner {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
 
-  .why-photos { height: 380px; }
-  .photo-main { width: 230px; height: 320px; }
-  .photo-secondary { width: 190px; height: 220px; }
-  .why-badge { left: 185px; bottom: 60px; }
+      .hero-image-wrap {
+        order: -1;
+      }
 
-  .about-img-badge { right: 10px; bottom: 10px; }
-  .testimonial-item { min-width: 100%; }
-}
+      .hero-image-wrap img {
+        max-width: 380px;
+      }
 
-@media (max-width: 640px) {
-  .nav-links, .nav-cta-wrap { display: none; }
-  .nav-hamburger { display: flex; }
-  .areas-grid, .articles-grid { grid-template-columns: 1fr; }
-  .testimonial-item { min-width: 100%; }
-  .hero-image-wrap img { max-width: 280px; }
-  .results-grid { grid-template-columns: 1fr; }
-}
+      .areas-grid,
+      .articles-grid {
+        grid-template-columns: 1fr 1fr;
+      }
 
-/* MOBILE NAV */
-.navbar.mobile-open .nav-links {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  position: fixed;
-  top: 70px;
-  left: 0;
-  right: 0;
-  background: rgba(11, 31, 56, 0.95);
-  z-index: 998;
-  padding: 12px 20px 18px;
-}
-.navbar.mobile-open .nav-cta-wrap {
-  display: flex;
-  justify-content: center;
-  position: fixed;
-  top: calc(70px + 252px);
-  left: 0;
-  right: 0;
-  background: rgba(11, 31, 56, 0.95);
-  z-index: 998;
-  padding: 12px 20px 18px;
-}
-.navbar.mobile-open .nav-cta { width: 100%; max-width: 360px; }
-.navbar.mobile-open .nav-links a { color: #fff; font-size: 14px; padding: 10px; border-radius: var(--radius-sm); }
-.navbar.mobile-open .nav-links a:hover { background: rgba(255,255,255,0.08); color: #fff; }
+      .faq-grid {
+        grid-template-columns: 1fr;
+      }
 
-@media (max-width: 768px) {
-  .navbar.mobile-open .nav-cta-wrap {
-    display: none;
-  }
-}
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 36px;
+      }
 
-/* FORÇAR VISIBILIDADE NO MOBILE - DERMAVITA */
-@media (max-width: 768px) {
-    /* 1. Força o card a aparecer independente de JS ou Scroll */
-    .area-card {
+      .results-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .why-photos {
+        height: 380px;
+      }
+
+      .photo-main {
+        width: 230px;
+        height: 320px;
+      }
+
+      .photo-secondary {
+        width: 190px;
+        height: 220px;
+      }
+
+      .why-badge {
+        left: 185px;
+        bottom: 60px;
+      }
+
+      .about-img-badge {
+        right: 10px;
+        bottom: 10px;
+      }
+
+      .testimonial-item {
+        min-width: 100%;
+      }
+    }
+
+    @media (max-width: 640px) {
+
+      .nav-links,
+      .nav-cta-wrap {
+        display: none;
+      }
+
+      .nav-hamburger {
+        display: flex;
+      }
+
+      .areas-grid,
+      .articles-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .testimonial-item {
+        min-width: 100%;
+      }
+
+      .hero-image-wrap img {
+        max-width: 280px;
+      }
+
+      .results-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* MOBILE NAV */
+    .navbar.mobile-open .nav-links {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      position: fixed;
+      top: 70px;
+      left: 0;
+      right: 0;
+      background: rgba(11, 31, 56, 0.95);
+      z-index: 998;
+      padding: 12px 20px 18px;
+    }
+
+    .navbar.mobile-open .nav-cta-wrap {
+      display: flex;
+      justify-content: center;
+      position: fixed;
+      top: calc(70px + 252px);
+      left: 0;
+      right: 0;
+      background: rgba(11, 31, 56, 0.95);
+      z-index: 998;
+      padding: 12px 20px 18px;
+    }
+
+    .navbar.mobile-open .nav-cta {
+      width: 100%;
+      max-width: 360px;
+    }
+
+    .navbar.mobile-open .nav-links a {
+      color: #fff;
+      font-size: 14px;
+      padding: 10px;
+      border-radius: var(--radius-sm);
+    }
+
+    .navbar.mobile-open .nav-links a:hover {
+      background: rgba(255, 255, 255, 0.08);
+      color: #fff;
+    }
+
+    @media (max-width: 768px) {
+      .navbar.mobile-open .nav-cta-wrap {
+        display: none;
+      }
+    }
+
+    /* FORÇAR VISIBILIDADE NO MOBILE - DERMAVITA */
+    @media (max-width: 768px) {
+
+      /* 1. Força o card a aparecer independente de JS ou Scroll */
+      .area-card {
         opacity: 1 !important;
         transform: translateY(0) !important;
         visibility: visible !important;
-        transition: none !important; /* Remove delay de animação no mobile */
-    }
+        transition: none !important;
+        /* Remove delay de animação no mobile */
+      }
 
-    /* 2. Garante que o botão agendar esteja sempre visível e clicável */
-    .area-card .btn-secondary {
+      /* 2. Garante que o botão agendar esteja sempre visível e clicável */
+      .area-card .btn-secondary {
         display: block !important;
         opacity: 1 !important;
         visibility: visible !important;
         transform: none !important;
         margin-top: 20px !important;
-        border-color: var(--orange) !important; /* Dá destaque pro botão no celular */
+        border-color: var(--orange) !important;
+        /* Dá destaque pro botão no celular */
         color: var(--white) !important;
-        background-color: var(--orange) !important; /* Sugestão: fundo laranja no mobile facilita o clique */
+        background-color: var(--orange) !important;
+        /* Sugestão: fundo laranja no mobile facilita o clique */
         text-align: center;
-    }
+      }
 
-    /* 3. Ajuste do ícone para não sumir */
-    .area-icon {
-        background: rgba(232,101,10,0.18) !important;
+      /* 3. Ajuste do ícone para não sumir */
+      .area-icon {
+        background: rgba(232, 101, 10, 0.18) !important;
+      }
     }
-}
-</style>
+  </style>
 </head>
+
 <body>
 
-<!-- ═══════════════════════════════ NAVBAR ═══ -->
-<nav class="navbar">
-  <a href="#home" class="nav-logo">
-    <img src="imagens/logo.png" alt="Dr. Rafael">
-    <div>
-      <div class="nav-logo-text">DermaVita</div>
-      <div class="nav-logo-sub">Dr. Rafael Monteiro</div>
-    </div>
-  </a>
-
-  <ul class="nav-links">
-    <li><a href="#home">Início</a></li>
-    <li><a href="#sobre">Sobre</a></li>
-    <li><a href="#tratamentos">Tratamentos</a></li>
-    <li><a href="#depoimentos">Depoimentos</a></li>
-    <li><a href="#localizacao">Localização</a></li>
-    <li><a href="#contato">Contato</a></li>
-  </ul>
-
-  <div class="nav-cta-wrap">
-    <button class="nav-cta" onclick="openModal()">Agendar Consulta</button>
-  </div>
-
-  <div class="nav-hamburger" onclick="toggleMenu(this)">
-    <span></span><span></span><span></span>
-  </div>
-</nav>
-
-
-<!-- ═══════════════════════════════ HERO ═══ -->
-<section class="hero" id="home">
-  <div class="hero-inner">
-    <div class="hero-text">
-      <span class="eyebrow">Bem-vindo à DermaVita</span>
-      <h1>Dermatologia<br><em>Estética Avançada</em></h1>
-      <p>Realçando sua beleza natural com ciência e sofisticação através dos cuidados personalizados do Dr. Rafael Monteiro Azevedo.</p>
-      <div class="hero-btns">
-        <button class="btn-primary" onclick="openModal()">Agendar Consulta</button>
-        <button class="btn-secondary" onclick="scrollToElement('#tratamentos')">Conheça os Tratamentos</button>
+  <!-- ═══════════════════════════════ NAVBAR ═══ -->
+  <nav class="navbar">
+    <a href="#home" class="nav-logo">
+      <img src="imagens/logo.png" alt="Dr. Rafael">
+      <div>
+        <div class="nav-logo-text">DermaVita</div>
+        <div class="nav-logo-sub">Dr. Rafael Monteiro</div>
       </div>
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="#home">Início</a></li>
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#tratamentos">Tratamentos</a></li>
+      <li><a href="#depoimentos">Depoimentos</a></li>
+      <li><a href="#localizacao">Localização</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+
+    <div class="nav-cta-wrap">
+      <button class="nav-cta" onclick="openModal()">Agendar Consulta</button>
     </div>
 
-    <div class="hero-image-wrap">
-      <img src="imagens/cadeira.png" alt="Dr. Rafael Monteiro Azevedo">
-      <div class="hero-stats">
-        <div class="hero-stat">
-          <span class="hero-stat-num">10+</span>
-          <span class="hero-stat-lbl">Anos</span>
-        </div>
-        <div class="hero-stat">
-          <span class="hero-stat-num">2k+</span>
-          <span class="hero-stat-lbl">Pacientes</span>
-        </div>
-        <div class="hero-stat">
-          <span class="hero-stat-num">5★</span>
-          <span class="hero-stat-lbl">Avaliação</span>
-        </div>
-      </div>
+    <div class="nav-hamburger" onclick="toggleMenu(this)">
+      <span></span><span></span><span></span>
     </div>
-  </div>
-</section>
+  </nav>
 
 
-<!-- ═══════════════════════════════ TRATAMENTOS ═══ -->
-<section class="areas-section" id="tratamentos1">
-  <div class="section-header">
-    <span class="eyebrow">O que oferecemos</span>
-    <h2>Áreas de Atuação</h2>
-    <p>Soluções completas para saúde e beleza da sua pele com as mais avançadas tecnologias</p>
-  </div>
-
-  <div class="areas-grid">
-    <div class="area-card">
-      <div class="area-icon"><i class="fas fa-spa"></i></div>
-      <h3>Rejuvenescimento</h3>
-      <p>Botox, bioestimuladores e preenchimentos personalizados para resultados naturais e duradouros.</p>
-      <button class="btn-secondary" onclick="openModal()">Agendar esse tratamento</button>
-    </div>
-    <div class="area-card">
-      <div class="area-icon"><i class="fas fa-bolt"></i></div>
-      <h3>Tecnologia Laser</h3>
-      <p>Tratamentos avançados para manchas, cicatrizes, textura e flacidez com equipamentos de última geração.</p>
-      <button class="btn-secondary" onclick="openModal()">Agendar esse tratamento</button>
-    </div>
-    <div class="area-card">
-      <div class="area-icon"><i class="fas fa-stethoscope"></i></div>
-      <h3>Dermatologia Clínica</h3>
-      <p>Prevenção, diagnóstico e tratamento para a saúde integral da sua pele com atenção especializada.</p>
-      <button class="btn-secondary" onclick="openModal()">Agendar esse tratamento</button>
-    </div>
-  </div>
-</section>
-
-
-<!-- ═══════════════════════════════ POR QUE ME ESCOLHER ═══ -->
-<section class="why-section" id="por-que">
-  <div class="why-inner">
-
-    <!-- Fotos -->
-    <div class="why-photos">
-      <div class="why-deco-circle"></div>
-
-      <div class="photo-frame photo-main">
-        <img src="imagens/medico.jpg" alt="Dr. Rafael em consulta">
-        <!-- Se tiver foto de consulta: troque o src acima -->
-      </div>
-
-      <div class="photo-frame photo-secondary">
-        <img src="imagens/procedimento.png" alt="procedimento dermatológico">
-        
-         <div class="photo-badge">
-          <i class="fas fa-check"></i>
-        
+  <!-- ═══════════════════════════════ HERO ═══ -->
+  <section class="hero" id="home">
+    <div class="hero-inner">
+      <div class="hero-text">
+        <span class="eyebrow">Bem-vindo à DermaVita</span>
+        <h1>Dermatologia<br><em>Estética Avançada</em></h1>
+        <p>Realçando sua beleza natural com ciência e sofisticação através dos cuidados personalizados do Dr. Rafael
+          Monteiro Azevedo.</p>
+        <div class="hero-btns">
+          <button class="btn-primary" onclick="openModal()">Agendar Consulta</button>
+          <button class="btn-secondary" onclick="scrollToElement('#tratamentos')">Conheça os Tratamentos</button>
         </div>
       </div>
 
-      <div class="why-badge">
-        <span class="badge-dot"></span>
-        Agendamento disponível
-      </div>
-    </div>
-
-    <!-- Conteúdo -->
-    <div class="why-content">
-      <span class="eyebrow">Por que me escolher</span>
-      <h2>Por que escolher o Dr. Rafael como seu <em>dermatologista?</em></h2>
-      <p>Cuidar da sua pele vai além da estética — é saúde, autoestima e qualidade de vida. Conheça os diferenciais que tornam cada consulta única.</p>
-
-      <div class="why-cards">
-        <div class="why-card">
-          <div class="why-card-icon"><i class="fas fa-award"></i></div>
-          <div class="why-card-text">
-            <strong>Mais de 10 anos de experiência</strong>
-            <span>Em dermatologia clínica, cirúrgica e estética avançada</span>
+      <div class="hero-image-wrap">
+        <img src="imagens/cadeira.png" alt="Dr. Rafael Monteiro Azevedo">
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <span class="hero-stat-num">10+</span>
+            <span class="hero-stat-lbl">Anos</span>
           </div>
-        </div>
-        <div class="why-card">
-          <div class="why-card-icon"><i class="fas fa-heart"></i></div>
-          <div class="why-card-text">
-            <strong>Atendimento humanizado e personalizado</strong>
-            <span>Cada diagnóstico explicado com clareza, cuidado e empatia</span>
+          <div class="hero-stat">
+            <span class="hero-stat-num">2k+</span>
+            <span class="hero-stat-lbl">Pacientes</span>
           </div>
-        </div>
-        <div class="why-card">
-          <div class="why-card-icon"><i class="fas fa-microscope"></i></div>
-          <div class="why-card-text">
-            <strong>Equipamentos de última geração</strong>
-            <span>Procedimentos com alta precisão e mínima invasividade</span>
-          </div>
-        </div>
-        <div class="why-card">
-          <div class="why-card-icon"><i class="fas fa-shield-alt"></i></div>
-          <div class="why-card-text">
-            <strong>Membro da Sociedade Brasileira de Dermatologia</strong>
-            <span>Formação contínua e atualização em congresso nacionais e internacionais</span>
-          </div>
-        </div>
-        <div class="why-card">
-          <div class="why-card-icon"><i class="fas fa-star"></i></div>
-          <div class="why-card-text">
-            <strong>Reconhecimento pelos pacientes</strong>
-            <span>Avaliações 5 estrelas e pacientes fidelizados ao longo dos anos</span>
+          <div class="hero-stat">
+            <span class="hero-stat-num">5★</span>
+            <span class="hero-stat-lbl">Avaliação</span>
           </div>
         </div>
       </div>
+    </div>
+  </section>
 
-      <div class="why-cta">
-        <button class="btn-primary" onclick="openModal()">Agendar Consulta</button>
-        <button class="btn-outline-white" onclick="scrollToElement('#tratamentos')">Conheça os Tratamentos</button>
-      </div>
+
+  <!-- ═══════════════════════════════ TRATAMENTOS ═══ -->
+  <section class="areas-section" id="tratamentos1">
+    <div class="section-header">
+      <span class="eyebrow">O que oferecemos</span>
+      <h2>Áreas de Atuação</h2>
+      <p>Soluções completas para saúde e beleza da sua pele com as mais avançadas tecnologias</p>
     </div>
 
-  </div>
-</section>
-
-
-<!-- ═══════════════════════════════ SOBRE ═══ -->
-<section class="about-section" id="sobre">
-  <div class="about-inner">
-
-    <div class="about-img-wrap">
-      <img src="imagens/escrevendo.png" alt="Dr. Rafael Monteiro">
-      <div class="about-img-badge">
-        <strong>10+</strong>
-        <span>Anos de experiência</span>
+    <div class="areas-grid">
+      <div class="area-card">
+        <div class="area-icon"><i class="fas fa-spa"></i></div>
+        <h3>Rejuvenescimento</h3>
+        <p>Botox, bioestimuladores e preenchimentos personalizados para resultados naturais e duradouros.</p>
+        <button class="btn-secondary" onclick="openModal()">Agendar esse tratamento</button>
+      </div>
+      <div class="area-card">
+        <div class="area-icon"><i class="fas fa-bolt"></i></div>
+        <h3>Tecnologia Laser</h3>
+        <p>Tratamentos avançados para manchas, cicatrizes, textura e flacidez com equipamentos de última geração.</p>
+        <button class="btn-secondary" onclick="openModal()">Agendar esse tratamento</button>
+      </div>
+      <div class="area-card">
+        <div class="area-icon"><i class="fas fa-stethoscope"></i></div>
+        <h3>Dermatologia Clínica</h3>
+        <p>Prevenção, diagnóstico e tratamento para a saúde integral da sua pele com atenção especializada.</p>
+        <button class="btn-secondary" onclick="openModal()">Agendar esse tratamento</button>
       </div>
     </div>
+  </section>
 
-    <div class="about-content">
-      <span class="eyebrow">Quem sou eu</span>
-      <h2>Dr. Rafael Monteiro Azevedo</h2>
-      <p>• Graduação em Medicina pela Universidade Estadual de Campinas (UNICAMP) </p>
-    <p>• Residência em Dermatologia pela Santa Casa de São Paulo </p>
-   <p>• Especialização em Dermatologia Estética Avançada</p>
-      <p>Sou dermatologista especializado em estética, com foco em técnicas seguras e resultados naturais. Atendo com informações claras, tratamentos personalizados e muito cuidado humano.</p>
-      <p>Aqui na DermaVita, oferecemos protocolos rápidos e modernos para que você se sinta confiante desde a primeira consulta. Meu compromisso é com a sua saúde e bem-estar.</p>
 
-      <div class="about-tags">
-        <span class="about-tag">CRM-SP 000000</span>
-        <span class="about-tag">RQE 11111</span>
-        <span class="about-tag">SBD – Membro</span>
-        <span class="about-tag">Estética Avançada</span>
-        <span class="about-tag">Dermatologia Clínica</span>
+  <!-- ═══════════════════════════════ POR QUE ME ESCOLHER ═══ -->
+  <section class="why-section" id="por-que">
+    <div class="why-inner">
+
+      <!-- Fotos -->
+      <div class="why-photos">
+        <div class="why-deco-circle"></div>
+
+        <div class="photo-frame photo-main">
+          <img src="imagens/medico.jpg" alt="Dr. Rafael em consulta">
+          <!-- Se tiver foto de consulta: troque o src acima -->
+        </div>
+
+        <div class="photo-frame photo-secondary">
+          <img src="imagens/procedimento.png" alt="procedimento dermatológico">
+
+          <div class="photo-badge">
+            <i class="fas fa-check"></i>
+
+          </div>
+        </div>
+
+        <div class="why-badge">
+          <span class="badge-dot"></span>
+          Agendamento disponível
+        </div>
       </div>
 
-      <button class="btn-primary" onclick="scrollToElement('#tratamentos')">Ver Tratamentos</button>
+      <!-- Conteúdo -->
+      <div class="why-content">
+        <span class="eyebrow">Por que me escolher</span>
+        <h2>Por que escolher o Dr. Rafael como seu <em>dermatologista?</em></h2>
+        <p>Cuidar da sua pele vai além da estética — é saúde, autoestima e qualidade de vida. Conheça os diferenciais
+          que tornam cada consulta única.</p>
+
+        <div class="why-cards">
+          <div class="why-card">
+            <div class="why-card-icon"><i class="fas fa-award"></i></div>
+            <div class="why-card-text">
+              <strong>Mais de 10 anos de experiência</strong>
+              <span>Em dermatologia clínica, cirúrgica e estética avançada</span>
+            </div>
+          </div>
+          <div class="why-card">
+            <div class="why-card-icon"><i class="fas fa-heart"></i></div>
+            <div class="why-card-text">
+              <strong>Atendimento humanizado e personalizado</strong>
+              <span>Cada diagnóstico explicado com clareza, cuidado e empatia</span>
+            </div>
+          </div>
+          <div class="why-card">
+            <div class="why-card-icon"><i class="fas fa-microscope"></i></div>
+            <div class="why-card-text">
+              <strong>Equipamentos de última geração</strong>
+              <span>Procedimentos com alta precisão e mínima invasividade</span>
+            </div>
+          </div>
+          <div class="why-card">
+            <div class="why-card-icon"><i class="fas fa-shield-alt"></i></div>
+            <div class="why-card-text">
+              <strong>Membro da Sociedade Brasileira de Dermatologia</strong>
+              <span>Formação contínua e atualização em congresso nacionais e internacionais</span>
+            </div>
+          </div>
+          <div class="why-card">
+            <div class="why-card-icon"><i class="fas fa-star"></i></div>
+            <div class="why-card-text">
+              <strong>Reconhecimento pelos pacientes</strong>
+              <span>Avaliações 5 estrelas e pacientes fidelizados ao longo dos anos</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="why-cta">
+          <button class="btn-primary" onclick="openModal()">Agendar Consulta</button>
+          <button class="btn-outline-white" onclick="scrollToElement('#tratamentos')">Conheça os Tratamentos</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════ SOBRE ═══ -->
+  <section class="about-section" id="sobre">
+    <div class="about-inner">
+
+      <div class="about-img-wrap">
+        <img src="imagens/escrevendo.png" alt="Dr. Rafael Monteiro">
+        <div class="about-img-badge">
+          <strong>10+</strong>
+          <span>Anos de experiência</span>
+        </div>
+      </div>
+
+      <div class="about-content">
+        <span class="eyebrow">Quem sou eu</span>
+        <h2>Dr. Rafael Monteiro Azevedo</h2>
+        <p>• Graduação em Medicina pela Universidade Estadual de Campinas (UNICAMP) </p>
+        <p>• Residência em Dermatologia pela Santa Casa de São Paulo </p>
+        <p>• Especialização em Dermatologia Estética Avançada</p>
+        <p>Sou dermatologista especializado em estética, com foco em técnicas seguras e resultados naturais. Atendo com
+          informações claras, tratamentos personalizados e muito cuidado humano.</p>
+        <p>Aqui na DermaVita, oferecemos protocolos rápidos e modernos para que você se sinta confiante desde a primeira
+          consulta. Meu compromisso é com a sua saúde e bem-estar.</p>
+
+        <div class="about-tags">
+          <span class="about-tag">CRM-SP 000000</span>
+          <span class="about-tag">RQE 11111</span>
+          <span class="about-tag">SBD – Membro</span>
+          <span class="about-tag">Estética Avançada</span>
+          <span class="about-tag">Dermatologia Clínica</span>
+        </div>
+
+        <button class="btn-primary" onclick="scrollToElement('#tratamentos')">Ver Tratamentos</button>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════ TRANSFORMAÇÕES (ANTES E DEPOIS) ═══ -->
+  <section class="results-section" id="resultados">
+    <div class="section-header">
+      <span class="eyebrow">Transformações Reais</span>
+      <h2>Resultados de Nossos Pacientes</h2>
+      <p>Veja os resultados alcançados com protocolos personalizados e técnicas avançadas</p>
     </div>
 
-  </div>
-</section>
-
-
-<!-- ═══════════════════════════════ TRANSFORMAÇÕES (ANTES E DEPOIS) ═══ -->
-<section class="results-section" id="resultados">
-  <div class="section-header">
-    <span class="eyebrow">Transformações Reais</span>
-    <h2>Resultados de Nossos Pacientes</h2>
-    <p>Veja os resultados alcançados com protocolos personalizados e técnicas avançadas</p>
-  </div>
-
-  <div class="results-grid">
-    <!-- Card 1 - Rejuvenescimento -->
-    <div class="result-card">
-      <div class="before-after-container">
-        <div class="before-after-img before">
-          <img src="imagens/cliente1_antes.png" alt="Antes - Rejuvenescimento">
-          <span class="ba-label">ANTES</span>
+    <div class="results-grid">
+      <!-- Card 1 - Rejuvenescimento -->
+      <div class="result-card">
+        <div class="before-after-container">
+          <div class="before-after-img before">
+            <img src="imagens/cliente1_antes.png" alt="Antes - Rejuvenescimento">
+            <span class="ba-label">ANTES</span>
+          </div>
+          <div class="before-after-img after">
+            <img src="imagens/cliente1_depois.png" alt="Depois - Rejuvenescimento">
+            <span class="ba-label">DEPOIS</span>
+          </div>
+          <button class="toggle-btn" onclick="toggleAfter(this)"><i class="fas fa-arrow-right"></i> Ver Depois</button>
         </div>
-        <div class="before-after-img after">
-          <img src="imagens/cliente1_depois.png" alt="Depois - Rejuvenescimento">
-          <span class="ba-label">DEPOIS</span>
-        </div>
-        <button class="toggle-btn" onclick="toggleAfter(this)"><i class="fas fa-arrow-right"></i> Ver Depois</button>
-      </div>
-      <div class="result-info">
-        <h3>Rejuvenescimento Facial</h3>
-        <p class="result-tag">Botox + Preenchimento</p>
-        <p class="result-desc">Redução de rugas e linhas de expressão com resultado natural e harmonioso.</p>
-        <div class="result-details">
-          <span><i class="fas fa-calendar"></i> 30 dias</span>
-          <span><i class="fas fa-check-circle"></i> Sem downtime</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 2 - Laser -->
-    <div class="result-card">
-      <div class="before-after-container">
-        <div class="before-after-img before">
-          <img src="imagens/cliente2_antes.png" alt="Antes - Laser">
-          <span class="ba-label">ANTES</span>
-        </div>
-        <div class="before-after-img after">
-          <img src="imagens/cliente2_depois.png" alt="Depois - Laser">
-          <span class="ba-label">DEPOIS</span>
-        </div>
-        <button class="toggle-btn" onclick="toggleAfter(this)"><i class="fas fa-arrow-right"></i> Ver Depois</button>
-      </div>
-      <div class="result-info">
-        <h3>Tratamento a Laser</h3>
-        <p class="result-tag">Remoção de Manchas</p>
-        <p class="result-desc">Eliminação eficaz de manchas solares e melanose com equipamento de última geração.</p>
-        <div class="result-details">
-          <span><i class="fas fa-calendar"></i> 45 dias</span>
-          <span><i class="fas fa-check-circle"></i> Resultados perceptíveis</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 3 - Bioestimulador -->
-    <div class="result-card">
-      <div class="before-after-container">
-        <div class="before-after-img before">
-          <img src="imagens/cliente3_antes.png" alt="Antes - Bioestimulador">
-          <span class="ba-label">ANTES</span>
-        </div>
-        <div class="before-after-img after">
-          <img src="imagens/cliente3_depois.png" alt="Depois - Bioestimulador">
-          <span class="ba-label">DEPOIS</span>
-        </div>
-        <button class="toggle-btn" onclick="toggleAfter(this)"><i class="fas fa-arrow-right"></i> Ver Depois</button>
-      </div>
-      <div class="result-info">
-        <h3>Bioestimulador de Colágeno</h3>
-        <p class="result-tag">Rejuvenescimento Profundo</p>
-        <p class="result-desc">Estímulo natural da produção de colágeno para pele mais firme e luminosa.</p>
-        <div class="result-details">
-          <span><i class="fas fa-calendar"></i> 60 dias</span>
-          <span><i class="fas fa-check-circle"></i> Resultados progressivos</span>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="results-cta">
-    <p>Quer conhecer seus resultados potenciais?</p>
-    <button class="btn-primary" onclick="openModal()">Agende Sua Consulta</button>
-  </div>
-</section>
-
-
-<!-- ═══════════════════════════════ DEPOIMENTOS ═══ -->
-<section class="testimonials-section" id="depoimentos">
-  <div class="section-header">
-    <span class="eyebrow">O que dizem</span>
-    <h2>Depoimentos de Pacientes</h2>
-    <p>A confiança de quem já viveu a experiência DermaVita</p>
-  </div>
-
-  <div class="carousel-wrap">
-    <div class="carousel-track" id="carouselTrack">
-
-      <div class="testimonial-item">
-        <div class="testimonial-card">
-          <div class="t-stars">★★★★★</div>
-          <p class="t-text">"Excelente atendimento, muito atencioso e profissional. Explicou tudo com clareza e me deixou muito tranquila durante o procedimento."</p>
-          <div class="t-author">
-            <div class="t-avatar">M</div>
-            <div><div class="t-name">Mariana Souza</div><div class="t-label">Paciente</div></div>
+        <div class="result-info">
+          <h3>Rejuvenescimento Facial</h3>
+          <p class="result-tag">Botox + Preenchimento</p>
+          <p class="result-desc">Redução de rugas e linhas de expressão com resultado natural e harmonioso.</p>
+          <div class="result-details">
+            <span><i class="fas fa-calendar"></i> 30 dias</span>
+            <span><i class="fas fa-check-circle"></i> Sem downtime</span>
           </div>
         </div>
       </div>
 
-      <div class="testimonial-item">
-        <div class="testimonial-card">
-          <div class="t-stars">★★★★★</div>
-          <p class="t-text">"Minha experiência foi incrível, desde o acolhimento na recepção até o resultado final. Superou todas as minhas expectativas!"</p>
-          <div class="t-author">
-            <div class="t-avatar">C</div>
-            <div><div class="t-name">Carlos Henrique</div><div class="t-label">Paciente</div></div>
+      <!-- Card 2 - Laser -->
+      <div class="result-card">
+        <div class="before-after-container">
+          <div class="before-after-img before">
+            <img src="imagens/cliente2_antes.png" alt="Antes - Laser">
+            <span class="ba-label">ANTES</span>
+          </div>
+          <div class="before-after-img after">
+            <img src="imagens/cliente2_depois.png" alt="Depois - Laser">
+            <span class="ba-label">DEPOIS</span>
+          </div>
+          <button class="toggle-btn" onclick="toggleAfter(this)"><i class="fas fa-arrow-right"></i> Ver Depois</button>
+        </div>
+        <div class="result-info">
+          <h3>Tratamento a Laser</h3>
+          <p class="result-tag">Remoção de Manchas</p>
+          <p class="result-desc">Eliminação eficaz de manchas solares e melanose com equipamento de última geração.</p>
+          <div class="result-details">
+            <span><i class="fas fa-calendar"></i> 45 dias</span>
+            <span><i class="fas fa-check-circle"></i> Resultados perceptíveis</span>
           </div>
         </div>
       </div>
 
-      <div class="testimonial-item">
-        <div class="testimonial-card">
-          <div class="t-stars">★★★★★</div>
-          <p class="t-text">"Clínica moderna e médico extremamente competente. O resultado do tratamento a laser foi além do que esperava. Recomendo sem dúvidas!"</p>
-          <div class="t-author">
-            <div class="t-avatar">A</div>
-            <div><div class="t-name">Ana Paula Lima</div><div class="t-label">Paciente</div></div>
+      <!-- Card 3 - Bioestimulador -->
+      <div class="result-card">
+        <div class="before-after-container">
+          <div class="before-after-img before">
+            <img src="imagens/cliente3_antes.png" alt="Antes - Bioestimulador">
+            <span class="ba-label">ANTES</span>
+          </div>
+          <div class="before-after-img after">
+            <img src="imagens/cliente3_depois.png" alt="Depois - Bioestimulador">
+            <span class="ba-label">DEPOIS</span>
+          </div>
+          <button class="toggle-btn" onclick="toggleAfter(this)"><i class="fas fa-arrow-right"></i> Ver Depois</button>
+        </div>
+        <div class="result-info">
+          <h3>Bioestimulador de Colágeno</h3>
+          <p class="result-tag">Rejuvenescimento Profundo</p>
+          <p class="result-desc">Estímulo natural da produção de colágeno para pele mais firme e luminosa.</p>
+          <div class="result-details">
+            <span><i class="fas fa-calendar"></i> 60 dias</span>
+            <span><i class="fas fa-check-circle"></i> Resultados progressivos</span>
           </div>
         </div>
       </div>
-
-      <div class="testimonial-item">
-        <div class="testimonial-card">
-          <div class="t-stars">★★★★★</div>
-          <p class="t-text">"Profissional muito humano e detalhista. Me senti seguro durante todo o processo e os resultados são naturais e bonitos."</p>
-          <div class="t-author">
-            <div class="t-avatar">F</div>
-            <div><div class="t-name">Fernanda Rocha</div><div class="t-label">Paciente</div></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="testimonial-item">
-        <div class="testimonial-card">
-          <div class="t-stars">★★★★★</div>
-          <p class="t-text">"Resultado excelente! O Dr. Rafael é extremamente técnico e ao mesmo tempo muito atencioso. Voltarei certamente."</p>
-          <div class="t-author">
-            <div class="t-avatar">R</div>
-            <div><div class="t-name">Ricardo Alves</div><div class="t-label">Paciente</div></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="testimonial-item">
-        <div class="testimonial-card">
-          <div class="t-stars">★★★★★</div>
-          <p class="t-text">"Atendimento impecável e estrutura de alto nível. Senti que estava em boas mãos desde o primeiro contato. Indico a todos!"</p>
-          <div class="t-author">
-            <div class="t-avatar">J</div>
-            <div><div class="t-name">Juliana Martins</div><div class="t-label">Paciente</div></div>
-          </div>
-        </div>
-      </div>
-
     </div>
 
-    <div class="carousel-controls">
-      <button class="carousel-btn" id="prevBtn"><i class="fas fa-chevron-left"></i></button>
-      <button class="carousel-btn" id="nextBtn"><i class="fas fa-chevron-right"></i></button>
+    <div class="results-cta">
+      <p>Quer conhecer seus resultados potenciais?</p>
+      <button class="btn-primary" onclick="openModal()">Agende Sua Consulta</button>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ═══════════════════════════════ TRATAMENTOS ESPECIALIZADOS ═══ --> 
-<section class="services" id="tratamentos">
+
+  <!-- ═══════════════════════════════ DEPOIMENTOS ═══ -->
+  <section class="testimonials-section" id="depoimentos">
+    <div class="section-header">
+      <span class="eyebrow">O que dizem</span>
+      <h2>Depoimentos de Pacientes</h2>
+      <p>A confiança de quem já viveu a experiência DermaVita</p>
+    </div>
+
+    <div class="carousel-wrap">
+      <div class="carousel-track" id="carouselTrack">
+
+        <div class="testimonial-item">
+          <div class="testimonial-card">
+            <div class="t-stars">★★★★★</div>
+            <p class="t-text">"Excelente atendimento, muito atencioso e profissional. Explicou tudo com clareza e me
+              deixou muito tranquila durante o procedimento."</p>
+            <div class="t-author">
+              <div class="t-avatar">M</div>
+              <div>
+                <div class="t-name">Mariana Souza</div>
+                <div class="t-label">Paciente</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-item">
+          <div class="testimonial-card">
+            <div class="t-stars">★★★★★</div>
+            <p class="t-text">"Minha experiência foi incrível, desde o acolhimento na recepção até o resultado final.
+              Superou todas as minhas expectativas!"</p>
+            <div class="t-author">
+              <div class="t-avatar">C</div>
+              <div>
+                <div class="t-name">Carlos Henrique</div>
+                <div class="t-label">Paciente</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-item">
+          <div class="testimonial-card">
+            <div class="t-stars">★★★★★</div>
+            <p class="t-text">"Clínica moderna e médico extremamente competente. O resultado do tratamento a laser foi
+              além do que esperava. Recomendo sem dúvidas!"</p>
+            <div class="t-author">
+              <div class="t-avatar">A</div>
+              <div>
+                <div class="t-name">Ana Paula Lima</div>
+                <div class="t-label">Paciente</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-item">
+          <div class="testimonial-card">
+            <div class="t-stars">★★★★★</div>
+            <p class="t-text">"Profissional muito humano e detalhista. Me senti seguro durante todo o processo e os
+              resultados são naturais e bonitos."</p>
+            <div class="t-author">
+              <div class="t-avatar">F</div>
+              <div>
+                <div class="t-name">Fernanda Rocha</div>
+                <div class="t-label">Paciente</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-item">
+          <div class="testimonial-card">
+            <div class="t-stars">★★★★★</div>
+            <p class="t-text">"Resultado excelente! O Dr. Rafael é extremamente técnico e ao mesmo tempo muito
+              atencioso. Voltarei certamente."</p>
+            <div class="t-author">
+              <div class="t-avatar">R</div>
+              <div>
+                <div class="t-name">Ricardo Alves</div>
+                <div class="t-label">Paciente</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-item">
+          <div class="testimonial-card">
+            <div class="t-stars">★★★★★</div>
+            <p class="t-text">"Atendimento impecável e estrutura de alto nível. Senti que estava em boas mãos desde o
+              primeiro contato. Indico a todos!"</p>
+            <div class="t-author">
+              <div class="t-avatar">J</div>
+              <div>
+                <div class="t-name">Juliana Martins</div>
+                <div class="t-label">Paciente</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="carousel-controls">
+        <button class="carousel-btn" id="prevBtn"><i class="fas fa-chevron-left"></i></button>
+        <button class="carousel-btn" id="nextBtn"><i class="fas fa-chevron-right"></i></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════ TRATAMENTOS ESPECIALIZADOS ═══ -->
+  <section class="services" id="tratamentos">
     <div class="services-header">
-        <span class="subtitle">Procedimentos</span>
-        <h2>Tratamentos Especializados</h2>
+      <span class="subtitle">Procedimentos</span>
+      <h2>Tratamentos Especializados</h2>
     </div>
 
     <div class="services-grid">
-        <div class="service-card">
-            <div class="service-img">
-                <img src="imagens/tecnologia1.png" alt="Rejuvenescimento Facial">
-            </div>
-            <div class="service-info">
-                <h3>Rejuvenescimento Facial</h3>
-                <p>Técnicas avançadas para restaurar a firmeza e vitalidade da sua pele.</p>
-                <button class="btn-service" onclick="openModal()">Agendar Consulta</button>
-            </div>
+      <div class="service-card">
+        <div class="service-img">
+          <img src="imagens/tecnologia1.png" alt="Rejuvenescimento Facial">
+        </div>
+        <div class="service-info">
+          <h3>Rejuvenescimento Facial</h3>
+          <p>Técnicas avançadas para restaurar a firmeza e vitalidade da sua pele.</p>
+          <button class="btn-service" onclick="openModal()">Agendar Consulta</button>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-img">
+          <img src="imagens/tecnologia2.png" alt="Tecnologia Laser">
+        </div>
+        <div class="service-info">
+          <h3>Tecnologia Laser</h3>
+          <p>O que há de mais moderno em tratamentos para manchas, textura e renovação celular.</p>
+          <button class="btn-service" onclick="openModal()">Agendar Consulta</button>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-img">
+          <img src="imagens/bioestimuladores.png" alt="Bioestimuladores">
+        </div>
+        <div class="service-info">
+          <h3>Bioestimuladores</h3>
+          <p>Estímulo natural de colágeno para um efeito lifting duradouro e natural.</p>
+          <button class="btn-service" onclick="openModal()">Agendar Consulta</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ═══════════════════════════════ ARTIGOS ═══ -->
+  <section class="articles-section" id="artigos">
+    <div class="section-header">
+      <span class="eyebrow">Conteúdo</span>
+      <h2>Artigos & Novidades</h2>
+      <p>Fique por dentro das últimas tendências e informações sobre saúde da pele</p>
+    </div>
+
+    <div class="articles-grid">
+      <article class="article-card">
+        <div class="article-img" style="background-image:url('imagens/tecnologia1.png');"></div>
+        <div class="article-body">
+          <div class="article-tag">Dermatologia</div>
+          <h3>Laser para dermatologia: saiba mais sobre a tecnologia</h3>
+          <div class="article-date">Mar 20, 2026</div>
+          <div class="article-divider"></div>
+          <p class="article-excerpt">Descubra como funciona o tratamento moderno a laser e quando o procedimento é
+            indicado para rejuvenescimento.</p>
+        </div>
+      </article>
+
+      <article class="article-card">
+        <div class="article-img" style="background-image:url('imagens/bioestimuladores.png');"></div>
+        <div class="article-body">
+          <div class="article-tag">Estética Avançada</div>
+          <h3>Bioestimuladores de Colágeno: entenda como funciona</h3>
+          <div class="article-date">Mar 19, 2026</div>
+          <div class="article-divider"></div>
+          <p class="article-excerpt">Saiba mais sobre como os bioestimuladores promovem firmeza da pele e resultados
+            cada vez mais naturais.</p>
+        </div>
+      </article>
+
+      <article class="article-card">
+        <div class="article-img" style="background-image:url('imagens/medico.jpg');"></div>
+        <div class="article-body">
+          <div class="article-tag">Novidades</div>
+          <h3>Podcast Entrevista com Especialista | DermaVita</h3>
+          <div class="article-date">Mar 17, 2026</div>
+          <div class="article-divider"></div>
+          <p class="article-excerpt">O podcast com Dr. Rafael está de volta discutindo as principais tendências da
+            estética para 2026.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════ FAQ ═══ -->
+  <section class="faq-section" id="faq">
+    <div class="section-header">
+      <span class="eyebrow">Tire suas dúvidas</span>
+      <h2>Perguntas Frequentes</h2>
+      <p>Respondemos as principais dúvidas sobre atendimento e procedimentos</p>
+    </div>
+
+    <div class="faq-grid">
+
+      <div class="faq-item">
+        <button class="faq-question">
+          Como agendar uma consulta com o Dr. Rafael?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Você pode realizar o agendamento diretamente pelo nosso WhatsApp (15) 99999-9999
+            ou clicando no botão "Agendar Consulta" no topo do site.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          Quais as especialidades do Dr. Rafael?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">O Dr. Rafael é especialista em Dermatologia Clínica e Estética Avançada,
+            tratando desde patologias da pele até procedimentos de rejuvenescimento facial e corporal.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          Quais hospitais o Dr. Rafael realiza cirurgias?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Atuamos nos principais hospitais da região, garantindo segurança e
+            infraestrutura completa para procedimentos cirúrgicos dermatológicos.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          Sou de fora de Votorantim, como fazer?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Oferecemos suporte para pacientes de outras localidades, com triagem inicial e
+            agendamento de exames e procedimentos em datas próximas.</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════ MAPA ═══ -->
+  <section class="map-section" id="localizacao">
+    <div class="map-inner">
+      <!-- Mapa -->
+      <div class="map-container">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3664.7859526340357!2d-47.51823!3d-23.571667!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c8f0c0c0c0c0c1%3A0x800000000000!2sAv.%20Pres.%20Kennedy%2C%201500%20-%20Centro%2C%20Votorantim%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1234567890"
+          allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+
+      <!-- Informações de Contato -->
+      <div class="map-content">
+        <span class="eyebrow">Onde nos encontrar</span>
+        <h2>Visite Nossa Clínica</h2>
+        <p>Estamos localizados em uma região de fácil acesso, com estrutura moderna e confortável para recebê-lo. Venha
+          conhecer nosso espaço e conversar com o Dr. Rafael sobre seus objetivos estéticos.</p>
+
+        <div class="map-address">
+          <div class="map-address-title">Endereço Completo</div>
+          <ul class="map-address-list">
+            <li><i class="fas fa-map-pin"></i> <strong>Instituto DermaVita</strong></li>
+            <li><i class="fas fa-road"></i> Av. Presidente Kennedy, 1500 – Conjunto 51</li>
+            <li><i class="fas fa-city"></i> Votorantim – SP, Brasil</li>
+            <li><i class="fas fa-phone"></i> <strong>(15) 99999-9999</strong></li>
+            <li><i class="fas fa-envelope"></i> contato@dermavita.com.br</li>
+          </ul>
         </div>
 
-        <div class="service-card">
-            <div class="service-img">
-                <img src="imagens/tecnologia2.png" alt="Tecnologia Laser">
-            </div>
-            <div class="service-info">
-                <h3>Tecnologia Laser</h3>
-                <p>O que há de mais moderno em tratamentos para manchas, textura e renovação celular.</p>
-                <button class="btn-service" onclick="openModal()">Agendar Consulta</button>
-            </div>
+        <div class="map-cta">
+          <p style="font-size:13px; color:#64748b; margin-bottom:16px;">Horário de Funcionamento: Seg-Sex 9h às 19h |
+            Sábado 9h às 13h</p>
+          <a href="https://maps.google.com/?q=Av.+Presidente+Kennedy,+1500,+Votorantim,+SP" target="_blank"
+            class="btn-primary"><i class="fas fa-map"></i> Abrir no Google Maps</a>
         </div>
+      </div>
+    </div>
+  </section>
 
-        <div class="service-card">
-            <div class="service-img">
-                <img src="imagens/bioestimuladores.png" alt="Bioestimuladores">
-            </div>
-            <div class="service-info">
-                <h3>Bioestimuladores</h3>
-                <p>Estímulo natural de colágeno para um efeito lifting duradouro e natural.</p>
-                <button class="btn-service" onclick="openModal()">Agendar Consulta</button>
-            </div>
+
+  <!-- ═══════════════════════════════ CONTATO ═══ -->
+  <section class="contact-section" id="contato">
+    <div class="contact-inner">
+      <span class="eyebrow">Entre em contato</span>
+      <h2>Fale com a DermaVita</h2>
+      <p>Conecte-se conosco diretamente pelas redes sociais ou WhatsApp. Estamos prontos para cuidar de você.</p>
+      <div class="contact-btns">
+        <a href="https://wa.me/551599999999" target="_blank" class="btn-social whatsapp"><i class="fab fa-whatsapp"></i>
+          WhatsApp</a>
+        <a href="https://www.instagram.com" target="_blank" class="btn-social instagram"><i
+            class="fab fa-instagram"></i> Instagram</a>
+        <a href="https://www.linkedin.com" target="_blank" class="btn-social linkedin"><i
+            class="fab fa-linkedin-in"></i> LinkedIn</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════ FOOTER ═══ -->
+  <footer class="footer">
+    <div class="footer-grid">
+
+      <div class="footer-brand">
+        <div class="footer-brand-logo">
+          <img src="imagens/logo.png" alt="DermaVita">
+          <div>
+            <h3>DermaVita</h3>
+            <div style="font-size:11px;color:rgba(255,255,255,0.45);letter-spacing:.1em;text-transform:uppercase;">
+              Dermatologia Estética Avançada</div>
+          </div>
         </div>
-    </div>
-</section>
-<!-- ═══════════════════════════════ ARTIGOS ═══ -->
-<section class="articles-section" id="artigos">
-  <div class="section-header">
-    <span class="eyebrow">Conteúdo</span>
-    <h2>Artigos & Novidades</h2>
-    <p>Fique por dentro das últimas tendências e informações sobre saúde da pele</p>
-  </div>
-
-  <div class="articles-grid">
-    <article class="article-card">
-      <div class="article-img" style="background-image:url('imagens/tecnologia1.png');"></div>
-      <div class="article-body">
-        <div class="article-tag">Dermatologia</div>
-        <h3>Laser para dermatologia: saiba mais sobre a tecnologia</h3>
-        <div class="article-date">Mar 20, 2026</div>
-        <div class="article-divider"></div>
-        <p class="article-excerpt">Descubra como funciona o tratamento moderno a laser e quando o procedimento é indicado para rejuvenescimento.</p>
-      </div>
-    </article>
-
-    <article class="article-card">
-      <div class="article-img" style="background-image:url('imagens/bioestimuladores.png');"></div>
-      <div class="article-body">
-        <div class="article-tag">Estética Avançada</div>
-        <h3>Bioestimuladores de Colágeno: entenda como funciona</h3>
-        <div class="article-date">Mar 19, 2026</div>
-        <div class="article-divider"></div>
-        <p class="article-excerpt">Saiba mais sobre como os bioestimuladores promovem firmeza da pele e resultados cada vez mais naturais.</p>
-      </div>
-    </article>
-
-    <article class="article-card">
-      <div class="article-img" style="background-image:url('imagens/medico.jpg');"></div>
-      <div class="article-body">
-        <div class="article-tag">Novidades</div>
-        <h3>Podcast Entrevista com Especialista | DermaVita</h3>
-        <div class="article-date">Mar 17, 2026</div>
-        <div class="article-divider"></div>
-        <p class="article-excerpt">O podcast com Dr. Rafael está de volta discutindo as principais tendências da estética para 2026.</p>
-      </div>
-    </article>
-  </div>
-</section>
-
-
-<!-- ═══════════════════════════════ FAQ ═══ -->
-<section class="faq-section" id="faq">
-  <div class="section-header">
-    <span class="eyebrow">Tire suas dúvidas</span>
-    <h2>Perguntas Frequentes</h2>
-    <p>Respondemos as principais dúvidas sobre atendimento e procedimentos</p>
-  </div>
-
-  <div class="faq-grid">
-
-    <div class="faq-item">
-      <button class="faq-question">
-        Como agendar uma consulta com o Dr. Rafael?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        <div class="faq-answer-inner">Você pode realizar o agendamento diretamente pelo nosso WhatsApp (15) 99999-9999 ou clicando no botão "Agendar Consulta" no topo do site.</div>
-      </div>
-    </div>
-
-    <div class="faq-item">
-      <button class="faq-question">
-        Quais as especialidades do Dr. Rafael?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        <div class="faq-answer-inner">O Dr. Rafael é especialista em Dermatologia Clínica e Estética Avançada, tratando desde patologias da pele até procedimentos de rejuvenescimento facial e corporal.</div>
-      </div>
-    </div>
-
-    <div class="faq-item">
-      <button class="faq-question">
-        Quais hospitais o Dr. Rafael realiza cirurgias?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        <div class="faq-answer-inner">Atuamos nos principais hospitais da região, garantindo segurança e infraestrutura completa para procedimentos cirúrgicos dermatológicos.</div>
-      </div>
-    </div>
-
-    <div class="faq-item">
-      <button class="faq-question">
-        Sou de fora de Votorantim, como fazer?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        <div class="faq-answer-inner">Oferecemos suporte para pacientes de outras localidades, com triagem inicial e agendamento de exames e procedimentos em datas próximas.</div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-
-<!-- ═══════════════════════════════ MAPA ═══ -->
-<section class="map-section" id="localizacao">
-  <div class="map-inner">
-    <!-- Mapa -->
-    <div class="map-container">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3664.7859526340357!2d-47.51823!3d-23.571667!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c8f0c0c0c0c0c1%3A0x800000000000!2sAv.%20Pres.%20Kennedy%2C%201500%20-%20Centro%2C%20Votorantim%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1234567890" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-    </div>
-
-    <!-- Informações de Contato -->
-    <div class="map-content">
-      <span class="eyebrow">Onde nos encontrar</span>
-      <h2>Visite Nossa Clínica</h2>
-      <p>Estamos localizados em uma região de fácil acesso, com estrutura moderna e confortável para recebê-lo. Venha conhecer nosso espaço e conversar com o Dr. Rafael sobre seus objetivos estéticos.</p>
-
-      <div class="map-address">
-        <div class="map-address-title">Endereço Completo</div>
-        <ul class="map-address-list">
-          <li><i class="fas fa-map-pin"></i> <strong>Instituto DermaVita</strong></li>
-          <li><i class="fas fa-road"></i> Av. Presidente Kennedy, 1500 – Conjunto 51</li>
-          <li><i class="fas fa-city"></i> Votorantim – SP, Brasil</li>
-          <li><i class="fas fa-phone"></i> <strong>(15) 99999-9999</strong></li>
-          <li><i class="fas fa-envelope"></i> contato@dermavita.com.br</li>
+        <p>Cuidando da saúde e beleza da sua pele com ciência, ética e humanidade em Votorantim – SP.</p>
+        <ul class="footer-contact-list">
+          <li><i class="fas fa-id-card"></i> CRM-SP 000000 – RQE 11111</li>
+          <li><i class="fas fa-building"></i> Instituto DermaVita</li>
+          <li><i class="fas fa-map-marker-alt"></i> Av. Pres. Kennedy, 1500 – Conj. 51, Votorantim – SP</li>
+          <li><i class="fas fa-phone"></i> (15) 99999-9999</li>
         </ul>
       </div>
 
-      <div class="map-cta">
-        <p style="font-size:13px; color:#64748b; margin-bottom:16px;">Horário de Funcionamento: Seg-Sex 9h às 19h | Sábado 9h às 13h</p>
-        <a href="https://maps.google.com/?q=Av.+Presidente+Kennedy,+1500,+Votorantim,+SP" target="_blank" class="btn-primary"><i class="fas fa-map"></i> Abrir no Google Maps</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- ═══════════════════════════════ CONTATO ═══ -->
-<section class="contact-section" id="contato">
-  <div class="contact-inner">
-    <span class="eyebrow">Entre em contato</span>
-    <h2>Fale com a DermaVita</h2>
-    <p>Conecte-se conosco diretamente pelas redes sociais ou WhatsApp. Estamos prontos para cuidar de você.</p>
-    <div class="contact-btns">
-      <a href="https://wa.me/551599999999" target="_blank" class="btn-social whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-      <a href="https://www.instagram.com" target="_blank" class="btn-social instagram"><i class="fab fa-instagram"></i> Instagram</a>
-      <a href="https://www.linkedin.com" target="_blank" class="btn-social linkedin"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
-    </div>
-  </div>
-</section>
-
-
-<!-- ═══════════════════════════════ FOOTER ═══ -->
-<footer class="footer">
-  <div class="footer-grid">
-
-    <div class="footer-brand">
-      <div class="footer-brand-logo">
-        <img src="imagens/logo.png" alt="DermaVita">
-        <div>
-          <h3>DermaVita</h3>
-          <div style="font-size:11px;color:rgba(255,255,255,0.45);letter-spacing:.1em;text-transform:uppercase;">Dermatologia Estética Avançada</div>
+      <div class="footer-col">
+        <h4>Mídias Sociais</h4>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/dermavita" target="_blank" rel="noopener noreferrer"><i
+              class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/dermavita" target="_blank" rel="noopener noreferrer"><i
+              class="fab fa-instagram"></i></a>
+          <a href="https://www.youtube.com/@dermavita" target="_blank" rel="noopener noreferrer"><i
+              class="fab fa-youtube"></i></a>
+          <a href="https://www.linkedin.com/company/dermavita" target="_blank" rel="noopener noreferrer"><i
+              class="fab fa-linkedin-in"></i></a>
         </div>
       </div>
-      <p>Cuidando da saúde e beleza da sua pele com ciência, ética e humanidade em Votorantim – SP.</p>
-      <ul class="footer-contact-list">
-        <li><i class="fas fa-id-card"></i> CRM-SP 000000 – RQE 11111</li>
-        <li><i class="fas fa-building"></i> Instituto DermaVita</li>
-        <li><i class="fas fa-map-marker-alt"></i> Av. Pres. Kennedy, 1500 – Conj. 51, Votorantim – SP</li>
-        <li><i class="fas fa-phone"></i> (15) 99999-9999</li>
-      </ul>
-    </div>
 
-    <div class="footer-col">
-      <h4>Mídias Sociais</h4>
-      <div class="footer-social">
-        <a href="https://www.facebook.com/dermavita" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://www.instagram.com/dermavita" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
-        <a href="https://www.youtube.com/@dermavita" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
-        <a href="https://www.linkedin.com/company/dermavita" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
-      </div>
-    </div>
-
-    <div class="footer-col">
-      <h4>Agende sua Consulta</h4>
-      <div class="footer-doctoralia">
-        <div class="doc-card-header">
-          <img src="imagens/medico.jpg" alt="Dr. Rafael" class="doc-thumb">
-          <div>
-            <div class="doc-name">Dr. Rafael Monteiro <span style="color:#2ecc71;font-size:11px;">✔</span></div>
-            <div class="doc-spec">Dermatologista</div>
-            <div class="doc-stars">★★★★★ <small style="color:#999">850 opiniões</small></div>
+      <div class="footer-col">
+        <h4>Agende sua Consulta</h4>
+        <div class="footer-doctoralia">
+          <div class="doc-card-header">
+            <img src="imagens/medico.jpg" alt="Dr. Rafael" class="doc-thumb">
+            <div>
+              <div class="doc-name">Dr. Rafael Monteiro <span style="color:#2ecc71;font-size:11px;">✔</span></div>
+              <div class="doc-spec">Dermatologista</div>
+              <div class="doc-stars">★★★★★ <small style="color:#999">850 opiniões</small></div>
+            </div>
           </div>
+          <a href="#" class="doc-cta" onclick="openModal(); return false;">Agendar consulta</a>
+          <div class="doc-brand-label">Doctoralia</div>
         </div>
-        <a href="#" class="doc-cta" onclick="openModal(); return false;">Agendar consulta</a>
-        <div class="doc-brand-label">Doctoralia</div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 DermaVita – Dr. Rafael Monteiro Azevedo. Todos os direitos reservados.</span>
+      <a href="#">Políticas de Privacidade</a>
+    </div>
+  </footer>
+
+
+  <!-- WhatsApp Float -->
+  <a href="https://wa.me/551599999999" target="_blank" class="whatsapp-float">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+
+  <!-- ═══════════════════════════════ MODAL ═══ -->
+  <div class="modal-overlay" id="modal">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeModal()">✕</button>
+      <h3>Primeira consulta com desconto de 20%</h3>
+      <p>Preencha os dados abaixo e entraremos em contato em breve.</p>
+      <div class="modal-form">
+        <input type="text" id="nome" placeholder="Seu nome completo" required>
+        <input type="email" id="email" placeholder="Seu e-mail" required>
+        <input type="tel" id="telefone" placeholder="WhatsApp (15) 9 ____-____ " required>
+        <select id="tratamento" required>
+          <option value="" disabled selected>Escolha o tratamento de interesse</option>
+          <option>Rejuvenescimento facial</option>
+          <option>Tecnologia Laser</option>
+          <option>Dermatologia Clínica</option>
+          <option>Bioestimuladores</option>
+          <option>Outro</option>
+        </select>
+        <button onclick="enviarFormulario()">Enviar Solicitação</button>
       </div>
     </div>
-
   </div>
 
-  <div class="footer-bottom">
-    <span>© 2026 DermaVita – Dr. Rafael Monteiro Azevedo. Todos os direitos reservados.</span>
-    <a href="#">Políticas de Privacidade</a>
-  </div>
-</footer>
 
+  <!-- ═══════════════════════════════ SCRIPTS ═══ -->
 
-<!-- WhatsApp Float -->
-<a href="https://wa.me/551599999999" target="_blank" class="whatsapp-float">
-  <i class="fab fa-whatsapp"></i>
-</a>
+  <script type="module">
+    // Import Firebase
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+    import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
+    // CONFIG do seu projeto (copie do Firebase)
+    const firebaseConfig = {
+      apiKey: "AIzaSyB54ZSjQTuvdS5q71h3407MTnxdMGc06VA",
+      authDomain: "webmedico-aa23b.firebaseapp.com",
+      projectId: "webmedico-aa23b",
+      storageBucket: "webmedico-aa23b.firebasestorage.app",
+      messagingSenderId: "637932846685",
+      appId: "1:637932846685:web:93cd1e5d31158e2b4817b4",
+      measurementId: "G-C5K6GBTNVW"
+    };
 
-<!-- ═══════════════════════════════ MODAL ═══ -->
-<div class="modal-overlay" id="modal">
-  <div class="modal-box">
-    <button class="modal-close" onclick="closeModal()">✕</button>
-    <h3>Primeira consulta com desconto de 20%</h3>
-    <p>Preencha os dados abaixo e entraremos em contato em breve.</p>
-    <div class="modal-form">
-      <input type="text" id="nome" placeholder="Seu nome completo" required>
-      <input type="email" id="email" placeholder="Seu e-mail" required>
-      <input type="tel" id="telefone" placeholder="WhatsApp (15) 9 ____-____ "required>
-      <select id="tratamento" required>
-        <option value="" disabled selected>Escolha o tratamento de interesse</option>
-        <option>Rejuvenescimento facial</option>
-        <option>Tecnologia Laser</option>
-        <option>Dermatologia Clínica</option>
-        <option>Bioestimuladores</option>
-        <option>Outro</option>
-      </select>
-      <button onclick="enviarFormulario()">Enviar Solicitação</button>
-    </div>
-  </div>
-</div>
+    // Inicializar Firebase
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
 
+    // Tornar global (pra usar fora do module se quiser)
+    window.db = db;
+    window.addDoc = addDoc;
+    window.collection = collection;
+  </script>
 
-<!-- ═══════════════════════════════ SCRIPTS ═══ -->
-
- <script type="module">
-  // Import Firebase
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-  import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
-
-  // CONFIG do seu projeto (copie do Firebase)
-  const firebaseConfig = {
-apiKey: "AIzaSyB54ZSjQTuvdS5q71h3407MTnxdMGc06VA",
-  authDomain: "webmedico-aa23b.firebaseapp.com",
-  projectId: "webmedico-aa23b",
-  storageBucket: "webmedico-aa23b.firebasestorage.app",
-  messagingSenderId: "637932846685",
-  appId: "1:637932846685:web:93cd1e5d31158e2b4817b4",
-  measurementId: "G-C5K6GBTNVW"
-  };
-
-  // Inicializar Firebase
-  const app = initializeApp(firebaseConfig);
-  const db = getFirestore(app);
-
-  // Tornar global (pra usar fora do module se quiser)
-  window.db = db;
-  window.addDoc = addDoc;
-  window.collection = collection;
-</script>
-
-<script>
+  <script>
     async function enviarFormulario() {
-  const nome = document.getElementById('nome').value;
-  const email = document.getElementById('email').value;
-  const telefone = document.getElementById('telefone').value;
-  const tratamento = document.getElementById('tratamento').value;
+      const nome = document.getElementById('nome').value;
+      const email = document.getElementById('email').value;
+      const telefone = document.getElementById('telefone').value;
+      const tratamento = document.getElementById('tratamento').value;
 
-  if (!nome || !email || !telefone || !tratamento) {
-    alert("Preencha todos os campos!");
-    return;
-  }
+      if (!nome || !email || !telefone || !tratamento) {
+        alert("Preencha todos os campos!");
+        return;
+      }
 
-  try {
-    await addDoc(collection(db, "agendamentos"), {
-      nome: nome,
-      email: email,
-      telefone: telefone,
-      tratamento: tratamento,
-      data: new Date()
+      try {
+        await addDoc(collection(db, "agendamentos"), {
+          nome: nome,
+          email: email,
+          telefone: telefone,
+          tratamento: tratamento,
+          data: new Date()
+        });
+
+        alert("Solicitação enviada com sucesso!");
+        closeModal();
+
+        // Limpar campos
+        document.getElementById('nome').value = "";
+        document.getElementById('email').value = "";
+        document.getElementById('telefone').value = "";
+        document.getElementById('tratamento').selectedIndex = 0;
+
+      } catch (error) {
+        console.error("Erro ao enviar:", error);
+        alert("Erro ao enviar. Tente novamente.");
+      }
+    }
+    // MODAL
+    function openModal() {
+
+      document.getElementById('modal').classList.add('open');
+      document.body.classList.add('modal-open');
+    }
+    function closeModal() {
+      document.getElementById('modal').classList.remove('open');
+      document.body.classList.remove('modal-open');
+    }
+    document.getElementById('modal').addEventListener('click', function (e) {
+      if (e.target === this) closeModal();
     });
 
-    alert("Solicitação enviada com sucesso!");
-    closeModal();
-
-    // Limpar campos
-    document.getElementById('nome').value = "";
-    document.getElementById('email').value = "";
-    document.getElementById('telefone').value = "";
-    document.getElementById('tratamento').selectedIndex = 0;
-
-  } catch (error) {
-    console.error("Erro ao enviar:", error);
-    alert("Erro ao enviar. Tente novamente.");
-  }
-}
-// MODAL
-function openModal() {
-  
-  document.getElementById('modal').classList.add('open');
-  document.body.classList.add('modal-open');
-}
-function closeModal() {
-  document.getElementById('modal').classList.remove('open');
-  document.body.classList.remove('modal-open');
-}
-document.getElementById('modal').addEventListener('click', function(e) {
-  if (e.target === this) closeModal();
-});
-
-// SMOOTH SCROLL
-function scrollToElement(selector) {
-    document.querySelector(selector).scrollIntoView({ behavior: 'smooth' });
-}
-
-// CAROUSEL
-const track = document.getElementById('carouselTrack');
-const items = track.querySelectorAll('.testimonial-item');
-let idx = 0;
-
-function getVisible() { return window.innerWidth <= 640 ? 1 : window.innerWidth <= 900 ? 2 : 3; }
-
-function updateCarousel() {
-  const w = track.clientWidth / getVisible();
-  track.style.transform = `translateX(-${idx * w}px)`;
-}
-
-document.getElementById('nextBtn').addEventListener('click', () => {
-  const v = getVisible();
-  idx = (idx >= items.length - v) ? 0 : idx + 1;
-  updateCarousel();
-});
-document.getElementById('prevBtn').addEventListener('click', () => {
-  const v = getVisible();
-  idx = (idx <= 0) ? items.length - v : idx - 1;
-  updateCarousel();
-});
-window.addEventListener('resize', () => { idx = 0; updateCarousel(); });
-
-// Auto-play
-setInterval(() => {
-  const v = getVisible();
-  idx = (idx >= items.length - v) ? 0 : idx + 1;
-  updateCarousel();
-}, 5000);
-
-// AREAS ANIMATION ON SCROLL
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((e, i) => {
-    if (e.isIntersecting) {
-      setTimeout(() => e.target.classList.add('visible'), i * 120);
-      observer.unobserve(e.target);
+    // SMOOTH SCROLL
+    function scrollToElement(selector) {
+      document.querySelector(selector).scrollIntoView({ behavior: 'smooth' });
     }
-  });
-}, { threshold: 0.15 });
-document.querySelectorAll('.area-card').forEach(c => observer.observe(c));
 
-// BEFORE/AFTER TOGGLE BUTTON
-function toggleAfter(btn) {
-  const container = btn.closest('.before-after-container');
-  container.classList.toggle('active');
-  
-  if (container.classList.contains('active')) {
-    btn.innerHTML = '<i class="fas fa-arrow-left"></i> Ver Antes';
-  } else {
-    btn.innerHTML = '<i class="fas fa-arrow-right"></i> Ver Depois';
-  }
-}
+    // CAROUSEL
+    const track = document.getElementById('carouselTrack');
+    const items = track.querySelectorAll('.testimonial-item');
+    let idx = 0;
 
-// FAQ
-document.querySelectorAll('.faq-question').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const item = btn.parentElement;
-    document.querySelectorAll('.faq-item').forEach(i => { if (i !== item) i.classList.remove('active'); });
-    item.classList.toggle('active');
-  });
-});
+    function getVisible() { return window.innerWidth <= 640 ? 1 : window.innerWidth <= 900 ? 2 : 3; }
 
-// NAVBAR shrink on scroll
-window.addEventListener('scroll', () => {
-  const nb = document.querySelector('.navbar');
-  nb.style.background = window.scrollY > 80
-    ? 'rgba(7,15,30,0.97)'
-    : 'rgba(11,31,56,0.92)';
-});
+    function updateCarousel() {
+      const w = track.clientWidth / getVisible();
+      track.style.transform = `translateX(-${idx * w}px)`;
+    }
 
-// HAMBURGER (mobile)
-function toggleMenu(el) {
-  el.classList.toggle('open');
-  document.querySelector('.navbar').classList.toggle('mobile-open');
-}
+    document.getElementById('nextBtn').addEventListener('click', () => {
+      const v = getVisible();
+      idx = (idx >= items.length - v) ? 0 : idx + 1;
+      updateCarousel();
+    });
+    document.getElementById('prevBtn').addEventListener('click', () => {
+      const v = getVisible();
+      idx = (idx <= 0) ? items.length - v : idx - 1;
+      updateCarousel();
+    });
+    window.addEventListener('resize', () => { idx = 0; updateCarousel(); });
 
-// Fechar menu ao clicar em âncora no mobile
-document.querySelectorAll('.nav-links a').forEach(link => {
-  link.addEventListener('click', () => {
-    document.querySelector('.navbar').classList.remove('mobile-open');
-    document.querySelector('.nav-hamburger').classList.remove('open');
-  });
-});
+    // Auto-play
+    setInterval(() => {
+      const v = getVisible();
+      idx = (idx >= items.length - v) ? 0 : idx + 1;
+      updateCarousel();
+    }, 5000);
 
- 
-document.addEventListener("DOMContentLoaded", function() {
-  if (!sessionStorage.getItem("modalShown")) {
-    setTimeout(function() {
-      openModal();
-      sessionStorage.setItem("modalShown", "true");
-    }, 12000);
-  }
-});
+    // AREAS ANIMATION ON SCROLL
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((e, i) => {
+        if (e.isIntersecting) {
+          setTimeout(() => e.target.classList.add('visible'), i * 120);
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    document.querySelectorAll('.area-card').forEach(c => observer.observe(c));
 
-</script>
+    // BEFORE/AFTER TOGGLE BUTTON
+    function toggleAfter(btn) {
+      const container = btn.closest('.before-after-container');
+      container.classList.toggle('active');
+
+      if (container.classList.contains('active')) {
+        btn.innerHTML = '<i class="fas fa-arrow-left"></i> Ver Antes';
+      } else {
+        btn.innerHTML = '<i class="fas fa-arrow-right"></i> Ver Depois';
+      }
+    }
+
+    // FAQ
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.parentElement;
+        document.querySelectorAll('.faq-item').forEach(i => { if (i !== item) i.classList.remove('active'); });
+        item.classList.toggle('active');
+      });
+    });
+
+    // NAVBAR shrink on scroll
+    window.addEventListener('scroll', () => {
+      const nb = document.querySelector('.navbar');
+      nb.style.background = window.scrollY > 80
+        ? 'rgba(7,15,30,0.97)'
+        : 'rgba(11,31,56,0.92)';
+    });
+
+    // HAMBURGER (mobile)
+    function toggleMenu(el) {
+      el.classList.toggle('open');
+      document.querySelector('.navbar').classList.toggle('mobile-open');
+    }
+
+    // Fechar menu ao clicar em âncora no mobile
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        document.querySelector('.navbar').classList.remove('mobile-open');
+        document.querySelector('.nav-hamburger').classList.remove('open');
+      });
+    });
+
+
+    document.addEventListener("DOMContentLoaded", function () {
+      if (!sessionStorage.getItem("modalShown")) {
+        setTimeout(function () {
+          openModal();
+          sessionStorage.setItem("modalShown", "true");
+        }, 12000);
+      }
+    });
+
+  </script>
 
 </body>
+
 </html>
