@@ -23,7 +23,7 @@ Landing page profissional para captação de pacientes, agendamento de consultas
 
 ---
 
-## 📖 Sobre o projeto
+## Sobre o projeto
 
 O site foi criado para o **Instituto DermaVita** e tem como objetivos:
 
