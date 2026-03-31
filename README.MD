@@ -112,19 +112,19 @@ Votorantim – SP
 | GitHub Copilot        | Correções rápidas de bugs                |
 
 ### Porque escolhi cada um
-HTML5, CSS3, JS - é o que eu estava acostumado a usar para criação de sites, e promove muita facilidade
-Firebase Firestore - Em minhas pesquisas descobri que é uma das opções mais simples de aplicar no meu projeto
-Firebase Hosting - é uma boa opção por estar no mesmo lugar que a firestore, implementei os dois juntos, fazendo tudo ficar mais simples
-Git / GitHub - eu já tinha meu GitHub e estou acostumado com o uso de Github.
-Leonardo.ai - pelas minhas pesquisas, a versão gratuita é uma das melhores, com o ônus de ter um limite curto de criação de imagens
-Gemini - Principal IA utilizada na criação do meu site, gostei muito pela velocidade de raciocínio e criação de imagens
-Chat GPT - Utilizei para codar apenas no começo, mas acabei gostando mais de outras IAs, durante o resto do projeto usei mais para criação de imagens e conselhos pontuais
-Deepseek - Utilizei para codar e corrigir Bugs no site em alguns momentos, ele se sobressai por ter um limite muito grande de texto em apenas uma solicitação, o que me ajudou em algumas ocasiões
-GitHub Copilot - Utilizado principalmente para correção de Bugs, se sobressai muito por ter acesso ao html completo
-Claude AI - De longe a melhor IA que utilizei, porem o uso foi muito curto e pontual, porque a versão gratuita aceita poucas solicitações
+- HTML5, CSS3, JS - é o que eu estava acostumado a usar para criação de sites, e promove muita facilidade
+- Firebase Firestore - Em minhas pesquisas descobri que é uma das opções mais simples de aplicar no meu projeto
+- Firebase Hosting - é uma boa opção por estar no mesmo lugar que a firestore, implementei os dois juntos, fazendo tudo ficar mais simples
+- Git / GitHub - eu já tinha meu GitHub e estou acostumado com o uso de Github.
+- Leonardo.ai - pelas minhas pesquisas, a versão gratuita é uma das melhores, com o ônus de ter um limite curto de criação de imagens
+- Gemini - Principal IA utilizada na criação do meu site, gostei muito pela velocidade de raciocínio e criação de imagens
+- Chat GPT - Utilizei para codar apenas no começo, mas acabei gostando mais de outras IAs, durante o resto do projeto usei mais para criação de imagens e conselhos pontuais
+- Deepseek - Utilizei para codar e corrigir Bugs no site em alguns momentos, ele se sobressai por ter um limite muito grande de texto em apenas uma solicitação, o que me ajudou em algumas ocasiões
+- GitHub Copilot - Utilizado principalmente para correção de Bugs, se sobressai muito por ter acesso ao html completo
+- Claude AI - De longe a melhor IA que utilizei, porem o uso foi muito curto e pontual, porque a versão gratuita aceita poucas solicitações
 
 ### Notas:
-HTML - Optei por codar o site inteiro em apenas um arquivo apenas por achar mais facil no começo
+- HTML: Optei por codar o site inteiro em apenas um arquivo apenas por achar mais facil no começo
 ---
 
 ## Estrutura do banco de dados (Firestore)
