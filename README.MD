@@ -99,6 +99,16 @@ Votorantim – SP
 
 ---
 
+### Referencias de mercado
+    - Site de referência: Dr. Rodrigo Barbosa - https://drrodrigobarbosa.com.br/
+    - Lições aplicadas:
+    - Estrutura de áreas de atuação e CTAs diretos
+    - Prova social com avaliações e contadores
+    - Abordagem de autoridade (selos, publicações, docência)
+    - Uso de pop‑ups com ofertas limitadas
+    - Adaptações: transformação do conceito em uma landing page única, com cores azuladas para transmitir confiança e serenidade, e foco em microinterações que melhoram a experiência do usuário.
+
+
 ## Tecnologias utilizadas
 
 | Tecnologia             | Finalidade                               |
