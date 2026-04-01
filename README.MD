@@ -19,7 +19,6 @@ Landing page profissional para captação de pacientes, agendamento de consultas
 - [O que eu faria com mais tempo](#o-que-eu-faria-com-mais-tempo)
 - [Como executar localmente](#como-executar-localmente)
 - [Deploy e hospedagem](#deploy-e-hospedagem)
-- [Links úteis](#links-úteis)
 - [Autor](#autor)
 
 ---
@@ -235,12 +234,7 @@ bash
 firebase deploy
 URL de produção: https://webmedico-aa23b.web.app/
 
-## Links úteis
-Repositório no GitHub
 
-Site ao vivo
-
-Firebase Console – projeto webmedico-aa23b
 
 ## Autor
 Davi Dias Campos
